@@ -31,7 +31,6 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col">
           {/* Global navigation */}
-          {/* @ts-expect-error Async Server Component */}
           <SiteHeader />
           <main className="flex-1">
             <div className="mx-auto max-w-6xl px-6 py-10">{children}</div>
