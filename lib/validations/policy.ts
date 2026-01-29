@@ -126,13 +126,13 @@ export const userPreferencesSchema = z.object({
   timezone: z.string().default('UTC'),
   severity_threshold: severityLevelSchema.default('MEDIUM'),
   alert_frequency_minutes: z.number().int().min(15).max(1440).default(60),
-  notification_preferences: z.record(z.unknown()).default({}),
+  notification_preferences: z.record(z.string(), z.unknown()).default({}),
 })
 
 // Risk Event Update Schema (for user actions)
 export const updateRiskEventSchema = z.object({
   status: eventStatusSchema,
-  metadata: z.record(z.unknown()).optional(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
 })
 
 // Export types

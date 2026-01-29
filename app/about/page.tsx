@@ -98,13 +98,13 @@ export default function AboutPage() {
                   We're building the risk intelligence platform that blockchain-native 
                   companies deserve. No more waking up to surprise balance drops, 
                   unauthorized transactions, or protocol exploits.
-                </p>
-                <p>
+        </p>
+        <p>
                   Our platform combines real-time blockchain data, AI-powered anomaly 
                   detection, and institutional-grade alerting to give risk teams the 
                   visibility and control they need.
-                </p>
-                <p>
+        </p>
+        <p>
                   We believe that blockchain risk monitoring should be as sophisticated 
                   as traditional financial risk management—but faster, more transparent, 
                   and built for the on-chain world.
@@ -254,8 +254,8 @@ export default function AboutPage() {
               <h3 className="mb-2 font-semibold text-white">Alerts</h3>
               <p className="text-sm text-zinc-400">
                 Multi-channel delivery via Resend (Email), Twilio (SMS), and Slack webhooks
-              </p>
-            </div>
+        </p>
+      </div>
           </div>
         </div>
       </section>

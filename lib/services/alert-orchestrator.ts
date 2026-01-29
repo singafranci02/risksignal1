@@ -63,6 +63,7 @@ export class AlertOrchestrator {
           recipient: this.getRecipient(channel, payload),
           status: result.success ? 'SENT' : 'FAILED',
           message_content: payload.violationMessage,
+          error_message: result.error || null,
           metadata: {
             message_id: result.messageId,
             error: result.error,

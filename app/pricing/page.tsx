@@ -181,7 +181,7 @@ export default function PricingPage() {
             })}
           </div>
         </div>
-      </section>
+        </section>
 
       {/* Feature Comparison */}
       <section className="border-b border-zinc-800 bg-zinc-950">
@@ -262,7 +262,7 @@ export default function PricingPage() {
             </table>
           </div>
         </div>
-      </section>
+        </section>
 
       {/* FAQ Section */}
       <section className="border-b border-zinc-800">
@@ -283,7 +283,7 @@ export default function PricingPage() {
             ))}
           </div>
         </div>
-      </section>
+        </section>
 
       {/* CTA Section */}
       <section className="bg-zinc-950">
@@ -312,7 +312,7 @@ export default function PricingPage() {
               </Link>
             </div>
           </div>
-        </div>
+      </div>
       </section>
     </div>
   )
