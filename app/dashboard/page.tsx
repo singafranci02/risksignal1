@@ -1,7 +1,11 @@
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
-import WalletList from './wallet-list'
-import AddWalletForm from './add-wallet-form'
+import { DashboardHeader } from './components/dashboard-header'
+import { RiskOverview } from './components/risk-overview'
+import { WalletPortfolio } from './components/wallet-portfolio'
+import { RiskFeed } from './components/risk-feed'
+import { PolicyManager } from './components/policy-manager'
+import { QuickActions } from './components/quick-actions'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -14,35 +18,96 @@ export default async function DashboardPage() {
     redirect('/login')
   }
 
-  const { data: wallets, error } = await supabase
-    .from('monitored_wallets')
-    .select('*')
-    .eq('user_id', user.id)
-    .order('created_at', { ascending: false })
+  // Fetch all data in parallel
+  const [
+    { data: policies },
+    { data: riskEvents },
+    { data: wallets },
+    { data: recentSnapshots },
+    { data: alertStats }
+  ] = await Promise.all([
+    supabase
+      .from('policies')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false }),
+    
+    supabase
+      .from('risk_events')
+      .select('*, policies!inner(policy_name, wallet_address)')
+      .eq('policies.user_id', user.id)
+      .order('detected_at', { ascending: false })
+      .limit(50),
+    
+    supabase
+      .from('monitored_wallets')
+      .select('*')
+      .eq('user_id', user.id),
+    
+    supabase
+      .from('wallet_snapshots')
+      .select('*')
+      .order('captured_at', { ascending: false })
+      .limit(100),
+    
+    supabase
+      .from('alert_history')
+      .select('*, risk_events!inner(policy_id, policies!inner(user_id))')
+      .eq('risk_events.policies.user_id', user.id)
+      .order('sent_at', { ascending: false })
+      .limit(100)
+  ])
+
+  // Calculate metrics
+  const totalPolicies = policies?.length || 0
+  const activePolicies = policies?.filter(p => p.is_active).length || 0
+  const openEvents = riskEvents?.filter(e => e.status === 'OPEN').length || 0
+  const criticalEvents = riskEvents?.filter(e => e.severity === 'CRITICAL').length || 0
 
   return (
-    <div className="min-h-screen bg-background p-8">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">RiskSignal Dashboard</h1>
-          <p className="mt-2 text-muted-foreground">
-            Monitor your wallet balances and receive alerts
-          </p>
-        </div>
+    <div className="min-h-screen bg-zinc-950">
+      <div className="mx-auto max-w-[1800px] p-6 space-y-6">
+        {/* Header */}
+        <DashboardHeader 
+          userName={user.user_metadata?.first_name || user.email?.split('@')[0] || 'User'}
+          userEmail={user.email || ''}
+        />
 
-        <div className="mb-8">
-          <AddWalletForm />
-        </div>
+        {/* KPI Overview */}
+        <RiskOverview 
+          totalPolicies={totalPolicies}
+          activePolicies={activePolicies}
+          openEvents={openEvents}
+          criticalEvents={criticalEvents}
+          alertStats={alertStats || []}
+        />
 
-        <div>
-          <h2 className="mb-4 text-2xl font-semibold text-foreground">Monitored Wallets</h2>
-          {error ? (
-            <div className="rounded-lg border border-destructive bg-destructive/10 p-4 text-destructive">
-              Error loading wallets: {error.message}
-            </div>
-          ) : (
-            <WalletList wallets={wallets || []} />
-          )}
+        {/* Main Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left Column - 2/3 width */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Wallet Portfolio */}
+            <WalletPortfolio 
+              wallets={wallets || []}
+              snapshots={recentSnapshots || []}
+            />
+
+            {/* Risk Feed */}
+            <RiskFeed 
+              events={riskEvents || []}
+            />
+          </div>
+
+          {/* Right Column - 1/3 width */}
+          <div className="space-y-6">
+            {/* Quick Actions */}
+            <QuickActions />
+
+            {/* Policy Manager */}
+            <PolicyManager 
+              policies={policies || []}
+            />
+          </div>
         </div>
       </div>
     </div>

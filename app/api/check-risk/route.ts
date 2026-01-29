@@ -1,16 +1,22 @@
 import { createClient } from '@/utils/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import { RiskChecker } from '@/lib/services/risk-checker'
+import { AlertService } from '@/lib/services/alert-service'
+import { z } from 'zod'
 
-// Initialize Resend only if API key is available
-const getResend = () => {
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
-    console.warn('RESEND_API_KEY is not configured')
-    return null
-  }
-  return new Resend(apiKey)
-}
+const API_RESPONSE_SCHEMA = z.object({
+  success: z.boolean(),
+  data: z
+    .object({
+      walletsChecked: z.number(),
+      alertsSent: z.number(),
+      message: z.string(),
+    })
+    .optional(),
+  error: z.string().optional(),
+})
+
+type ApiResponse = z.infer<typeof API_RESPONSE_SCHEMA>
 
 interface Wallet {
   id: string
@@ -19,158 +25,126 @@ interface Wallet {
   min_balance_usd: number
 }
 
-interface MoralisNetWorthResponse {
-  total_networth_usd: string
+function authenticateRequest(request: NextRequest): boolean {
+  const isDevelopment = process.env.NODE_ENV === 'development'
+
+  if (isDevelopment) {
+    console.warn(
+      '[DEV] CRON_SECRET check bypassed. Never deploy with NODE_ENV=development.'
+    )
+    return true
+  }
+
+  const vercelCron = request.headers.get('x-vercel-cron')
+  const authHeader = request.headers.get('authorization')
+  const cronSecret = process.env.CRON_SECRET
+
+  const isVercelCron = vercelCron === '1'
+  const hasValidAuth =
+    !!authHeader &&
+    !!cronSecret &&
+    authHeader.replace('Bearer ', '') === cronSecret
+
+  return isVercelCron || hasValidAuth
 }
 
 export async function GET(request: NextRequest) {
   try {
-    // Check for Vercel Cron signature or Authorization header with CRON_SECRET
-    const isDevelopment = process.env.NODE_ENV === 'development'
-    const vercelCron = request.headers.get('x-vercel-cron')
-    const authHeader = request.headers.get('authorization')
-    const cronSecret = process.env.CRON_SECRET
-
-    // Allow bypass in development mode for testing
-    if (isDevelopment) {
-      console.warn('⚠️  Development mode: CRON_SECRET check bypassed. This should not happen in production.')
-    } else {
-      // Production: Require either Vercel Cron signature OR CRON_SECRET
-      const isVercelCron = vercelCron === '1'
-      const hasValidAuth = authHeader && cronSecret && authHeader.replace('Bearer ', '') === cronSecret
-
-      if (!isVercelCron && !hasValidAuth) {
-        return NextResponse.json(
-          { 
-            error: 'Unauthorized',
-            message: 'This endpoint requires either Vercel Cron signature or valid CRON_SECRET'
-          },
-          { status: 401 }
-        )
+    if (!authenticateRequest(request)) {
+      const response: ApiResponse = {
+        success: false,
+        error:
+          'Unauthorized: This endpoint requires Vercel Cron signature or valid CRON_SECRET',
       }
-
-      // Log which authentication method was used
-      if (isVercelCron) {
-        console.log('✅ Authenticated via Vercel Cron')
-      } else {
-        console.log('✅ Authenticated via CRON_SECRET')
-      }
+      return NextResponse.json(response, { status: 401 })
     }
 
-    // Fetch all wallets from Supabase
+    const moralisApiKey = process.env.MORALIS_API_KEY
+    if (!moralisApiKey) {
+      const response: ApiResponse = {
+        success: false,
+        error: 'MORALIS_API_KEY is not configured',
+      }
+      return NextResponse.json(response, { status: 500 })
+    }
+
     const supabase = await createClient()
     const { data: wallets, error: supabaseError } = await supabase
       .from('monitored_wallets')
       .select('id, user_id, wallet_address, min_balance_usd')
 
     if (supabaseError) {
-      console.error('Error fetching wallets:', supabaseError)
-      return NextResponse.json(
-        { error: 'Failed to fetch wallets', details: supabaseError.message },
-        { status: 500 }
-      )
+      console.error('[Supabase Error]', supabaseError)
+      const response: ApiResponse = {
+        success: false,
+        error: 'Failed to fetch monitored wallets',
+      }
+      return NextResponse.json(response, { status: 500 })
     }
 
     if (!wallets || wallets.length === 0) {
-      return NextResponse.json({
-        walletsChecked: 0,
-        alertsSent: 0,
-        message: 'No wallets to check',
-      })
+      const response: ApiResponse = {
+        success: true,
+        data: {
+          walletsChecked: 0,
+          alertsSent: 0,
+          message: 'No wallets to check',
+        },
+      }
+      return NextResponse.json(response)
     }
 
+    const riskChecker = new RiskChecker(moralisApiKey)
+    const alertService = new AlertService(process.env.RESEND_API_KEY)
+
+    const results = await riskChecker.checkMultipleWallets(
+      wallets as Wallet[]
+    )
     let alertsSent = 0
-    const morailsApiKey = process.env.MORALIS_API_KEY
 
-    if (!morailsApiKey) {
-      return NextResponse.json(
-        { error: 'MORALIS_API_KEY is not configured' },
-        { status: 500 }
-      )
-    }
+    for (const result of results) {
+      if (!result.isAtRisk) continue
 
-    // Check each wallet
-    for (const wallet of wallets as Wallet[]) {
+      console.log('[ALERT TRIGGERED]', {
+        wallet: result.address,
+        current: result.currentBalance,
+        threshold: result.threshold,
+      })
+
       try {
-        // Call Moralis API to get wallet net worth
-        const moralisUrl = `https://deep-index.moralis.io/api/v2.2/wallets/${wallet.wallet_address}/net-worth?exclude_spam=true`
-        
-        const moralisResponse = await fetch(moralisUrl, {
-          headers: {
-            'X-API-Key': morailsApiKey,
-          },
+        // TODO: Fetch actual user email from auth.users
+        await alertService.sendAlert({
+          walletAddress: result.address,
+          currentBalance: result.currentBalance,
+          threshold: result.threshold,
+          recipientEmail: 'user@example.com',
         })
-
-        if (!moralisResponse.ok) {
-          console.error(
-            `Moralis API error for wallet ${wallet.wallet_address}:`,
-            moralisResponse.statusText
-          )
-          continue
-        }
-
-        const netWorthData: MoralisNetWorthResponse = await moralisResponse.json()
-        const totalNetworthUsd = parseFloat(netWorthData.total_networth_usd || '0')
-        const minBalanceUsd = wallet.min_balance_usd
-
-        // Check if net worth is below threshold
-        if (totalNetworthUsd < minBalanceUsd) {
-          console.log('ALERT TRIGGERED')
-          console.log(
-            `Wallet ${wallet.wallet_address} has dropped to $${totalNetworthUsd}. Threshold was $${minBalanceUsd}.`
-          )
-
-          // Send email via Resend
-          // TODO: Fetch actual user email from Supabase auth.users table
-          const userEmail = 'user@example.com'
-          const resend = getResend()
-
-          if (resend) {
-            try {
-              await resend.emails.send({
-                from: 'RiskSignal <alerts@risksignal.com>', // Update with your verified domain
-                to: userEmail,
-                subject: 'CRITICAL ALERT: Wallet Balance Below Threshold',
-                html: `
-                  <h2>CRITICAL ALERT</h2>
-                  <p>Wallet <strong>${wallet.wallet_address}</strong> has dropped to <strong>$${totalNetworthUsd.toFixed(2)}</strong>.</p>
-                  <p>Threshold was <strong>$${minBalanceUsd.toFixed(2)}</strong>.</p>
-                `,
-                text: `CRITICAL ALERT: Wallet ${wallet.wallet_address} has dropped to $${totalNetworthUsd.toFixed(2)}. Threshold was $${minBalanceUsd.toFixed(2)}.`,
-              })
-              alertsSent++
-            } catch (emailError) {
-              console.error(
-                `Failed to send email for wallet ${wallet.wallet_address}:`,
-                emailError
-              )
-            }
-          } else {
-            console.warn('Resend not configured - skipping email send')
-            // Still count as alert triggered for logging purposes
-            alertsSent++
-          }
-        }
-      } catch (error) {
-        console.error(
-          `Error processing wallet ${wallet.wallet_address}:`,
-          error
-        )
-        // Continue with next wallet even if one fails
-        continue
+        alertsSent++
+      } catch (emailError) {
+        console.error('[Email Error]', {
+          wallet: result.address,
+          error: emailError instanceof Error ? emailError.message : 'Unknown',
+        })
       }
     }
 
-    return NextResponse.json({
-      walletsChecked: wallets.length,
-      alertsSent,
-      message: `Checked ${wallets.length} wallet(s), sent ${alertsSent} alert(s)`,
-    })
+    const response: ApiResponse = {
+      success: true,
+      data: {
+        walletsChecked: results.length,
+        alertsSent,
+        message: `Checked ${results.length} wallet(s), sent ${alertsSent} alert(s)`,
+      },
+    }
+
+    return NextResponse.json(response)
   } catch (error) {
-    console.error('Error in check-risk API:', error)
-    return NextResponse.json(
-      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
-      { status: 500 }
-    )
+    console.error('[Uncaught Error]', error)
+    const response: ApiResponse = {
+      success: false,
+      error:
+        error instanceof Error ? error.message : 'Internal server error',
+    }
+    return NextResponse.json(response, { status: 500 })
   }
 }
