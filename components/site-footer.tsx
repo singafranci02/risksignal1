@@ -151,25 +151,13 @@ export default function SiteFooter() {
             <ul className="mt-4 space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group flex items-center gap-1 text-sm text-zinc-400 transition-colors hover:text-white"
-                    >
-                      {link.label}
-                      <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="group flex items-center gap-1 text-sm text-zinc-400 transition-colors hover:text-white"
-                    >
-                      {link.label}
-                      <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    className="group flex items-center gap-1 text-sm text-zinc-400 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                    <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
+                  </Link>
                 </li>
               ))}
             </ul>
