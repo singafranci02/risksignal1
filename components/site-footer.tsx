@@ -48,16 +48,15 @@ export default function SiteFooter() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight text-white">
-                  RiskSignal
+                  Kuneo
                 </span>
                 <span className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                  Intelligence Platform
+                  AI Agent Governance
                 </span>
               </div>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-zinc-400">
-              Enterprise-grade blockchain risk monitoring with AI-powered anomaly detection. 
-              Protect your assets with real-time intelligence.
+              The infrastructure layer for autonomous financial agents. Deploy AI with absolute certainty through verifiable execution and mathematical constraints.
             </p>
             
             {/* Social Links */}
@@ -169,7 +168,7 @@ export default function SiteFooter() {
       <div className="border-t border-zinc-900">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-sm text-zinc-500 sm:flex-row">
           <div className="flex items-center gap-2">
-            <span>&copy; {year} RiskSignal, Inc.</span>
+            <span>&copy; {year} Kuneo, Inc.</span>
             <span className="hidden sm:inline">•</span>
             <span className="hidden sm:inline">All rights reserved.</span>
           </div>

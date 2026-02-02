@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "RiskSignal - Wallet Monitoring SaaS",
-  description: "Monitor your wallet balances and receive alerts",
+  title: "Kuneo - AI Agent Governance Platform",
+  description: "The infrastructure layer for autonomous financial agents. Deploy AI with absolute certainty through verifiable execution.",
 }
 
 export default function RootLayout({

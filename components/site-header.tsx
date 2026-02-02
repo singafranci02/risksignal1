@@ -22,10 +22,10 @@ export default async function SiteHeader() {
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold tracking-tight text-white">
-              RiskSignal
+              Kuneo
             </span>
             <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-500">
-              Intelligence Platform
+              AI Agent Governance
             </span>
           </div>
         </Link>
@@ -40,6 +40,13 @@ export default async function SiteHeader() {
               >
                 <Activity className="h-4 w-4" />
                 Platform
+              </Link>
+              <Link 
+                href="/ai-governance" 
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-white"
+              >
+                <Shield className="h-4 w-4" />
+                AI Governance
               </Link>
               <Link 
                 href="/pricing" 
@@ -63,6 +70,13 @@ export default async function SiteHeader() {
               >
                 <Activity className="h-4 w-4" />
                 Dashboard
+              </Link>
+              <Link 
+                href="/ai-governance" 
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-white"
+              >
+                <Shield className="h-4 w-4" />
+                AI Governance
               </Link>
               <Link 
                 href="/about" 
