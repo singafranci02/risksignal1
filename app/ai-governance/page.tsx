@@ -4,8 +4,53 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Shield, Lock, FileCheck, Brain, ArrowRight, CheckCircle2, AlertTriangle, Zap, Eye, TrendingUp, BarChart3, FileText, Scale, BookOpen, Sparkles, Download, Power, Activity, AlertOctagon, Flag } from 'lucide-react'
 
+// Note: Metadata is in layout.tsx for this page
+
 export default function AIGovernanceOverview() {
   const [activeLog, setActiveLog] = useState(0)
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://risksignal1-orpin.vercel.app/#organization",
+        "name": "Kuneo",
+        "url": "https://risksignal1-orpin.vercel.app",
+        "logo": "https://risksignal1-orpin.vercel.app/logo.png",
+        "description": "Infrastructure for autonomous financial agent governance with mathematical certainty."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is AI Agent Governance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI Agent Governance is the infrastructure layer that enforces mathematical constraints and regulatory compliance on autonomous agents using hardware-secured environments (TEEs) and immutable audit logs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Kuneo support the EU AI Act?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Kuneo is designed to map agent behavior to global frameworks including the EU AI Act (Articles 12, 13, 52), ASIC (Australia), and SEC/FINRA guidelines (United States)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Digital Helmet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Digital Helmet is Kuneo's hardware-secured execution environment that uses Trusted Execution Environments (TEEs) to enforce rules at the infrastructure level, making rule violations mathematically impossible."
+            }
+          }
+        ]
+      }
+    ]
+  }
   
   const logEntries = [
     { time: '12:01:03.421', event: 'Agent Request', action: 'BUY 10 BTC @ $94,500', status: 'pending' },
@@ -94,9 +139,33 @@ export default function AIGovernanceOverview() {
   ]
 
   return (
-    <div className="space-y-16">
-      {/* Hero Introduction with Bento Grid */}
-      <section>
+    <>
+      {/* Add JSON-LD to your page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      <div className="space-y-16">
+        {/* Answer Block for AI Search */}
+        <section className="rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-8">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900">
+            What is AI Agent Governance?
+          </h2>
+          <p className="mb-4 text-lg leading-relaxed text-gray-700">
+            AI Agent Governance is the infrastructure layer that transforms experimental AI scripts into compliant, 
+            institutional-grade financial vehicles by enforcing mathematical constraints at the hardware level using 
+            Trusted Execution Environments (TEEs) and providing immutable audit trails for regulatory compliance.
+          </p>
+          <p className="text-gray-700">
+            Unlike traditional monitoring tools that observe behavior after the fact, Kuneo's governance infrastructure 
+            prevents rule violations at the execution level—making it mathematically impossible for autonomous agents 
+            to exceed defined risk parameters, trade unauthorized assets, or bypass compliance requirements.
+          </p>
+        </section>
+
+        {/* Hero Introduction with Bento Grid */}
+        <section>
         <div className="mb-8 rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-8 shadow-lg">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm shadow-sm">
             <Sparkles className="h-4 w-4 text-blue-600" />

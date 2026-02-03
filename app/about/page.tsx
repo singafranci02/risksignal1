@@ -112,7 +112,11 @@ export default function AboutPage() {
             <p className="mb-8 text-lg leading-relaxed text-blue-100">
               Kuneo was born from a simple problem: financial institutions needed 
               to deploy autonomous AI agents, but existing tools could not provide 
-              the mathematical certainty and regulatory compliance required.
+              the mathematical certainty and regulatory compliance required. Our{' '}
+              <Link href="/ai-governance" className="font-semibold text-white underline decoration-blue-300 underline-offset-4 hover:decoration-white">
+                AI Agent Governance Framework
+              </Link>
+              {' '}solves this with hardware-secured execution and immutable audit trails.
             </p>
 
             <Link
