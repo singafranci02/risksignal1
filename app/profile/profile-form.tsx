@@ -78,13 +78,13 @@ export default function ProfileForm() {
       : "Medium"
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+    <div className="rounded-2xl border border-gray-300 bg-white p-6 shadow-sm">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid gap-4 md:grid-cols-2">
           <div>
             <label
               htmlFor="first-name"
-              className="mb-1 block text-sm font-medium text-foreground"
+              className="mb-1 block text-sm font-medium text-gray-900"
             >
               First name
             </label>
@@ -93,7 +93,7 @@ export default function ProfileForm() {
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+              className="w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
               placeholder="Ada"
               required
             />
@@ -101,7 +101,7 @@ export default function ProfileForm() {
           <div>
             <label
               htmlFor="last-name"
-              className="mb-1 block text-sm font-medium text-foreground"
+              className="mb-1 block text-sm font-medium text-gray-900"
             >
               Last name
             </label>
@@ -110,7 +110,7 @@ export default function ProfileForm() {
               type="text"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+              className="w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
               placeholder="Lovelace"
               required
             />
@@ -119,7 +119,7 @@ export default function ProfileForm() {
         <div>
           <label
             htmlFor="email"
-            className="mb-1 block text-sm font-medium text-foreground"
+            className="mb-1 block text-sm font-medium text-gray-900"
           >
             Work email
           </label>
@@ -128,7 +128,7 @@ export default function ProfileForm() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            className="w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
             placeholder="you@company.com"
             required
           />
@@ -137,7 +137,7 @@ export default function ProfileForm() {
           <div>
             <label
               htmlFor="password"
-              className="mb-1 block text-sm font-medium text-foreground"
+              className="mb-1 block text-sm font-medium text-gray-900"
             >
               Password
             </label>
@@ -146,12 +146,12 @@ export default function ProfileForm() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+              className="w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
               placeholder="••••••••"
               required
             />
             {passwordStrength && (
-              <p className="mt-1 text-xs text-muted-foreground">
+              <p className="mt-1 text-xs text-gray-600">
                 Strength:{" "}
                 <span
                   className={
@@ -170,7 +170,7 @@ export default function ProfileForm() {
           <div>
             <label
               htmlFor="confirm-password"
-              className="mb-1 block text-sm font-medium text-foreground"
+              className="mb-1 block text-sm font-medium text-gray-900"
             >
               Confirm password
             </label>
@@ -179,7 +179,7 @@ export default function ProfileForm() {
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+              className="w-full rounded-md border border-input bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
               placeholder="Repeat password"
               required
             />
@@ -187,7 +187,7 @@ export default function ProfileForm() {
         </div>
 
         {error && (
-          <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
+          <div className="rounded-md bg-red-50/10 p-3 text-sm text-red-800">
             {error}
           </div>
         )}
@@ -200,14 +200,14 @@ export default function ProfileForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
+          className="w-full rounded-md bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gradient-to-r from-blue-600 to-blue-700/90 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {loading ? "Creating account..." : "Create account"}
         </button>
       </form>
-      <p className="mt-3 text-center text-xs text-muted-foreground">
+      <p className="mt-3 text-center text-xs text-gray-600">
         Already have an account?{" "}
-        <a href="/login" className="font-medium text-foreground underline">
+        <a href="/login" className="font-medium text-gray-900 underline">
           Sign in
         </a>
       </p>

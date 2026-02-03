@@ -119,39 +119,39 @@ export default function DocumentationPage() {
       {/* Introduction */}
       <section>
         <div className="mb-8">
-          <h2 className="mb-3 text-3xl font-bold text-slate-100">
+          <h2 className="mb-3 text-3xl font-bold text-gray-900">
             Technical Documentation
           </h2>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-gray-600">
             Comprehensive guides, specifications, and references for implementing AI agent governance
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
               <Book className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 font-semibold text-slate-100">Guides</h3>
-            <p className="text-sm text-slate-400">
+            <h3 className="mb-2 font-semibold text-gray-900">Guides</h3>
+            <p className="text-sm text-gray-600">
               Step-by-step tutorials for common implementation scenarios
             </p>
           </div>
-          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-400">
               <Code className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 font-semibold text-slate-100">API Reference</h3>
-            <p className="text-sm text-slate-400">
+            <h3 className="mb-2 font-semibold text-gray-900">API Reference</h3>
+            <p className="text-sm text-gray-600">
               Complete API documentation with code examples
             </p>
           </div>
-          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
               <Terminal className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 font-semibold text-slate-100">CLI Tools</h3>
-            <p className="text-sm text-slate-400">
+            <h3 className="mb-2 font-semibold text-gray-900">CLI Tools</h3>
+            <p className="text-sm text-gray-600">
               Command-line utilities for deployment and management
             </p>
           </div>
@@ -160,31 +160,31 @@ export default function DocumentationPage() {
 
       {/* Document Library */}
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-slate-100">Document Library</h2>
+        <h2 className="mb-6 text-2xl font-bold text-gray-900">Document Library</h2>
         <div className="space-y-8">
           {documents.map((section) => (
             <div key={section.category}>
-              <h3 className="mb-4 text-lg font-semibold text-slate-200">
+              <h3 className="mb-4 text-lg font-semibold text-gray-800">
                 {section.category}
               </h3>
               <div className="space-y-3">
                 {section.items.map((doc) => (
                   <div
                     key={doc.title}
-                    className="group flex items-center justify-between rounded-lg border border-slate-800 bg-slate-900 p-4 transition-all hover:border-slate-700 hover:bg-slate-800"
+                    className="group flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4 transition-all hover:border-gray-300 hover:bg-white"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-slate-800">
-                        <FileText className="h-5 w-5 text-slate-400" />
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-white">
+                        <FileText className="h-5 w-5 text-gray-600" />
                       </div>
                       <div>
-                        <h4 className="mb-1 font-semibold text-slate-100">
+                        <h4 className="mb-1 font-semibold text-gray-900">
                           {doc.title}
                         </h4>
-                        <p className="mb-2 text-sm text-slate-400">
+                        <p className="mb-2 text-sm text-gray-600">
                           {doc.description}
                         </p>
-                        <div className="flex items-center gap-4 text-xs text-slate-500">
+                        <div className="flex items-center gap-4 text-xs text-gray-500">
                           <span>{doc.type}</span>
                           <span>•</span>
                           <span>{doc.size}</span>
@@ -193,7 +193,7 @@ export default function DocumentationPage() {
                         </div>
                       </div>
                     </div>
-                    <button className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-slate-400 transition-colors hover:bg-slate-700 hover:text-slate-100">
+                    <button className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-gray-300 bg-white text-gray-600 transition-colors hover:bg-slate-700 hover:text-gray-900">
                       <Download className="h-5 w-5" />
                     </button>
                   </div>
@@ -206,21 +206,21 @@ export default function DocumentationPage() {
 
       {/* Code Examples */}
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-slate-100">Code Examples</h2>
+        <h2 className="mb-6 text-2xl font-bold text-gray-900">Code Examples</h2>
         <div className="space-y-6">
           {codeExamples.map((example) => (
-            <div key={example.title} className="rounded-lg border border-slate-800 bg-slate-900">
-              <div className="border-b border-slate-800 px-6 py-4">
+            <div key={example.title} className="rounded-lg border border-gray-200 bg-gray-50">
+              <div className="border-b border-gray-200 px-6 py-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-semibold text-slate-100">{example.title}</h3>
-                  <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-400">
+                  <h3 className="font-semibold text-gray-900">{example.title}</h3>
+                  <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-600">
                     {example.language}
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <pre className="overflow-x-auto rounded-lg bg-slate-950 p-4">
-                  <code className="text-sm text-slate-300">{example.code}</code>
+                <pre className="overflow-x-auto rounded-lg bg-white p-4">
+                  <code className="text-sm text-gray-700">{example.code}</code>
                 </pre>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function DocumentationPage() {
 
       {/* Integration Steps */}
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-slate-100">Integration Steps</h2>
+        <h2 className="mb-6 text-2xl font-bold text-gray-900">Integration Steps</h2>
         <div className="space-y-4">
           {[
             {
@@ -266,15 +266,15 @@ export default function DocumentationPage() {
           ].map((step) => (
             <div
               key={step.step}
-              className="flex gap-4 rounded-lg border border-slate-800 bg-slate-900 p-6"
+              className="flex gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6"
             >
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-lg font-bold text-white">
                 {step.step}
               </div>
               <div className="flex-1">
-                <h3 className="mb-1 font-semibold text-slate-100">{step.title}</h3>
-                <p className="mb-3 text-sm text-slate-400">{step.description}</p>
-                <div className="rounded-lg bg-slate-950 p-3">
+                <h3 className="mb-1 font-semibold text-gray-900">{step.title}</h3>
+                <p className="mb-3 text-sm text-gray-600">{step.description}</p>
+                <div className="rounded-lg bg-white p-3">
                   <code className="text-sm text-emerald-400">{step.command}</code>
                 </div>
               </div>
@@ -285,42 +285,42 @@ export default function DocumentationPage() {
 
       {/* Support Resources */}
       <section>
-        <div className="rounded-2xl border border-slate-800 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 p-8">
-          <h2 className="mb-4 text-2xl font-bold text-slate-100">
+        <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 p-8">
+          <h2 className="mb-4 text-2xl font-bold text-gray-900">
             Need Help?
           </h2>
-          <p className="mb-6 text-slate-300">
+          <p className="mb-6 text-gray-700">
             Our team is here to help you implement AI agent governance successfully
           </p>
           <div className="grid gap-4 md:grid-cols-3">
             <Link
               href="#"
-              className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-800 p-4 transition-colors hover:bg-slate-700"
+              className="flex items-center gap-3 rounded-lg border border-gray-300 bg-white p-4 transition-colors hover:bg-slate-700"
             >
               <Book className="h-5 w-5 text-blue-400" />
               <div>
-                <div className="font-semibold text-slate-100">Knowledge Base</div>
-                <div className="text-xs text-slate-400">Browse articles</div>
+                <div className="font-semibold text-gray-900">Knowledge Base</div>
+                <div className="text-xs text-gray-600">Browse articles</div>
               </div>
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-800 p-4 transition-colors hover:bg-slate-700"
+              className="flex items-center gap-3 rounded-lg border border-gray-300 bg-white p-4 transition-colors hover:bg-slate-700"
             >
               <ExternalLink className="h-5 w-5 text-indigo-400" />
               <div>
-                <div className="font-semibold text-slate-100">Community Forum</div>
-                <div className="text-xs text-slate-400">Ask questions</div>
+                <div className="font-semibold text-gray-900">Community Forum</div>
+                <div className="text-xs text-gray-600">Ask questions</div>
               </div>
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-800 p-4 transition-colors hover:bg-slate-700"
+              className="flex items-center gap-3 rounded-lg border border-gray-300 bg-white p-4 transition-colors hover:bg-slate-700"
             >
               <Terminal className="h-5 w-5 text-emerald-400" />
               <div>
-                <div className="font-semibold text-slate-100">Support Ticket</div>
-                <div className="text-xs text-slate-400">Get direct help</div>
+                <div className="font-semibold text-gray-900">Support Ticket</div>
+                <div className="text-xs text-gray-600">Get direct help</div>
               </div>
             </Link>
           </div>

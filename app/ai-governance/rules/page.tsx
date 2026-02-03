@@ -133,7 +133,7 @@ export default function RulesPage() {
       case 'Advanced':
         return 'bg-red-500/10 text-red-400 border-red-500/20'
       default:
-        return 'bg-slate-500/10 text-slate-400 border-slate-500/20'
+        return 'bg-slate-500/10 text-gray-600 border-slate-500/20'
     }
   }
 
@@ -142,40 +142,40 @@ export default function RulesPage() {
       {/* Introduction */}
       <section>
         <div className="mb-8">
-          <h2 className="mb-3 text-3xl font-bold text-slate-100">
+          <h2 className="mb-3 text-3xl font-bold text-gray-900">
             Rule Library
           </h2>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-gray-600">
             Pre-built rule templates for common AI agent governance scenarios
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
-            <div className="mb-2 text-3xl font-bold text-slate-100">6</div>
-            <div className="text-sm text-slate-400">Rule Templates</div>
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
+            <div className="mb-2 text-3xl font-bold text-gray-900">6</div>
+            <div className="text-sm text-gray-600">Rule Templates</div>
           </div>
-          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
-            <div className="mb-2 text-3xl font-bold text-slate-100">3</div>
-            <div className="text-sm text-slate-400">Regional Packages</div>
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
+            <div className="mb-2 text-3xl font-bold text-gray-900">3</div>
+            <div className="text-sm text-gray-600">Regional Packages</div>
           </div>
-          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6">
-            <div className="mb-2 text-3xl font-bold text-slate-100">12+</div>
-            <div className="text-sm text-slate-400">Regulatory Mappings</div>
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
+            <div className="mb-2 text-3xl font-bold text-gray-900">12+</div>
+            <div className="text-sm text-gray-600">Regulatory Mappings</div>
           </div>
         </div>
       </section>
 
       {/* Rule Templates */}
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-slate-100">Individual Rule Templates</h2>
+        <h2 className="mb-6 text-2xl font-bold text-gray-900">Individual Rule Templates</h2>
         <div className="grid gap-6 md:grid-cols-2">
           {ruleTemplates.map((rule) => {
             const Icon = rule.icon
             return (
               <div
                 key={rule.id}
-                className="group rounded-xl border border-slate-800 bg-slate-900 transition-all hover:border-slate-700"
+                className="group rounded-xl border border-gray-200 bg-gray-50 transition-all hover:border-gray-300"
               >
                 <div className="p-6">
                   <div className="mb-4 flex items-start justify-between">
@@ -184,8 +184,8 @@ export default function RulesPage() {
                         <Icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-slate-100">{rule.name}</h3>
-                        <p className="text-xs text-slate-500">{rule.category}</p>
+                        <h3 className="font-semibold text-gray-900">{rule.name}</h3>
+                        <p className="text-xs text-gray-500">{rule.category}</p>
                       </div>
                     </div>
                     <span className={`rounded-full border px-3 py-1 text-xs font-medium ${getDifficultyColor(rule.difficulty)}`}>
@@ -193,24 +193,24 @@ export default function RulesPage() {
                     </span>
                   </div>
 
-                  <p className="mb-4 text-sm text-slate-400">{rule.description}</p>
+                  <p className="mb-4 text-sm text-gray-600">{rule.description}</p>
 
-                  <div className="mb-4 rounded-lg bg-slate-950 p-4">
-                    <div className="mb-2 text-xs font-semibold text-slate-500">Example Use</div>
-                    <p className="text-sm text-slate-300">{rule.example}</p>
+                  <div className="mb-4 rounded-lg bg-white p-4">
+                    <div className="mb-2 text-xs font-semibold text-gray-500">Example Use</div>
+                    <p className="text-sm text-gray-700">{rule.example}</p>
                   </div>
 
                   <div className="mb-4">
-                    <div className="mb-2 text-xs font-semibold text-slate-500">Configuration</div>
-                    <pre className="overflow-x-auto rounded-lg bg-slate-950 p-3">
-                      <code className="text-xs text-slate-300">
+                    <div className="mb-2 text-xs font-semibold text-gray-500">Configuration</div>
+                    <pre className="overflow-x-auto rounded-lg bg-white p-3">
+                      <code className="text-xs text-gray-700">
                         {JSON.stringify(rule.config, null, 2)}
                       </code>
                     </pre>
                   </div>
 
                   <div className="mb-4">
-                    <div className="mb-2 text-xs font-semibold text-slate-500">Regulatory Compliance</div>
+                    <div className="mb-2 text-xs font-semibold text-gray-500">Regulatory Compliance</div>
                     <div className="flex flex-wrap gap-2">
                       {rule.regulatory.map((reg) => (
                         <span
@@ -224,12 +224,12 @@ export default function RulesPage() {
                   </div>
 
                   <div className="mb-4">
-                    <div className="mb-2 text-xs font-semibold text-slate-500">Common Use Cases</div>
+                    <div className="mb-2 text-xs font-semibold text-gray-500">Common Use Cases</div>
                     <div className="flex flex-wrap gap-2">
                       {rule.useCases.map((useCase) => (
                         <span
                           key={useCase}
-                          className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-400"
+                          className="rounded-full bg-white px-3 py-1 text-xs text-gray-600"
                         >
                           {useCase}
                         </span>
@@ -242,7 +242,7 @@ export default function RulesPage() {
                       <Copy className="h-4 w-4" />
                       Copy Template
                     </button>
-                    <button className="flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:bg-slate-700">
+                    <button className="flex items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:bg-slate-700">
                       <Download className="h-4 w-4" />
                     </button>
                   </div>
@@ -255,26 +255,26 @@ export default function RulesPage() {
 
       {/* Compliance Packages */}
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-slate-100">Regional Compliance Packages</h2>
-        <p className="mb-6 text-slate-400">
+        <h2 className="mb-6 text-2xl font-bold text-gray-900">Regional Compliance Packages</h2>
+        <p className="mb-6 text-gray-600">
           Pre-configured rule sets that meet specific regulatory requirements by jurisdiction
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           {complianceTemplates.map((template) => (
             <div
               key={template.name}
-              className="rounded-xl border border-slate-800 bg-slate-900 p-6"
+              className="rounded-xl border border-gray-200 bg-gray-50 p-6"
             >
               <div className="mb-4 text-4xl">{template.icon}</div>
-              <h3 className="mb-2 text-lg font-semibold text-slate-100">{template.name}</h3>
-              <p className="mb-1 text-xs font-semibold text-slate-500">{template.region}</p>
-              <p className="mb-4 text-sm text-slate-400">{template.description}</p>
+              <h3 className="mb-2 text-lg font-semibold text-gray-900">{template.name}</h3>
+              <p className="mb-1 text-xs font-semibold text-gray-500">{template.region}</p>
+              <p className="mb-4 text-sm text-gray-600">{template.description}</p>
               
               <div className="mb-4">
-                <div className="mb-2 text-xs font-semibold text-slate-500">Included Rules</div>
+                <div className="mb-2 text-xs font-semibold text-gray-500">Included Rules</div>
                 <div className="space-y-2">
                   {template.rules.map((rule) => (
-                    <div key={rule} className="flex items-center gap-2 text-sm text-slate-300">
+                    <div key={rule} className="flex items-center gap-2 text-sm text-gray-700">
                       <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-emerald-400" />
                       <span>{rule}</span>
                     </div>
@@ -292,18 +292,18 @@ export default function RulesPage() {
 
       {/* Custom Rules */}
       <section>
-        <div className="rounded-2xl border border-slate-800 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 p-8">
-          <h2 className="mb-4 text-2xl font-bold text-slate-100">
+        <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 p-8">
+          <h2 className="mb-4 text-2xl font-bold text-gray-900">
             Need Custom Rules?
           </h2>
-          <p className="mb-6 text-slate-300">
+          <p className="mb-6 text-gray-700">
             Our team can help you design custom rule configurations for your specific use case and regulatory requirements
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl">
               Request Custom Rules
             </button>
-            <button className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-6 py-3 font-semibold text-slate-100 transition-colors hover:bg-slate-700">
+            <button className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-900 transition-colors hover:bg-slate-700">
               View Documentation
             </button>
           </div>

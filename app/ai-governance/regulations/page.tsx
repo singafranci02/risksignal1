@@ -198,10 +198,10 @@ export default function RegulationsPage() {
       {/* Introduction */}
       <section>
         <div className="mb-8">
-          <h2 className="mb-3 text-3xl font-bold text-slate-100">
+          <h2 className="mb-3 text-3xl font-bold text-gray-900">
             Regulatory Frameworks
           </h2>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-gray-600">
             Comprehensive coverage of AI agent regulations in Australia, European Union, and United States
           </p>
         </div>
@@ -213,7 +213,7 @@ export default function RegulationsPage() {
             </div>
             <div>
               <h3 className="mb-2 font-semibold text-blue-400">Important Note</h3>
-              <p className="text-sm text-slate-300">
+              <p className="text-sm text-gray-700">
                 Regulatory requirements are subject to change. This information is current as of January 2026. 
                 Always consult with legal counsel for specific compliance requirements in your jurisdiction.
               </p>
@@ -227,32 +227,32 @@ export default function RegulationsPage() {
         <section key={region.name}>
           <div className="mb-6 flex items-center gap-3">
             <span className="text-4xl">{region.flag}</span>
-            <h2 className="text-2xl font-bold text-slate-100">{region.name}</h2>
+            <h2 className="text-2xl font-bold text-gray-900">{region.name}</h2>
           </div>
 
           <div className="space-y-8">
             {region.frameworks.map((framework) => (
               <div
                 key={framework.name}
-                className="rounded-xl border border-slate-800 bg-slate-900"
+                className="rounded-xl border border-gray-200 bg-gray-50"
               >
                 {/* Framework Header */}
-                <div className="border-b border-slate-800 p-6">
+                <div className="border-b border-gray-200 p-6">
                   <div className="mb-4 flex items-start justify-between">
                     <div>
-                      <h3 className="mb-2 text-xl font-bold text-slate-100">
+                      <h3 className="mb-2 text-xl font-bold text-gray-900">
                         {framework.name}
                       </h3>
-                      <p className="mb-3 text-sm text-slate-400">
+                      <p className="mb-3 text-sm text-gray-600">
                         {framework.authority}
                       </p>
-                      <p className="text-slate-300">{framework.description}</p>
+                      <p className="text-gray-700">{framework.description}</p>
                     </div>
                     <div className="flex flex-col items-end gap-2">
                       <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400">
                         {framework.status}
                       </span>
-                      <span className="text-xs text-slate-500">
+                      <span className="text-xs text-gray-500">
                         Updated {framework.lastUpdated}
                       </span>
                     </div>
@@ -261,20 +261,20 @@ export default function RegulationsPage() {
 
                 {/* Key Requirements */}
                 <div className="p-6">
-                  <h4 className="mb-4 font-semibold text-slate-200">
+                  <h4 className="mb-4 font-semibold text-gray-800">
                     Key Requirements & Kuneo Features
                   </h4>
                   <div className="space-y-4">
                     {framework.keyRequirements.map((req) => (
                       <div
                         key={req.title}
-                        className="rounded-lg border border-slate-800 bg-slate-950 p-4"
+                        className="rounded-lg border border-gray-200 bg-white p-4"
                       >
                         <div className="mb-3 flex items-start justify-between">
-                          <h5 className="font-semibold text-slate-100">{req.title}</h5>
+                          <h5 className="font-semibold text-gray-900">{req.title}</h5>
                           <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-emerald-400" />
                         </div>
-                        <p className="mb-3 text-sm text-slate-400">{req.description}</p>
+                        <p className="mb-3 text-sm text-gray-600">{req.description}</p>
                         <div className="rounded-lg bg-blue-500/5 p-3">
                           <p className="text-sm text-blue-300">
                             <span className="font-semibold">Kuneo Solution:</span> {req.kuneoFeature}
@@ -286,26 +286,26 @@ export default function RegulationsPage() {
                 </div>
 
                 {/* Resources */}
-                <div className="border-t border-slate-800 p-6">
-                  <h4 className="mb-4 font-semibold text-slate-200">
+                <div className="border-t border-gray-200 p-6">
+                  <h4 className="mb-4 font-semibold text-gray-800">
                     Resources & Templates
                   </h4>
                   <div className="grid gap-3 md:grid-cols-3">
                     {framework.resources.map((resource) => (
                       <button
                         key={resource.title}
-                        className="flex items-center gap-3 rounded-lg border border-slate-800 bg-slate-950 p-4 text-left transition-colors hover:bg-slate-800"
+                        className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 text-left transition-colors hover:bg-white"
                       >
-                        <FileCheck className="h-5 w-5 flex-shrink-0 text-slate-400" />
+                        <FileCheck className="h-5 w-5 flex-shrink-0 text-gray-600" />
                         <div className="flex-1 min-w-0">
-                          <div className="truncate text-sm font-medium text-slate-100">
+                          <div className="truncate text-sm font-medium text-gray-900">
                             {resource.title}
                           </div>
-                          <div className="text-xs text-slate-500">
+                          <div className="text-xs text-gray-500">
                             {resource.type} • {resource.size}
                           </div>
                         </div>
-                        <Download className="h-4 w-4 flex-shrink-0 text-slate-400" />
+                        <Download className="h-4 w-4 flex-shrink-0 text-gray-600" />
                       </button>
                     ))}
                   </div>
@@ -318,11 +318,11 @@ export default function RegulationsPage() {
 
       {/* Compliance Checklist */}
       <section>
-        <div className="rounded-2xl border border-slate-800 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 p-8">
-          <h2 className="mb-4 text-2xl font-bold text-slate-100">
+        <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 p-8">
+          <h2 className="mb-4 text-2xl font-bold text-gray-900">
             Need Compliance Assistance?
           </h2>
-          <p className="mb-6 text-slate-300">
+          <p className="mb-6 text-gray-700">
             Our team can help you navigate regulatory requirements and implement compliant AI agent systems
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
@@ -335,7 +335,7 @@ export default function RegulationsPage() {
             </Link>
             <Link
               href="/ai-governance/documentation"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-6 py-3 font-semibold text-slate-100 transition-colors hover:bg-slate-700"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-900 transition-colors hover:bg-slate-700"
             >
               View Documentation
             </Link>
