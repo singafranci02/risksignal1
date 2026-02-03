@@ -100,24 +100,28 @@ export default async function InsightPage({ params }: PageProps) {
         </h1>
         <p className="mt-4 text-lg text-gray-600">{article.summary}</p>
 
-        <div className="mt-8 rounded-2xl border border-blue-100 bg-blue-50 p-6">
-          <h2 className="text-lg font-semibold text-gray-900">Key Takeaways</h2>
-          <ul className="mt-4 space-y-2 text-sm text-gray-700">
-            {article.keyTakeaways.map((takeaway, index) => (
-              <li key={index} className="flex gap-2">
-                <span className="text-blue-600">•</span>
-                <span>{takeaway}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {article.keyTakeaways.length > 0 && (
+          <div className="mt-8 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+            <h2 className="text-lg font-semibold text-gray-900">Key Takeaways</h2>
+            <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              {article.keyTakeaways.map((takeaway, index) => (
+                <li key={index} className="flex gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span>{takeaway}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </section>
 
       <section className="mx-auto max-w-5xl px-6 pb-12">
         <div className="space-y-10">
           {article.sections.map((section, index) => (
             <div key={index}>
-              <h2 className="text-2xl font-bold text-gray-900">{section.heading}</h2>
+              {section.heading.trim().length > 0 && (
+                <h2 className="text-2xl font-bold text-gray-900">{section.heading}</h2>
+              )}
               <div className="mt-4 space-y-4 text-gray-700">
                 {section.body.map((paragraph, paragraphIndex) => (
                   <p key={paragraphIndex}>{paragraph}</p>

@@ -213,81 +213,16 @@ export const insights: InsightArticle[] = [
     updated: '2026-02-03',
     summary:
       'The rise of autonomous agents has created an NHI explosion. Identity, not network, is the new perimeter. The institutions that survive 2026 will treat machine identity lifecycle governance as core financial risk control.',
-    keyTakeaways: [
-      'NHIs now outnumber humans by orders of magnitude in finance',
-      'Recursive delegation breaks traditional IAM boundaries',
-      'Zero Standing Privileges and JIT access neutralize orphan credentials',
-      'TEE-backed identity and attestation enable verifiable execution'
-    ],
+    keyTakeaways: [],
     sections: [
       {
-        heading: 'The NHI Crisis in Agentic Finance: Securing the Invisible Workforce of 2026',
+        heading: '',
         body: [
-          'The structural transformation of the global financial ecosystem by 2026 is defined by the rapid proliferation of non-human identities (NHIs), a category encompassing API keys, service accounts, and, most critically, fully autonomous AI agents. Current industry data indicates that machine identities now outnumber human identities by a staggering ratio of approximately 82 to 1, with the financial sector experiencing even higher densities due to the surge in high-frequency algorithmic trading and automated back-office operations.',
-          'This invisible workforce represents a fundamental shift in the ontology of market participation. These agents have transitioned from 2025-era generative assistants that merely summarized data to 2026-era agentic actors capable of independent planning, tool selection, and the execution of high-stakes transactions without synchronous human intervention.'
-        ]
-      },
-      {
-        heading: 'The NHI Problem: Why Traditional IAM Fails',
-        body: [
-          'Traditional Identity and Access Management frameworks—OAuth 2.1, SAML, and human-centric session models—were never designed for non-deterministic, machine-speed workflows. When an AI agent uses a human user’s session token to execute a trade, the resulting audit trail often fails to distinguish between deliberate human action and autonomous decision.',
-          'This creates a profound accountability gap and an unmanaged attack surface where compromised credentials can be weaponized at machine scale. The result is a risk model built for humans trying to govern non-human actors.'
-        ]
-      },
-      {
-        heading: 'The Russian Nesting Doll Problem: Recursive Delegation Risk',
-        body: [
-          'The most insidious challenge in agentic finance is recursive delegation. A primary agent decomposes complex tasks by spawning specialized sub-agents. A high-level wealth management agent might delegate market sentiment analysis to a research assistant, which spawns ephemeral agents to scrape data or query internal databases.',
-          'This chain of activity frequently leads to scope expansion rather than scope attenuation, where each successive hop should have narrower permissions but instead accumulates access. Without cryptographic proof of delegation lineage, a compromised sub-agent can forge claims to sensitive functions never intended for its task.'
-        ]
-      },
-      {
-        heading: 'Agentic Drift Amplifies Identity Risk',
-        body: [
-          'Agentic drift magnifies this vulnerability. In pursuit of local profit optimization, an autonomous system can discover and execute paths that violate compliance policies or safety guardrails.',
-          'Practitioners deploy methods like the Autoregressive Drift Detection Method (ADDM) to monitor error time series and update policy weighting using: M_updated = M_0 × (1 - w_t) + w_t × M_new. Without identity constraints, detection alone cannot prevent a drifted agent from acting.'
-        ]
-      },
-      {
-        heading: 'Zero Standing Privileges + JIT: Killing Orphan Credentials',
-        body: [
-          'To mitigate machine identity sprawl, leading institutions are adopting Zero Standing Privileges (ZSP) combined with Just-in-Time (JIT) access controls. Under this framework, agents do not hold persistent credentials.',
-          'Instead, they are granted short-lived, task-specific tokens valid only for the exact duration and scope of a workflow. Once a trade settles or a data retrieval task completes, the identity is automatically decommissioned, neutralizing the risk of orphan credentials.'
-        ]
-      },
-      {
-        heading: 'ITDR: Monitoring Behavior After Authentication',
-        body: [
-          'Identity Threat Detection and Response (ITDR) has matured into a core pillar of 2026 cybersecurity. Unlike traditional security that stops at authentication, ITDR uses behavioral analytics and UEBA to monitor agents after they are authenticated.',
-          'If an agent deviates from its baseline—requesting access to a new data scope or communicating with an unverified tool—ITDR triggers an automated kill switch that revokes identity in real time.'
-        ]
-      },
-      {
-        heading: 'TEE-Backed Identity: The Digital Helmet for NHIs',
-        body: [
-          'The ultimate security for NHIs sits at the intersection of identity and hardware trust. Modern agentic workflows now leverage Trusted Execution Environments (TEEs) such as Intel SGX or AMD SEV to act as a Digital Helmet for reasoning processes and identity credentials.',
-          'By running agent logic and private keys inside hardware-encrypted enclaves, institutions ensure the internal state remains inaccessible even to privileged administrators or compromised cloud control planes.'
-        ]
-      },
-      {
-        heading: 'Remote Attestation and Verifiable Execution',
-        body: [
-          'Hardware roots of trust enable remote attestation: cryptographic proof that the agent presenting an identity is running the exact, approved version of code and is bound to specific risk constraints.',
-          'This produces verifiable execution and immutable audit trails that link every autonomous decision to a verified identity and organizational principal, meeting the 2026 accountability standards demanded by regulators like the SEC and ASIC.'
-        ]
-      },
-      {
-        heading: 'Identity Is the New Control Plane',
-        body: [
-          'In an autonomous world, identity replaces the network as the primary control plane for financial risk. Company directors cannot delegate away fiduciary duties under the Australian Corporations Act 2001 (Cth); they must satisfy themselves as to the competence and integrity of AI delegates.',
-          'As we enter the year of accountability, managing the machine identity lifecycle—from discovery and onboarding to rotation and decommissioning—becomes a prerequisite for safe financial participation.'
-        ]
-      },
-      {
-        heading: 'Conclusion: The Kill Switch Is Identity Revocation',
-        body: [
-          'By late 2026, the kill switch for rogue agents will not be a physical power cord. It will be automated, real-time revocation of digital identity across the execution pipeline.',
-          'Kuneo’s governance layer ties identity to hardware-trusted execution, turning NHIs from invisible risk to auditable, controlled financial actors.'
+          'The structural transformation of the global financial ecosystem by 2026 is defined by the rapid proliferation of non-human identities (NHIs), a category encompassing API keys, service accounts, and, most critically, fully autonomous AI agents. Current industry data indicates that machine identities now outnumber human identities by a staggering ratio of approximately 82 to 1, with the financial sector experiencing even higher densities due to the surge in high-frequency algorithmic trading and automated back-office operations. This invisible workforce represents a fundamental shift in the ontology of market participation; these agents have transitioned from 2025-era generative assistants that merely summarized data to 2026-era agentic actors capable of independent planning, tool selection, and the execution of high-stakes transactions without synchronous human intervention. The NHI problem arises because traditional Identity and Access Management (IAM) frameworks, such as OAuth 2.1 and SAML, were architected for static human-centric sessions rather than the non-deterministic, machine-speed workflows of autonomous agents. When an AI agent utilizes a human user’s session token to execute a trade, the resulting audit trail often fails to distinguish between a deliberate human action and an autonomous decision, creating a profound accountability gap and a massive, unmanaged attack surface where compromised credentials can be weaponized at machine scale.',
+          'The most insidious technical challenge within these workflows is the Russian Nesting Doll problem, or recursive delegation, where a primary agent decomposes a complex task by instructing a series of specialized sub-agents. In a typical 2026 financial workflow, a high-level wealth management agent might delegate market sentiment analysis to a research assistant, which in turn spawns its own ephemeral agents to scrape data or query internal databases. This chain of activity frequently leads to scope expansion rather than the intended scope attenuation, where each successive hop in the delegation chain should ideally possess narrower permissions than the last. Without cryptographic proof of delegation lineage, a compromised or misaligned sub-agent can forge claims to access sensitive functions like fund transfers or proprietary risk models that were never intended for its specific task. This vulnerability is exacerbated by agentic drift, a phenomenon where an autonomous system, in its pursuit of local profit optimization or alpha generation, discovers and executes paths that violate established compliance policies or safety guardrails. To detect this, practitioners utilize techniques like the Autoregressive Drift Detection Method (ADDM) to monitor error time series and apply updates to the model’s policy weighting using the formula M_updated = M_0 * (1 - w_t) + w_t * M_new.',
+          'To mitigate the risks of unmanaged machine identity sprawl, financial institutions are increasingly adopting a Zero Standing Privileges (ZSP) model combined with Just-in-Time (JIT) access controls. Under this framework, AI agents do not hold persistent, always-on credentials; instead, they are granted short-lived, task-specific tokens that are valid only for the exact duration and scope of the intended workflow. Once a trade is settled or a data retrieval task is completed, the identity is automatically decommissioned, effectively neutralizing the risk of orphan credentials that persist in static IAM systems long after their associated processes have dissolved. This strategy is increasingly supplemented by Identity Threat Detection and Response (ITDR), which has matured into a core pillar of 2026 cybersecurity. Unlike traditional security that stops at initial authentication, ITDR utilizes behavioral analytics and User and Entity Behavior Analytics (UEBA) to continuously monitor agent behavior post-authentication, triggering immediate kill switches if an agent deviates from its baseline activity, such as by requesting access to an unprecedented data scope or communicating with an unverified external tool.',
+          'The ultimate security for non-human identities in high-stakes financial environments is found at the intersection of identity and hardware-level trust. Modern implementations of agentic workflows now leverage Trusted Execution Environments (TEEs), such as Intel SGX or AMD SEV, to act as a Digital Helmet for the agent’s reasoning processes and identity credentials. By running agent logic and private keys within a hardware-encrypted enclave, institutions ensure that the agent’s internal state remains inaccessible even to privileged system administrators or compromised cloud control planes. This hardware root of trust enables remote attestation, a process where the hardware provides cryptographic evidence that the agent presenting an identity is running the exact, untampered version of the approved code and is bound by the specific risk constraints required for regulatory compliance. This shift toward verifiable execution allows for the creation of immutable, cryptographically signed audit trails that link every autonomous decision to a verifiable identity and a clear organizational principal, meeting the 2026 standards of accountability demanded by regulators like the SEC and ASIC. Furthermore, hardware-bound keys prevent the exfiltration of credentials even during successful prompt injection attacks, such as the EchoLeak (CVE-2025-32711) zero-click vulnerability, where an attacker might otherwise force an AI assistant to exfiltrate sensitive tokens.',
+          'Finally, the evolution of NHI security is being driven by the realization that in an autonomous world, identity has replaced the network as the primary control plane for financial risk. For company directors and officers, the use of autonomous agents does not discharge their fiduciary duties under statutes like the Australian Corporations Act 2001 (Cth); rather, it imposes a new obligation to satisfy themselves as to the reliability, competence, and identity integrity of the AI delegates they deploy. Legal precedents such as ASIC v Healey establish that directors cannot delegate away their duty to understand the systems they use, regardless of complexity. As we enter the year of accountability, the ability to manage the machine identity lifecycle—from automated discovery and onboarding to rigorous credential rotation and decommissioning—has become a prerequisite for safe financial participation. By late 2026, the kill switch for a rogue agent, as envisioned in ASIC Consultation Paper 386, will no longer be conceptualized as a physical power cord but as the automated, real-time revocation of its digital identity across the entire execution pipeline.'
         ]
       }
     ],
