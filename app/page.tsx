@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Shield, Zap, Eye, CheckCircle2, TrendingUp, Activity, Lock, Clock, Bell, BarChart3, Terminal, Layers, Brain, FileCheck, AlertTriangle, Users, Building2, Sparkles, ChevronRight } from "lucide-react"
 
 export default function Home() {
@@ -6,11 +7,19 @@ export default function Home() {
     <div className="bg-white">
       {/* Hero Section with Background Image */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-        
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image 
+            src="/images/hero/home-hero.png" 
+            alt="Professional business environment"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/50 to-blue-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/70 to-blue-900/90" />
         
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:py-40">
           <div className="mx-auto max-w-4xl text-center">
@@ -248,6 +257,102 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Visual Feature Showcase */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+              See the Technology in Action
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Cutting-edge infrastructure that powers verifiable agentic finance
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Digital Helmet Visual */}
+            <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+              <div className="relative h-64 overflow-hidden">
+                <Image 
+                  src="/images/features/digital-helmet.png" 
+                  alt="Digital Helmet Technology"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+                    <Shield className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">The Digital Helmet</h3>
+                  <p className="text-sm text-blue-100">Hardware-secured execution environments</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Real-Time Monitoring */}
+            <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+              <div className="relative h-64 overflow-hidden">
+                <Image 
+                  src="/images/features/monitoring.png" 
+                  alt="Real-time monitoring"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/90 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+                    <Activity className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Real-Time Monitoring</h3>
+                  <p className="text-sm text-indigo-100">Sub-50ms rule evaluation & detection</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Verification System */}
+            <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+              <div className="relative h-64 overflow-hidden">
+                <Image 
+                  src="/images/features/verification.png" 
+                  alt="Verification system"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+                    <FileCheck className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Immutable Audit Trails</h3>
+                  <p className="text-sm text-purple-100">Cryptographic proof for regulators</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Trading Infrastructure */}
+            <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+              <div className="relative h-64 overflow-hidden">
+                <Image 
+                  src="/images/features/trading-setup.png" 
+                  alt="Trading infrastructure"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+                    <TrendingUp className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Professional Trading Setup</h3>
+                  <p className="text-sm text-emerald-100">Enterprise-grade infrastructure</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Problem/Solution Section */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
@@ -458,7 +563,14 @@ export default function Home() {
             that our strategies stay within risk parameters—something we could never achieve before.
           </blockquote>
           <div className="flex items-center justify-center gap-4">
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700" />
+            <div className="relative h-16 w-16 overflow-hidden rounded-full">
+              <Image 
+                src="/images/testimonials/client-1.png" 
+                alt="Sarah Chen"
+                fill
+                className="object-cover"
+              />
+            </div>
             <div className="text-left">
               <div className="font-semibold text-gray-900">Sarah Chen</div>
               <div className="text-sm text-gray-600">CTO, Apex Capital</div>

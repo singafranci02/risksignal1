@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Shield, Target, Zap, Users, ArrowRight, CheckCircle2, TrendingUp, Lock, Eye, Award, Globe, Heart, Briefcase, AlertTriangle, FileCheck } from 'lucide-react'
 
 export default function AboutPage() {
@@ -76,8 +77,22 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
-        <div className="mx-auto max-w-7xl px-6 py-24">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image 
+            src="/images/hero/about-hero.png" 
+            alt="Professional team collaboration"
+            fill
+            className="object-cover opacity-25"
+            priority
+          />
+        </div>
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/85 via-blue-900/75 to-blue-900/90" />
+        
+        <div className="relative mx-auto max-w-7xl px-6 py-24">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm backdrop-blur-sm">
               <Globe className="h-4 w-4 text-white" />

@@ -2,6 +2,7 @@ import { createClient } from "@/utils/supabase/server"
 import ProfileForm from "./profile-form"
 import { Shield, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function ProfilePage() {
   const supabase = await createClient()
@@ -13,8 +14,21 @@ export default async function ProfilePage() {
     return (
       <div className="flex min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
         {/* Left Side - Branding */}
-        <div className="hidden w-1/2 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 p-12 lg:flex lg:flex-col lg:justify-between">
-          <div>
+        <div className="relative hidden w-1/2 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 p-12 lg:flex lg:flex-col lg:justify-between">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image 
+              src="/images/team/team-collaboration.png" 
+              alt=""
+              fill
+              className="object-cover opacity-20"
+            />
+          </div>
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/85 to-indigo-900/90" />
+          
+          <div className="relative">
             <Link href="/" className="flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
                 <Shield className="h-6 w-6 text-white" />
