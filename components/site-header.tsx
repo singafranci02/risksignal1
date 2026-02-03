@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { createClient } from '@/utils/supabase/server'
 import LogoutButton from './logout-button'
-import { Shield, Activity, Zap, ChevronRight } from 'lucide-react'
+import { Shield, Activity, Zap, ChevronRight, Menu } from 'lucide-react'
 
 export default async function SiteHeader() {
   const supabase = await createClient()
@@ -10,21 +10,21 @@ export default async function SiteHeader() {
   } = await supabase.auth.getUser()
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-black/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-xl shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
           <div className="relative">
-            <div className="absolute inset-0 rounded-lg bg-white opacity-20 blur-md transition-opacity group-hover:opacity-30" />
-            <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-white">
-              <Shield className="h-5 w-5 text-black" />
+            <div className="absolute inset-0 rounded-lg bg-blue-600 opacity-10 blur-md transition-opacity group-hover:opacity-20" />
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
+              <Shield className="h-5 w-5 text-white" />
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="text-lg font-bold tracking-tight text-white">
+            <span className="text-xl font-bold tracking-tight text-gray-900">
               Kuneo
             </span>
-            <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-500">
+            <span className="text-[10px] font-medium uppercase tracking-wider text-gray-500">
               AI Agent Governance
             </span>
           </div>
@@ -36,28 +36,28 @@ export default async function SiteHeader() {
             <>
               <Link 
                 href="/" 
-                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-white"
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
                 <Activity className="h-4 w-4" />
                 Platform
               </Link>
               <Link 
                 href="/ai-governance" 
-                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-white"
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
                 <Shield className="h-4 w-4" />
                 AI Governance
               </Link>
               <Link 
                 href="/pricing" 
-                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-white"
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
                 <Zap className="h-4 w-4" />
                 Pricing
               </Link>
               <Link 
                 href="/about" 
-                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-white"
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
                 About
               </Link>
@@ -66,21 +66,21 @@ export default async function SiteHeader() {
             <>
               <Link 
                 href="/dashboard" 
-                className="group flex items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800"
+                className="group flex items-center gap-2 rounded-lg bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 transition-all hover:bg-blue-100"
               >
                 <Activity className="h-4 w-4" />
                 Dashboard
               </Link>
               <Link 
                 href="/ai-governance" 
-                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-white"
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
                 <Shield className="h-4 w-4" />
                 AI Governance
               </Link>
               <Link 
                 href="/about" 
-                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-white"
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
                 About
               </Link>
@@ -94,7 +94,7 @@ export default async function SiteHeader() {
             <>
               <Link
                 href="/profile"
-                className="hidden items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-zinc-700 hover:bg-zinc-800 sm:flex"
+                className="hidden items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50 sm:flex"
               >
                 {user.user_metadata?.first_name || user.email?.split('@')[0] || 'Profile'}
               </Link>
@@ -104,38 +104,43 @@ export default async function SiteHeader() {
             <>
               <Link
                 href="/login"
-                className="hidden items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-400 transition-colors hover:text-white sm:flex"
+                className="hidden items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-gray-900 sm:flex"
               >
                 Log in
               </Link>
               <Link
                 href="/profile"
-                className="group flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black shadow-lg transition-all hover:shadow-xl hover:scale-105"
+                className="group flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition-all hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105"
               >
                 Get Started
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </>
           )}
+          
+          {/* Mobile Menu Button */}
+          <button className="flex items-center justify-center rounded-lg border border-gray-200 bg-white p-2 text-gray-700 transition-colors hover:bg-gray-50 md:hidden">
+            <Menu className="h-5 w-5" />
+          </button>
         </div>
       </div>
 
-      {/* Status Bar */}
-      <div className="border-t border-zinc-900 bg-zinc-950/50">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-xs">
-          <div className="flex items-center gap-4 text-zinc-500">
-            <div className="flex items-center gap-1.5">
+      {/* Trust Bar */}
+      <div className="border-t border-gray-100 bg-gradient-to-r from-blue-50/50 to-indigo-50/50">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5 text-xs">
+          <div className="flex items-center gap-4 text-gray-600">
+            <div className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
               </span>
-              <span>All Systems Operational</span>
+              <span className="font-medium">All Systems Operational</span>
             </div>
             <span className="hidden sm:inline">•</span>
             <span className="hidden sm:inline">99.9% Uptime</span>
           </div>
-          <div className="flex items-center gap-4 text-zinc-500">
-            <span className="hidden sm:inline">Enterprise-Grade Security</span>
+          <div className="flex items-center gap-4 text-gray-600">
+            <span className="hidden sm:inline font-medium">🔒 Enterprise-Grade Security</span>
           </div>
         </div>
       </div>
