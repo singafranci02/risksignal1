@@ -21,12 +21,12 @@ export default async function ProfilePage() {
               src="/images/team/team-collaboration.png" 
               alt=""
               fill
-              className="object-cover opacity-20"
+              className="object-cover opacity-30"
             />
           </div>
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/85 to-indigo-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/75 to-indigo-900/80" />
           
           <div className="relative">
             <Link href="/" className="flex items-center gap-3">

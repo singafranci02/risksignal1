@@ -13,13 +13,13 @@ export default function Home() {
             src="/images/hero/home-hero.png" 
             alt="Professional business environment"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-30"
             priority
           />
         </div>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/70 to-blue-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-900/60 to-blue-900/80" />
         
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:py-40">
           <div className="mx-auto max-w-4xl text-center">
@@ -270,16 +270,16 @@ export default function Home() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Digital Helmet Visual */}
+            {/* Digital Helmet Visual - SWAPPED to abstract art */}
             <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
               <div className="relative h-64 overflow-hidden">
                 <Image 
-                  src="/images/features/digital-helmet.png" 
+                  src="/images/features/verification.png" 
                   alt="Digital Helmet Technology"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/75 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                     <Shield className="h-5 w-5 text-white" />
@@ -299,7 +299,7 @@ export default function Home() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/90 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/75 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                     <Activity className="h-5 w-5 text-white" />
@@ -310,16 +310,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Verification System */}
+            {/* Verification System - SWAPPED to developer coding */}
             <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
               <div className="relative h-64 overflow-hidden">
                 <Image 
-                  src="/images/features/verification.png" 
+                  src="/images/features/digital-helmet.png" 
                   alt="Verification system"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/75 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                     <FileCheck className="h-5 w-5 text-white" />
@@ -330,22 +330,22 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Trading Infrastructure */}
+            {/* AI Technology - REPLACED trading setup */}
             <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
               <div className="relative h-64 overflow-hidden">
                 <Image 
-                  src="/images/features/trading-setup.png" 
-                  alt="Trading infrastructure"
+                  src="/images/features/ai-technology.png" 
+                  alt="AI technology infrastructure"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/75 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
-                    <TrendingUp className="h-5 w-5 text-white" />
+                    <Brain className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Professional Trading Setup</h3>
-                  <p className="text-sm text-emerald-100">Enterprise-grade infrastructure</p>
+                  <h3 className="text-xl font-bold text-white">AI Agent Intelligence</h3>
+                  <p className="text-sm text-emerald-100">Advanced governance algorithms</p>
                 </div>
               </div>
             </div>

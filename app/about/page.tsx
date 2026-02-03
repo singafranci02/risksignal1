@@ -84,13 +84,13 @@ export default function AboutPage() {
             src="/images/hero/about-hero.png" 
             alt="Professional team collaboration"
             fill
-            className="object-cover opacity-25"
+            className="object-cover opacity-35"
             priority
           />
         </div>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/85 via-blue-900/75 to-blue-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/75 via-blue-900/65 to-blue-900/80" />
         
         <div className="relative mx-auto max-w-7xl px-6 py-24">
           <div className="mx-auto max-w-3xl text-center">
