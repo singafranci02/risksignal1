@@ -66,17 +66,18 @@ export default function AIGovernanceOverview() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+      <section className="relative min-h-[32rem] overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/ai-governance-hero.png"
+            src="/images/hero/home-hero.png"
             alt="AI governance infrastructure"
             fill
-            className="object-cover opacity-30"
+            className="object-cover object-center opacity-25"
             priority
+            sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/70 via-blue-900/55 to-blue-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/75 via-blue-900/60 to-blue-900/85" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-28">
           <div className="max-w-3xl">
@@ -111,7 +112,7 @@ export default function AIGovernanceOverview() {
       </section>
 
       {/* Trust / Stats */}
-      <section className="mx-auto -mt-12 max-w-7xl px-6">
+      <section className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-6 rounded-2xl border border-gray-200 bg-white p-8 shadow-xl md:grid-cols-3">
           <div>
             <p className="text-sm font-semibold text-blue-600">Policy Enforcement</p>

@@ -81,10 +81,10 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image 
-            src="/images/hero/about-hero.png" 
-            alt="Professional team collaboration"
+            src="/images/hero/home-hero.png" 
+            alt="Professional business environment"
             fill
-            className="object-cover opacity-35"
+            className="object-cover opacity-30"
             priority
           />
         </div>
