@@ -242,7 +242,7 @@ export default function DocumentationPage() {
             {
               step: 2,
               title: 'Configure Your Agent',
-              description: 'Define your agent's parameters and constraints',
+              description: 'Define your agent parameters and constraints',
               command: 'kuneo init --agent-type trading',
             },
             {
