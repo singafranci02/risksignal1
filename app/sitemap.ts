@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
 import { getAllRegulationSlugs } from '@/data/regulations'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://kuneo.tech'
+  const currentDate = new Date().toISOString()
   
   // Static routes
   const staticRoutes = [
@@ -18,18 +19,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/profile',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === '' || route === '/ai-governance' ? 'weekly' as const : 'monthly' as const,
+    lastModified: currentDate,
+    changeFrequency: (route === '' || route === '/ai-governance' ? 'weekly' : 'monthly') as 'weekly' | 'monthly',
     priority: route === '' ? 1 : route === '/ai-governance' ? 0.95 : 0.8,
   }))
 
   // Dynamic regulation routes
-  const regulationRoutes = getAllRegulationSlugs().map((slug) => ({
+  const regulationSlugs = getAllRegulationSlugs()
+  console.log('[Sitemap] Generating sitemap with regulation slugs:', regulationSlugs)
+  
+  const regulationRoutes = regulationSlugs.map((slug) => ({
     url: `${baseUrl}/ai-governance/regulations/${slug}`,
-    lastModified: new Date(),
+    lastModified: currentDate,
     changeFrequency: 'monthly' as const,
-    priority: 0.9, // High priority for regulation pages (topical authority)
+    priority: 0.9,
   }))
 
-  return [...staticRoutes, ...regulationRoutes]
+  const allRoutes = [...staticRoutes, ...regulationRoutes]
+  console.log('[Sitemap] Total routes:', allRoutes.length)
+
+  return allRoutes
 }
