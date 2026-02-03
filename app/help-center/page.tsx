@@ -14,12 +14,42 @@ export default function HelpCenterPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
+      <section className="mx-auto max-w-5xl px-6 py-16">
         <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900">Content needed</h2>
+          <h2 className="text-2xl font-bold text-gray-900">How can we help?</h2>
           <p className="mt-3 text-gray-600">
-            Share FAQs, support channels, or a hosted help center link to include here.
+            Find quick answers or reach the team for compliance and governance support.
           </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {[
+              {
+                question: 'How do I start a governance program?',
+                answer: 'Create a policy baseline, connect your agents, and define guardrails.'
+              },
+              {
+                question: 'Can I export audit logs?',
+                answer: 'Yes. Reports are available in PDF and JSON/API formats.'
+              },
+              {
+                question: 'Which regulations are supported?',
+                answer: 'ASIC RG 265, EU AI Act, SEC/FINRA, and more regional frameworks.'
+              },
+              {
+                question: 'Do you provide compliance advice?',
+                answer: 'We provide tooling and evidence. Legal interpretations remain with you.'
+              }
+            ].map((item) => (
+              <div key={item.question} className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                <h3 className="font-semibold text-gray-900">{item.question}</h3>
+                <p className="mt-2 text-sm text-gray-600">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 rounded-xl border border-blue-100 bg-blue-50 p-5 text-sm text-blue-900">
+            Need help? Email kuneo.tech@gmail.com and we will respond within 1–2 business days.
+          </div>
         </div>
       </section>
     </div>

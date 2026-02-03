@@ -1,7 +1,8 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { createClient } from '@/utils/supabase/server'
 import LogoutButton from './logout-button'
-import { Shield, Activity, Zap, ChevronRight, Menu, BookOpen } from 'lucide-react'
+import { Activity, Zap, ChevronRight, Menu, BookOpen } from 'lucide-react'
 
 export default async function SiteHeader() {
   const supabase = await createClient()
@@ -17,7 +18,14 @@ export default async function SiteHeader() {
           <div className="relative">
             <div className="absolute inset-0 rounded-lg bg-blue-600 opacity-10 blur-md transition-opacity group-hover:opacity-20" />
             <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
-              <Shield className="h-5 w-5 text-white" />
+              <Image
+                src="/logo.svg"
+                alt="Kuneo logo"
+                width={24}
+                height={24}
+                className="h-6 w-6"
+                priority
+              />
             </div>
           </div>
           <div className="flex flex-col">
@@ -45,7 +53,13 @@ export default async function SiteHeader() {
                 href="/ai-governance" 
                 className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
-                <Shield className="h-4 w-4" />
+                <Image
+                  src="/logo.svg"
+                  alt="Kuneo"
+                  width={16}
+                  height={16}
+                  className="h-4 w-4"
+                />
                 AI Governance
               </Link>
               <Link 
@@ -82,7 +96,13 @@ export default async function SiteHeader() {
                 href="/ai-governance" 
                 className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
-                <Shield className="h-4 w-4" />
+                <Image
+                  src="/logo.svg"
+                  alt="Kuneo"
+                  width={16}
+                  height={16}
+                  className="h-4 w-4"
+                />
                 AI Governance
               </Link>
               <Link 

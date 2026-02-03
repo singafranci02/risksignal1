@@ -1,5 +1,6 @@
+import Image from 'next/image'
 import Link from 'next/link'
-import { Shield, Twitter, Linkedin, Mail, ArrowUpRight, Phone, MapPin } from 'lucide-react'
+import { Twitter, Linkedin, Mail, ArrowUpRight, Phone, MapPin } from 'lucide-react'
 
 export default function SiteFooter() {
   const year = new Date().getFullYear()
@@ -68,7 +69,13 @@ export default function SiteFooter() {
               <div className="relative">
                 <div className="absolute inset-0 rounded-lg bg-blue-600 opacity-10 blur-md" />
                 <div className="relative flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
-                  <Shield className="h-6 w-6 text-white" />
+                  <Image
+                    src="/logo.svg"
+                    alt="Kuneo logo"
+                    width={28}
+                    height={28}
+                    className="h-7 w-7"
+                  />
                 </div>
               </div>
               <div className="flex flex-col">
@@ -88,17 +95,17 @@ export default function SiteFooter() {
             <div className="mt-6 space-y-3">
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Mail className="h-4 w-4 text-blue-600" />
-                <a href="mailto:hello@kuneo.ai" className="hover:text-blue-600 transition-colors">
-                  hello@kuneo.ai
+                <a href="mailto:kuneo.tech@gmail.com" className="hover:text-blue-600 transition-colors">
+                  kuneo.tech@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Phone className="h-4 w-4 text-blue-600" />
-                <span>+1 (555) 123-4567</span>
+                <span>+61 2 8000 0000</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <MapPin className="h-4 w-4 text-blue-600" />
-                <span>San Francisco, CA</span>
+                <span>Sydney, NSW, Australia</span>
               </div>
             </div>
             
@@ -117,7 +124,7 @@ export default function SiteFooter() {
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="mailto:hello@kuneo.ai"
+                href="mailto:kuneo.tech@gmail.com"
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 shadow-sm transition-all hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600 hover:shadow-md"
               >
                 <Mail className="h-4 w-4" />

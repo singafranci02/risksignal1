@@ -14,11 +14,43 @@ export default function CompliancePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
+      <section className="mx-auto max-w-5xl px-6 py-16">
         <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900">Content needed</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Compliance alignment</h2>
           <p className="mt-3 text-gray-600">
-            Share compliance frameworks, certifications, or attestations you want listed.
+            Kuneo provides governance tooling that helps institutions demonstrate alignment with
+            leading AI and financial regulations.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {[
+              {
+                title: 'ASIC RG 265',
+                detail: 'Algorithmic trading governance, monitoring, and audit trails.'
+              },
+              {
+                title: 'EU AI Act',
+                detail: 'High-risk AI transparency, traceability, and oversight.'
+              },
+              {
+                title: 'SEC / FINRA',
+                detail: 'Supervision, record retention, and market integrity controls.'
+              },
+              {
+                title: 'Data Privacy',
+                detail: 'Alignment with Australian Privacy Principles and GDPR expectations.'
+              }
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-sm text-gray-600">
+            Compliance requirements vary by jurisdiction. Kuneo provides governance tooling and
+            audit outputs but does not provide legal advice.
           </p>
         </div>
       </section>

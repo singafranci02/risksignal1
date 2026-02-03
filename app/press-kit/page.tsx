@@ -14,18 +14,58 @@ export default function PressKitPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
-        <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900">Content needed</h2>
-          <p className="mt-3 text-gray-600">
-            Provide the official press kit materials and we will publish them here.
-          </p>
-          <ul className="mt-5 space-y-2 text-sm text-gray-700">
-            <li>• Brand logo files (SVG, PNG)</li>
-            <li>• Short company description (50–100 words)</li>
-            <li>• Leadership bios and headshots</li>
-            <li>• Product screenshots approved for media use</li>
-          </ul>
+      <section className="mx-auto max-w-5xl px-6 py-16">
+        <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <h2 className="text-2xl font-bold text-gray-900">Company description</h2>
+            <p className="mt-3 text-gray-600">
+              Kuneo is the governance layer for autonomous financial agents. We secure AI execution
+              inside hardware-enforced environments, validate policies in real time, and generate
+              regulator-ready audit trails so institutions can deploy AI with confidence.
+            </p>
+            <div className="mt-6 space-y-3 text-sm text-gray-700">
+              <div>
+                <span className="font-semibold text-gray-900">Founded:</span> 2024
+              </div>
+              <div>
+                <span className="font-semibold text-gray-900">HQ:</span> Sydney, NSW, Australia
+              </div>
+              <div>
+                <span className="font-semibold text-gray-900">Focus:</span> AI governance, compliance infrastructure, and auditability
+              </div>
+            <div>
+              <span className="font-semibold text-gray-900">Media contact:</span> kuneo.tech@gmail.com
+            </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-8">
+            <h3 className="text-xl font-semibold text-gray-900">Brand assets</h3>
+            <div className="mt-4 rounded-xl border border-gray-200 bg-white p-6">
+              <img src="/images/logos/kuneo-cone.svg" alt="Kuneo cone logo" className="h-16 w-16" />
+              <p className="mt-4 text-sm text-gray-600">
+                Primary logo mark (SVG).
+              </p>
+              <div className="mt-4 flex gap-3">
+                <a
+                  href="/images/logos/kuneo-cone.svg"
+                  className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700"
+                >
+                  Download SVG
+                </a>
+                <a
+                  href="/logo.svg"
+                  className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700"
+                >
+                  Alternate Logo
+                </a>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-gray-600">
+              Please do not modify the logo colors or proportions. Use the blue gradient version
+              for digital media.
+            </p>
+          </div>
         </div>
       </section>
     </div>

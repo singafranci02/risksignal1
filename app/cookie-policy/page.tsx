@@ -14,12 +14,37 @@ export default function CookiePolicyPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
+      <section className="mx-auto max-w-5xl px-6 py-16">
         <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900">Copy needed</h2>
-          <p className="mt-3 text-gray-600">
-            Provide the list of cookies used, purposes, and consent preferences to publish here.
-          </p>
+          <h2 className="text-2xl font-bold text-gray-900">Cookie policy</h2>
+          <p className="mt-3 text-sm text-gray-600">Effective date: 3 February 2026</p>
+
+          <div className="mt-6 space-y-6 text-sm text-gray-700">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900">What cookies are</h3>
+              <p className="mt-2">
+                Cookies are small files stored on your device to help websites function and
+                improve performance.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900">How we use cookies</h3>
+              <ul className="mt-2 space-y-2">
+                <li>• Essential: authentication and session management</li>
+                <li>• Functional: remember preferences and settings</li>
+                <li>• Analytics: understand usage to improve product quality</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900">Managing preferences</h3>
+              <p className="mt-2">
+                You can control cookies through browser settings. Disabling essential cookies may
+                impact platform functionality.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

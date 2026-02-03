@@ -14,12 +14,46 @@ export default function SecurityPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
+      <section className="mx-auto max-w-5xl px-6 py-16">
         <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900">Content needed</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Security practices</h2>
           <p className="mt-3 text-gray-600">
-            Provide the security practices you want to disclose (encryption, access controls,
-            incident response, audits).
+            Kuneo is built to meet the expectations of regulated financial institutions.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {[
+              {
+                title: 'Encryption',
+                detail: 'TLS in transit and encryption at rest for sensitive data.'
+              },
+              {
+                title: 'Access controls',
+                detail: 'Role-based access with least-privilege enforcement.'
+              },
+              {
+                title: 'Monitoring',
+                detail: 'Continuous logging, anomaly detection, and auditability.'
+              },
+              {
+                title: 'Incident response',
+                detail: 'Documented response procedures with rapid escalation.'
+              }
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-sm text-gray-600">
+            For security questionnaires or coordinated disclosure, contact
+            {' '}
+            <a href="mailto:kuneo.tech@gmail.com" className="font-semibold text-blue-700">
+              kuneo.tech@gmail.com
+            </a>
+            .
           </p>
         </div>
       </section>

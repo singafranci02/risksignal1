@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coneFill" x1="72" y1="120" x2="448" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F2A6B"/>
+      <stop offset="0.45" stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="coneHighlight" x1="140" y1="170" x2="380" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#93C5FD" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#60A5FA" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path
+    d="M84 360C146 248 242 174 448 120C392 238 322 344 204 412C148 442 104 424 84 360Z"
+    fill="url(#coneFill)"
+  />
+  <path
+    d="M132 336C188 258 270 206 384 166C352 234 308 306 232 358C196 382 160 378 132 336Z"
+    fill="url(#coneHighlight)"
+  />
+</svg>
