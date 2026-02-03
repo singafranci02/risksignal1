@@ -42,13 +42,13 @@ export default function PressKitPage() {
           <div className="rounded-2xl border border-gray-200 bg-gray-50 p-8">
             <h3 className="text-xl font-semibold text-gray-900">Brand assets</h3>
             <div className="mt-4 rounded-xl border border-gray-200 bg-white p-6">
-              <img src="/images/logos/kuneo-cone.svg" alt="Kuneo cone logo" className="h-16 w-16" />
+              <img src="/images/logos/kuneo-k.svg" alt="Kuneo K logo" className="h-16 w-16" />
               <p className="mt-4 text-sm text-gray-600">
                 Primary logo mark (SVG).
               </p>
               <div className="mt-4 flex gap-3">
                 <a
-                  href="/images/logos/kuneo-cone.svg"
+                  href="/images/logos/kuneo-k.svg"
                   className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700"
                 >
                   Download SVG
