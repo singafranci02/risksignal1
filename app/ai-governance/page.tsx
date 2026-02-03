@@ -124,7 +124,7 @@ export default function AIGovernanceOverview() {
     },
     {
       title: 'Wash Trading Prevention',
-      description: 'Ensure agents aren\'t trading with internal wallets',
+      description: 'Ensure agents are not trading with internal wallets',
       icon: Eye,
       example: 'Cross-wallet detection: Active',
       color: 'purple'
