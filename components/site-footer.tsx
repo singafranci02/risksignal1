@@ -8,16 +8,16 @@ export default function SiteFooter() {
     product: [
       { label: 'Platform', href: '/' },
       { label: 'AI Governance', href: '/ai-governance' },
+      { label: 'Insights', href: '/insights' },
       { label: 'Pricing', href: '/pricing' },
-      { label: 'Documentation', href: '/how-it-works' },
-      { label: 'API Reference', href: '#' },
+      { label: 'How It Works', href: '/how-it-works' },
     ],
     company: [
       { label: 'About Us', href: '/about' },
       { label: 'Careers', href: '#' },
-      { label: 'Blog', href: '#' },
       { label: 'Press Kit', href: '#' },
       { label: 'Contact', href: '#' },
+      { label: 'Status', href: '#' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy' },
@@ -27,11 +27,11 @@ export default function SiteFooter() {
       { label: 'Cookie Policy', href: '#' },
     ],
     resources: [
-      { label: 'Documentation', href: '/docs' },
+      { label: 'Documentation', href: '/ai-governance/documentation' },
+      { label: 'Regulations', href: '/ai-governance/regulations' },
+      { label: 'Rule Library', href: '/ai-governance/rules' },
+      { label: 'Insights', href: '/insights' },
       { label: 'Help Center', href: '#' },
-      { label: 'Community', href: '#' },
-      { label: 'Status Page', href: '#' },
-      { label: 'Changelog', href: '#' },
     ],
   }
 

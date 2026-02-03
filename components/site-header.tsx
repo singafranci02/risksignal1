@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { createClient } from '@/utils/supabase/server'
 import LogoutButton from './logout-button'
-import { Shield, Activity, Zap, ChevronRight, Menu } from 'lucide-react'
+import { Shield, Activity, Zap, ChevronRight, Menu, BookOpen } from 'lucide-react'
 
 export default async function SiteHeader() {
   const supabase = await createClient()
@@ -49,6 +49,13 @@ export default async function SiteHeader() {
                 AI Governance
               </Link>
               <Link 
+                href="/insights" 
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
+              >
+                <BookOpen className="h-4 w-4" />
+                Insights
+              </Link>
+              <Link 
                 href="/pricing" 
                 className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
               >
@@ -77,6 +84,13 @@ export default async function SiteHeader() {
               >
                 <Shield className="h-4 w-4" />
                 AI Governance
+              </Link>
+              <Link 
+                href="/insights" 
+                className="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-50 hover:text-gray-900"
+              >
+                <BookOpen className="h-4 w-4" />
+                Insights
               </Link>
               <Link 
                 href="/about" 
