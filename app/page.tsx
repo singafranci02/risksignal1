@@ -559,21 +559,21 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 text-center">
           <div className="mb-8 text-6xl text-blue-600">"</div>
           <blockquote className="mb-8 text-2xl font-medium leading-relaxed text-gray-900">
-            Kuneo transformed how we deploy AI agents. The Digital Helmet gives us mathematical certainty 
-            that our strategies stay within risk parameters—something we could never achieve before.
+            The infrastructure layer that finally makes autonomous AI agents viable for institutional finance. 
+            We built Kuneo because the market needed mathematical certainty, not blind trust.
           </blockquote>
           <div className="flex items-center justify-center gap-4">
             <div className="relative h-16 w-16 overflow-hidden rounded-full">
               <Image 
                 src="/images/testimonials/client-1.png" 
-                alt="Sarah Chen"
+                alt="Francesco Tomatis"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="text-left">
-              <div className="font-semibold text-gray-900">Sarah Chen</div>
-              <div className="text-sm text-gray-600">CTO, Apex Capital</div>
+              <div className="font-semibold text-gray-900">Francesco Tomatis</div>
+              <div className="text-sm text-gray-600">CEO & Founder, Kuneo</div>
             </div>
           </div>
         </div>
