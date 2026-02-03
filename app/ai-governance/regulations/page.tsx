@@ -1,4 +1,4 @@
-import { Scale, Globe, FileCheck, CheckCircle2, ExternalLink, Download, AlertCircle } from 'lucide-react'
+import { Scale, Globe, FileCheck, CheckCircle2, ExternalLink, Download, AlertCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function RegulationsPage() {
