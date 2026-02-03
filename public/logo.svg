@@ -11,16 +11,17 @@
       <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
     </linearGradient>
   </defs>
+  <path d="M96 80H240V432H96V80Z" fill="url(#kFill)" />
   <path
-    d="M120 96H220V416H120V96Z"
+    d="M206 212L414 52L482 140L274 300L206 212Z"
     fill="url(#kFill)"
   />
   <path
-    d="M220 256L404 120H468L282 256L468 392H404L220 256Z"
+    d="M274 212L482 372L414 460L206 300L274 212Z"
     fill="url(#kFill)"
   />
   <path
-    d="M220 256L394 140H438L268 256L438 372H394L220 256Z"
+    d="M214 220L408 64L470 142L276 298L214 220Z"
     fill="url(#kHighlight)"
   />
 </svg>
