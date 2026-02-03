@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'EU AI Act Compliance | Kuneo',
     description: 'Deploy compliant AI agents in Europe. Full EU AI Act and GDPR compliance framework.',
-    url: 'https://risksignal1-orpin.vercel.app/ai-governance/regulations/european-union',
+    url: 'https://kuneo.tech/ai-governance/regulations/european-union',
     siteName: 'Kuneo',
     locale: 'en_EU',
     type: 'article',
@@ -31,7 +31,7 @@ export default function EuropeanUnionRegulationsPage() {
       "name": "Kuneo",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://risksignal1-orpin.vercel.app/logo.png"
+        "url": "https://kuneo.tech/logo.png"
       }
     },
     "datePublished": "2026-01-28",

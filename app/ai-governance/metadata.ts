@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kuneo | Institutional-Grade AI Agent Governance',
     description: 'Hardware-secured execution and verifiable compliance for autonomous agents.',
-    url: 'https://risksignal1-orpin.vercel.app/ai-governance',
+    url: 'https://kuneo.tech/ai-governance',
     siteName: 'Kuneo',
     images: [
       {

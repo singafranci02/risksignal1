@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Australian AI Compliance (ASIC) | Kuneo',
     description: 'Deploy compliant AI agents in Australia. Full ASIC, ERS, and SMSF compliance framework.',
-    url: 'https://risksignal1-orpin.vercel.app/ai-governance/regulations/australia',
+    url: 'https://kuneo.tech/ai-governance/regulations/australia',
     siteName: 'Kuneo',
     locale: 'en_AU',
     type: 'article',
@@ -31,7 +31,7 @@ export default function AustraliaRegulationsPage() {
       "name": "Kuneo",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://risksignal1-orpin.vercel.app/logo.png"
+        "url": "https://kuneo.tech/logo.png"
       }
     },
     "datePublished": "2026-01-28",

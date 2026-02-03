@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'US SEC & FINRA AI Compliance | Kuneo',
     description: 'Deploy compliant AI agents in the United States. Full SEC, FINRA, and Dodd-Frank compliance framework.',
-    url: 'https://risksignal1-orpin.vercel.app/ai-governance/regulations/united-states',
+    url: 'https://kuneo.tech/ai-governance/regulations/united-states',
     siteName: 'Kuneo',
     locale: 'en_US',
     type: 'article',
@@ -31,7 +31,7 @@ export default function UnitedStatesRegulationsPage() {
       "name": "Kuneo",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://risksignal1-orpin.vercel.app/logo.png"
+        "url": "https://kuneo.tech/logo.png"
       }
     },
     "datePublished": "2026-01-28",

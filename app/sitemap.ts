@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://risksignal1-orpin.vercel.app'
+  const baseUrl = 'https://kuneo.tech'
   
   const routes = [
     '',

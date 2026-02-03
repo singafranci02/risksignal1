@@ -14,10 +14,10 @@ export default function AIGovernanceOverview() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://risksignal1-orpin.vercel.app/#organization",
+        "@id": "https://kuneo.tech/#organization",
         "name": "Kuneo",
-        "url": "https://risksignal1-orpin.vercel.app",
-        "logo": "https://risksignal1-orpin.vercel.app/logo.png",
+        "url": "https://kuneo.tech",
+        "logo": "https://kuneo.tech/logo.png",
         "description": "Infrastructure for autonomous financial agent governance with mathematical certainty."
       },
       {
