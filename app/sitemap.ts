@@ -1,9 +1,11 @@
 import { MetadataRoute } from 'next'
+import { getAllRegulationSlugs } from '@/data/regulations'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kuneo.tech'
   
-  const routes = [
+  // Static routes
+  const staticRoutes = [
     '',
     '/about',
     '/pricing',
@@ -11,9 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ai-governance',
     '/ai-governance/documentation',
     '/ai-governance/regulations',
-    '/ai-governance/regulations/australia',
-    '/ai-governance/regulations/european-union',
-    '/ai-governance/regulations/united-states',
     '/ai-governance/rules',
     '/login',
     '/profile',
@@ -21,8 +20,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '' || route === '/ai-governance' ? 'weekly' as const : 'monthly' as const,
-    priority: route === '' ? 1 : route.includes('regulations') ? 0.9 : 0.8,
+    priority: route === '' ? 1 : route === '/ai-governance' ? 0.95 : 0.8,
   }))
 
-  return routes
+  // Dynamic regulation routes
+  const regulationRoutes = getAllRegulationSlugs().map((slug) => ({
+    url: `${baseUrl}/ai-governance/regulations/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9, // High priority for regulation pages (topical authority)
+  }))
+
+  return [...staticRoutes, ...regulationRoutes]
 }
