@@ -14,24 +14,24 @@ export default function SiteFooter() {
     ],
     company: [
       { label: 'About Us', href: '/about' },
-      { label: 'Careers', href: '#' },
-      { label: 'Press Kit', href: '#' },
-      { label: 'Contact', href: '#' },
-      { label: 'Status', href: '#' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Press Kit', href: '/press-kit' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Status', href: '/status' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },
-      { label: 'Security', href: '#' },
-      { label: 'Compliance', href: '#' },
-      { label: 'Cookie Policy', href: '#' },
+      { label: 'Security', href: '/security' },
+      { label: 'Compliance', href: '/compliance' },
+      { label: 'Cookie Policy', href: '/cookie-policy' },
     ],
     resources: [
       { label: 'Documentation', href: '/ai-governance/documentation' },
       { label: 'Regulations', href: '/ai-governance/regulations' },
       { label: 'Rule Library', href: '/ai-governance/rules' },
       { label: 'Insights', href: '/insights' },
-      { label: 'Help Center', href: '#' },
+      { label: 'Help Center', href: '/help-center' },
     ],
   }
 
