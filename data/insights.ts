@@ -26,38 +26,64 @@ export const insights: InsightArticle[] = [
   {
     slug: 'tees-ai-safety-finance',
     title: 'Why TEEs Are the Future of AI Safety in Finance',
-    description: 'Trusted Execution Environments (TEEs) provide hardware-level isolation that can prove an agent followed policy and cannot tamper with funds.',
+    description: 'From probabilistic risk to deterministic compliance: TEEs turn autonomous finance into verifiable execution.',
     category: 'Infrastructure',
-    readTime: '8 min read',
+    readTime: '12 min read',
     published: '2026-02-01',
     updated: '2026-02-03',
     summary:
-      'Financial agents need stronger guarantees than traditional software. TEEs anchor AI decision-making to verifiable hardware constraints, turning intent into enforceable execution.',
+      'Agentic AI demands hardware-level controls. TEEs anchor policies to silicon so institutions can prove compliance before execution.',
     keyTakeaways: [
-      'TEEs enforce policy even when model behavior changes',
-      'Hardware-level proofs make audits faster and cheaper',
-      'Attestation logs are key for institutional trust'
+      'Agentic AI shifts risk from explainability to controllability',
+      'TEEs enforce policy even if software layers are compromised',
+      'Remote attestation proves approved code and constraints',
+      'Immutable audit trails reduce regulatory review time'
     ],
     sections: [
       {
-        heading: 'Why software controls are no longer enough',
+        heading: 'From generative AI to agentic AI',
         body: [
-          'Autonomous agents trade continuously and adapt to new data. Purely software-based controls can be bypassed by compromised infrastructure or faulty deployments.',
-          'A governance layer must prove that every decision was evaluated against policy before execution, not just reported after the fact.'
+          'In 2025, finance used generative AI to summarize research and automate workflows. In 2026, agentic AI executes trades, allocates capital, and interacts with payment rails.',
+          'This shift turns AI from a tool into an autonomous actor. Governance must prove not just what a model said, but what it was allowed to do at the moment of execution.'
         ]
       },
       {
-        heading: 'What TEEs add to the governance stack',
+        heading: 'The autonomy gap: why software controls fail',
         body: [
-          'TEEs isolate the agent runtime, preventing unauthorized code paths from accessing capital.',
-          'Remote attestation verifies that only signed policy modules are executed, which is critical for regulated counterparties.'
+          'Traditional guardrails are reporting systems. They observe the AI and log violations after the fact.',
+          'In millisecond execution environments, reporting a violation is equivalent to missing it. If the OS or cloud control plane is compromised, software wrappers can be bypassed.',
+          'Agentic drift occurs when an autonomous system optimizes for alpha and discovers a path that violates policy. You cannot regulate what you cannot prevent.'
         ]
       },
       {
-        heading: 'Operational benefits for compliance teams',
+        heading: 'The TEE model: anchoring intent to silicon',
         body: [
-          'Attested logs can be shared with auditors, demonstrating deterministic policy checks.',
-          'Incident response is faster because kill-switch controls are enforced inside the enclave rather than in a downstream system.'
+          'A Trusted Execution Environment (TEE) is a hardware-secured enclave inside a processor. Code and keys are isolated from the host, even with root access.',
+          'This is the Digital Helmet: policies are enforced inside the enclave, not at the API edge. The result is deterministic compliance rather than probabilistic trust.'
+        ]
+      },
+      {
+        heading: 'Three guarantees regulators now expect',
+        body: [
+          '1. Hardware-enforced isolation: the agent logic and keys are encrypted in memory and inaccessible to operators or cloud administrators.',
+          '2. Remote attestation: cryptographic proof that the exact approved code and constraints were active at execution time.',
+          '3. Verifiable execution: immutable audit trails that link every decision to the policy that permitted it.'
+        ]
+      },
+      {
+        heading: 'Strategic benefits for 2026 compliance',
+        body: [
+          'Operational resilience: hardware root of trust replaces fragile software-only controls.',
+          'Audit traceability: cryptographic attestation is immutable and regulator-ready.',
+          'Risk containment: enclave-enforced circuit breakers stop violations before execution.',
+          'Data sovereignty: encryption in use protects sensitive models and keys.'
+        ]
+      },
+      {
+        heading: 'Conclusion: the new standard for financial AI',
+        body: [
+          'The Digital Helmet is not marketing. It is a structural requirement for institutions deploying autonomous agents.',
+          'By anchoring AI decision-making to verifiable hardware constraints, Kuneo turns the autonomy gap into a compliant, auditable operating model.'
         ]
       }
     ],
@@ -69,6 +95,26 @@ export const insights: InsightArticle[] = [
       {
         title: 'Confidential Computing Consortium',
         url: 'https://confidentialcomputing.io/'
+      },
+      {
+        title: 'Intel Software Guard Extensions (SGX)',
+        url: 'https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html'
+      },
+      {
+        title: 'NVIDIA Confidential Computing',
+        url: 'https://www.nvidia.com/en-us/data-center/confidential-computing/'
+      },
+      {
+        title: 'OECD AI Principles',
+        url: 'https://oecd.ai/en/ai-principles'
+      },
+      {
+        title: 'KPMG Global Tech Report',
+        url: 'https://kpmg.com/'
+      },
+      {
+        title: 'J.P. Morgan Insights',
+        url: 'https://www.jpmorgan.com/insights'
       }
     ]
   },
