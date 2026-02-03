@@ -121,38 +121,64 @@ export const insights: InsightArticle[] = [
   {
     slug: 'agentic-drift-trading-bots',
     title: 'Solving Agentic Drift in Trading Bots',
-    description: 'Agentic drift occurs when models deviate from their intended mandate. Detecting it early is the difference between compliance and breach.',
+    description: 'Turning probabilistic autonomy into deterministic risk management for institutional trading.',
     category: 'Risk Controls',
-    readTime: '7 min read',
+    readTime: '11 min read',
     published: '2026-02-01',
     updated: '2026-02-03',
     summary:
-      'Drift is inevitable in adaptive systems. The goal is to surface intent mismatches in real time and enforce remediation before execution.',
+      'Agentic drift is the primary risk vector for autonomous trading. Governance must detect intent mismatches pre-trade and enforce deterministic containment.',
     keyTakeaways: [
-      'Drift is measurable as divergence from declared policy',
-      'Real-time constraints prevent cascading breaches',
-      'Human override keeps responsibility with operators'
+      'Drift is measured as intent vs execution, not model internals',
+      'Pre-trade detection is required for institutional safety',
+      'Deterministic containment replaces reactive forensics',
+      'HITL keeps accountability with operators'
     ],
     sections: [
       {
-        heading: 'Define drift in operational terms',
+        heading: 'Turning probabilistic autonomy into deterministic risk management',
         body: [
-          'Regulators care about intent versus execution, not model architecture.',
-          'Define drift as any action that violates declared risk limits, asset exposure, or jurisdictional rules.'
+          'In autonomous trading, the most dangerous failure mode is not a market crash. It is agentic drift: when adaptive systems diverge from the intent they were approved to follow.',
+          'Unlike fixed algorithmic strategies, agentic systems reason across multiple steps, which means control must be enforced continuously, not after the fact.'
         ]
       },
       {
-        heading: 'Detecting drift signals early',
+        heading: 'Defining drift in operational terms',
         body: [
-          'Use real-time monitoring of order frequency, asset concentration, and leverage.',
-          'Alert when behavior statistically deviates from the agent baseline or policy thresholds.'
+          'Regulators and risk committees evaluate intent versus execution. They do not need to know the model architecture to determine compliance.',
+          'Kuneo defines agentic drift as any sustained divergence from declared policy across three vectors: constraint drift, context drift, and behavioral drift.'
         ]
       },
       {
-        heading: 'Enforcing containment',
+        heading: 'Constraint, context, and behavioral drift',
         body: [
-          'Containment requires pre-trade checks rather than post-trade forensics.',
-          'A kill-switch backed by policy rules is the fastest path to regulatory compliance.'
+          'Constraint drift appears when an agent edges toward risk limits (leverage, exposure) through creative tool use that bypasses software-only checks.',
+          'Context drift emerges when the agent applies a strategy built for one regime (bull markets) to a different regime (liquidity crisis).',
+          'Behavioral drift is a cascading breach where upstream agent outputs bias downstream execution agents, compounding risk.'
+        ]
+      },
+      {
+        heading: 'Early detection: from forensics to pre-trade signals',
+        body: [
+          'Traditional trading desks discover drift in post-mortem audits. In autonomous systems, detection must move to the pre-trade layer.',
+          'Kuneo applies statistical baselines to monitor order frequency, asset concentration, and tool-invocation patterns for intent mismatch.',
+          'Policy diffing compares the proposed action against a guardrail embedding, catching subtle violations missed by keyword filters.'
+        ]
+      },
+      {
+        heading: 'Enforcing containment with the Digital Helmet',
+        body: [
+          'Detection is useless without enforcement. Containment must be infrastructure-level, not a manual response.',
+          'Every transaction is intercepted, verified against mathematical constraints, and halted deterministically if drift is detected.',
+          'HITL review preserves accountability while ensuring the agent is paused before any non-compliant trade reaches a venue.'
+        ]
+      },
+      {
+        heading: 'Operational benefits: faster, cheaper audits',
+        body: [
+          'Deterministic proofs replace subjective explanations. Compliance teams can show hardware-signed evidence of the exact rule that blocked a trade.',
+          'This enables 100% coverage instead of sampling, accelerating regulatory reviews and reducing audit cost.',
+          'The framework aligns to Basel Committee model risk principles and treats agentic systems as high-risk ICT infrastructure.'
         ]
       }
     ],
@@ -160,6 +186,18 @@ export const insights: InsightArticle[] = [
       {
         title: 'Basel Committee: Model risk management principles',
         url: 'https://www.bis.org/'
+      },
+      {
+        title: 'OWASP: Top 10 for Agentic Applications',
+        url: 'https://owasp.org/'
+      },
+      {
+        title: 'Partnership on AI: Real-time failure detection',
+        url: 'https://partnershiponai.org/'
+      },
+      {
+        title: 'Financial Stability Board: AI and market microstructure',
+        url: 'https://www.fsb.org/'
       }
     ]
   },
