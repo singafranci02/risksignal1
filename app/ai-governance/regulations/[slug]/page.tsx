@@ -3,22 +3,28 @@ import { Metadata } from 'next'
 import { getRegulationBySlug, getAllRegulationSlugs } from '@/data/regulations'
 import RegulationPageClient from './page-client'
 
+// Force static generation for all regulation pages
+export const dynamicParams = false
+
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 // Generate static paths for all regulations
 export async function generateStaticParams() {
-  return getAllRegulationSlugs().map((slug) => ({
+  const slugs = getAllRegulationSlugs()
+  console.log('Generating static params for slugs:', slugs)
+  return slugs.map((slug) => ({
     slug: slug,
   }))
 }
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const reg = getRegulationBySlug(params.slug)
+  const { slug } = await params
+  const reg = getRegulationBySlug(slug)
   
   if (!reg) {
     return {
@@ -41,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${reg.country} AI Agent Compliance | Kuneo`,
       description: `Deploy compliant AI agents in ${reg.country}. Full ${reg.body} and ${reg.framework} compliance framework.`,
-      url: `https://kuneo.tech/ai-governance/regulations/${params.slug}`,
+      url: `https://kuneo.tech/ai-governance/regulations/${slug}`,
       siteName: 'Kuneo',
       locale: 'en_US',
       type: 'article',
@@ -54,8 +60,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function RegulationPage({ params }: PageProps) {
-  const reg = getRegulationBySlug(params.slug)
+export default async function RegulationPage({ params }: PageProps) {
+  const { slug } = await params
+  const reg = getRegulationBySlug(slug)
   
   if (!reg) {
     notFound()
