@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Shield, Lock, FileCheck, Brain, ArrowRight, CheckCircle2, AlertTriangle, Zap, Eye, TrendingUp, BarChart3, FileText, Scale, BookOpen, Sparkles, Download, Power, Activity, AlertOctagon, Flag } from 'lucide-react'
+import { insights } from '@/data/insights'
 
 // Note: Metadata is in layout.tsx for this page
 
 export default function AIGovernanceOverview() {
   const [activeLog, setActiveLog] = useState(0)
+  const featuredInsights = insights.slice(0, 3)
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -576,6 +578,51 @@ export default function AIGovernanceOverview() {
           <p className="text-sm font-semibold text-gray-900">
             Reports comply with ASIC ERS, EU AI Act Article 12, and SEC 17a-4 retention requirements
           </p>
+        </div>
+      </section>
+
+      {/* Governance Insights */}
+      <section>
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900">Governance Insights</h2>
+            <p className="mt-2 text-gray-600">
+              Deep-dive research that builds topical authority for AI governance, compliance, and
+              institutional-grade controls.
+            </p>
+          </div>
+          <Link
+            href="/insights"
+            className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700"
+          >
+            View all insights
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {featuredInsights.map((article) => (
+            <Link
+              key={article.slug}
+              href={`/insights/${article.slug}`}
+              className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-blue-200 hover:shadow-lg"
+            >
+              <div className="flex items-center justify-between text-xs text-gray-500">
+                <span className="rounded-full bg-gray-100 px-3 py-1 font-semibold text-gray-700">
+                  {article.category}
+                </span>
+                <span>{article.readTime}</span>
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-gray-900 group-hover:text-blue-700">
+                {article.title}
+              </h3>
+              <p className="mt-3 text-sm text-gray-600">{article.description}</p>
+              <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-blue-600">
+                <span>Read article</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
