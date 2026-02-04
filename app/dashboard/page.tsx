@@ -1,8 +1,8 @@
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 import { DashboardHeader } from './components/dashboard-header'
+import { AgentManager } from './components/agent-manager'
 import { RiskOverview } from './components/risk-overview'
-import { AgentOpsDashboard } from './components/agent-ops-dashboard'
 import { WalletPortfolio } from './components/wallet-portfolio'
 import { RiskFeed } from './components/risk-feed'
 import { PolicyManager } from './components/policy-manager'
@@ -66,46 +66,51 @@ export default async function DashboardPage() {
   const criticalEvents = riskEvents?.filter(e => e.severity === 'CRITICAL').length || 0
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
-      <div className="mx-auto max-w-[1800px] space-y-6 px-6 py-8">
+    <div className="min-h-screen bg-white">
+      <div className="mx-auto max-w-[1800px] space-y-8 px-6 py-8">
         {/* Header */}
         <DashboardHeader 
           userName={user.user_metadata?.first_name || user.email?.split('@')[0] || 'User'}
           userEmail={user.email || ''}
         />
 
-        {/* KPI Overview */}
-        <RiskOverview 
-          totalPolicies={totalPolicies}
-          activePolicies={activePolicies}
-          openEvents={openEvents}
-          criticalEvents={criticalEvents}
-          alertStats={alertStats || []}
-        />
+        {/* Main Content */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          {/* Primary Column */}
+          <div className="lg:col-span-8 space-y-8">
+            {/* Agent Manager - Primary Feature */}
+            <AgentManager userId={user.id} />
 
-        {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
-          {/* Primary Operations Dashboard */}
-          <div className="xl:col-span-8 space-y-6">
-            <AgentOpsDashboard />
-          </div>
+            {/* KPI Overview */}
+            <RiskOverview 
+              totalPolicies={totalPolicies}
+              activePolicies={activePolicies}
+              openEvents={openEvents}
+              criticalEvents={criticalEvents}
+              alertStats={alertStats || []}
+            />
 
-          {/* Side Column - Wallets & Risk */}
-          <div className="xl:col-span-4 space-y-6">
+            {/* Wallet Portfolio */}
             <WalletPortfolio 
               wallets={wallets || []}
               snapshots={recentSnapshots || []}
             />
+          </div>
 
+          {/* Side Column */}
+          <div className="lg:col-span-4 space-y-8">
+            {/* Quick Actions */}
+            <QuickActions />
+
+            {/* Risk Feed */}
             <RiskFeed 
               events={riskEvents || []}
             />
 
+            {/* Policy Manager */}
             <PolicyManager 
               policies={policies || []}
             />
-
-            <QuickActions />
           </div>
         </div>
       </div>
