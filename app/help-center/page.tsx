@@ -1,7 +1,7 @@
 export default function HelpCenterPage() {
   return (
     <div className="bg-white">
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]" />
         <div className="relative mx-auto max-w-4xl px-6 py-20 text-white">
           <div className="inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm font-semibold">

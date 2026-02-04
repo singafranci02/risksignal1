@@ -8,9 +8,9 @@ export default function RegulationsOverview() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-indigo-700 py-20">
+      <section className="relative bg-gradient-to-r from-blue-600 to-blue-700 py-20">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-indigo-900/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-blue-900/50" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
@@ -78,9 +78,9 @@ export default function RegulationsOverview() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-indigo-200 bg-white p-8 shadow-lg">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100">
-              <Globe className="h-6 w-6 text-indigo-600" />
+          <div className="rounded-2xl border border-blue-200 bg-white p-8 shadow-lg">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
+              <Globe className="h-6 w-6 text-blue-600" />
             </div>
             <h3 className="mb-3 text-xl font-bold text-gray-900">Global Expansion</h3>
             <p className="text-gray-600">
@@ -122,7 +122,7 @@ export default function RegulationsOverview() {
                     </div>
                   </div>
 
-                  <div className="mb-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 p-3 border border-blue-100">
+                  <div className="mb-4 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 p-3 border border-blue-100">
                     <p className="text-sm font-semibold text-blue-900">{reg.body}</p>
                   </div>
 
@@ -142,7 +142,7 @@ export default function RegulationsOverview() {
       </section>
 
       {/* Comparison Table */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
+      <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900">
@@ -237,7 +237,7 @@ export default function RegulationsOverview() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 py-20">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-4 text-4xl font-bold text-white">
             Deploy Compliant AI Agents Globally

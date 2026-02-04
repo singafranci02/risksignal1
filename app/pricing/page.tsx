@@ -125,7 +125,7 @@ export default function PricingPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 py-24">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm backdrop-blur-sm">
             <Sparkles className="h-4 w-4 text-white" />
@@ -331,7 +331,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 py-24">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
             Ready to Get Started?

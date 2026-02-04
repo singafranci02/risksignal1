@@ -41,7 +41,7 @@ export default function AIGovernanceLayout({
   return (
     <div className="bg-white">
       {/* Page Header */}
-      <div className="border-b border-gray-200 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <div className="border-b border-gray-200 bg-gradient-to-br from-blue-50 to-blue-100/80">
         <div className="mx-auto max-w-7xl px-6 py-12">
           <div className="mb-8">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-sm shadow-sm">

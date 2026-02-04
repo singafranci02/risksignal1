@@ -6,14 +6,14 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero Section with Background Image */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
-        {/* Background Image */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
+        {/* Background Image - blue tint */}
         <div className="absolute inset-0">
           <Image 
             src="/images/hero/home-hero.png" 
             alt="Professional business environment"
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-35 [filter:hue-rotate(200deg)_saturate(0.85)_brightness(0.9)]"
             priority
           />
         </div>
@@ -219,17 +219,17 @@ export default function Home() {
 
             {/* Pillar 3: Agent Intelligence Hub */}
             <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-lg transition-all hover:shadow-2xl hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               
               <div className="relative">
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-700 shadow-lg">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
                   <Brain className="h-7 w-7 text-white" />
                 </div>
                 
                 <h3 className="mb-3 text-2xl font-bold text-gray-900">
                   Agent Intelligence Hub
                 </h3>
-                <p className="mb-2 text-sm font-semibold text-indigo-600">Compliance Knowledge Base</p>
+                <p className="mb-2 text-sm font-semibold text-blue-600">Compliance Knowledge Base</p>
                 
                 <p className="mb-6 text-gray-600">
                   A knowledge base of global AI regulations (MiCA, EU AI Act, ASIC ERS) and pre-built 
@@ -239,15 +239,15 @@ export default function Home() {
                 
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-indigo-600" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
                     <span>50+ pre-built compliance templates</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-indigo-600" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
                     <span>Multi-jurisdiction support (AU, EU, US)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-indigo-600" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
                     <span>Auto-updating regulatory framework</span>
                   </li>
                 </ul>
@@ -277,7 +277,7 @@ export default function Home() {
                   src="/images/features/verification.png" 
                   alt="Digital Helmet Technology"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/75 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
@@ -297,15 +297,15 @@ export default function Home() {
                   src="/images/features/monitoring.png" 
                   alt="Real-time monitoring"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/75 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/75 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                     <Activity className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white">Real-Time Monitoring</h3>
-                  <p className="text-sm text-indigo-100">Sub-50ms rule evaluation & detection</p>
+                  <p className="text-sm text-blue-100">Sub-50ms rule evaluation & detection</p>
                 </div>
               </div>
             </div>
@@ -317,15 +317,15 @@ export default function Home() {
                   src="/images/features/digital-helmet.png" 
                   alt="Verification system"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/75 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/75 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                     <FileCheck className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white">Immutable Audit Trails</h3>
-                  <p className="text-sm text-purple-100">Cryptographic proof for regulators</p>
+                  <p className="text-sm text-blue-100">Cryptographic proof for regulators</p>
                 </div>
               </div>
             </div>
@@ -337,15 +337,15 @@ export default function Home() {
                   src="/images/features/ai-technology.png" 
                   alt="AI technology infrastructure"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/75 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/75 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                     <Brain className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white">AI Agent Intelligence</h3>
-                  <p className="text-sm text-emerald-100">Advanced governance algorithms</p>
+                  <p className="text-sm text-blue-100">Advanced governance algorithms</p>
                 </div>
               </div>
             </div>
@@ -513,35 +513,35 @@ export default function Home() {
 
             {/* Use Case 2 */}
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-              <div className="bg-gradient-to-br from-indigo-600 to-indigo-700 p-8">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-8">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                   <Building2 className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="mb-2 text-2xl font-bold text-white">
                   Institutional Treasury Management
                 </h3>
-                <p className="text-indigo-100">
+                <p className="text-blue-100">
                   Automate treasury operations with board-approved constraints
                 </p>
               </div>
               <div className="p-8">
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-indigo-600" />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600" />
                     <div>
                       <div className="font-semibold text-gray-900">Liquidity Thresholds</div>
                       <div className="text-sm text-gray-600">Maintain minimum cash reserves at all times</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-indigo-600" />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600" />
                     <div>
                       <div className="font-semibold text-gray-900">Multi-Signature Approvals</div>
                       <div className="text-sm text-gray-600">Large transactions require board approval</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-indigo-600" />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600" />
                     <div>
                       <div className="font-semibold text-gray-900">Compliance Reporting</div>
                       <div className="text-sm text-gray-600">Automated audit trails for regulators</div>
@@ -563,12 +563,12 @@ export default function Home() {
             We built Kuneo because the market needed mathematical certainty, not blind trust.
           </blockquote>
           <div className="flex items-center justify-center gap-4">
-            <div className="relative h-16 w-16 overflow-hidden rounded-full">
+            <div className="relative h-16 w-16 overflow-hidden rounded-full ring-2 ring-blue-200">
               <Image 
                 src="/images/testimonials/client-1.png" 
                 alt="Francesco Tomatis"
                 fill
-                className="object-cover"
+                className="object-cover [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
               />
             </div>
             <div className="text-left">
@@ -580,7 +580,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 py-24">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
             Transform AI Scripts into

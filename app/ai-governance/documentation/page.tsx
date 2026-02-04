@@ -138,7 +138,7 @@ export default function DocumentationPage() {
             </p>
           </div>
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
-            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-400">
+            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
               <Code className="h-6 w-6" />
             </div>
             <h3 className="mb-2 font-semibold text-gray-900">API Reference</h3>
@@ -147,7 +147,7 @@ export default function DocumentationPage() {
             </p>
           </div>
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
-            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
+            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
               <Terminal className="h-6 w-6" />
             </div>
             <h3 className="mb-2 font-semibold text-gray-900">CLI Tools</h3>
@@ -268,14 +268,14 @@ export default function DocumentationPage() {
               key={step.step}
               className="flex gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6"
             >
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-lg font-bold text-white">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 text-lg font-bold text-white">
                 {step.step}
               </div>
               <div className="flex-1">
                 <h3 className="mb-1 font-semibold text-gray-900">{step.title}</h3>
                 <p className="mb-3 text-sm text-gray-600">{step.description}</p>
                 <div className="rounded-lg bg-white p-3">
-                  <code className="text-sm text-emerald-400">{step.command}</code>
+                  <code className="text-sm text-blue-400">{step.command}</code>
                 </div>
               </div>
             </div>
@@ -285,7 +285,7 @@ export default function DocumentationPage() {
 
       {/* Support Resources */}
       <section>
-        <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 p-8">
+        <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-500/10 via-blue-600/10 to-blue-700/10 p-8">
           <h2 className="mb-4 text-2xl font-bold text-gray-900">
             Need Help?
           </h2>
@@ -307,7 +307,7 @@ export default function DocumentationPage() {
               href="#"
               className="flex items-center gap-3 rounded-lg border border-gray-300 bg-white p-4 transition-colors hover:bg-slate-700"
             >
-              <ExternalLink className="h-5 w-5 text-indigo-400" />
+              <ExternalLink className="h-5 w-5 text-blue-400" />
               <div>
                 <div className="font-semibold text-gray-900">Community Forum</div>
                 <div className="text-xs text-gray-600">Ask questions</div>
@@ -317,7 +317,7 @@ export default function DocumentationPage() {
               href="#"
               className="flex items-center gap-3 rounded-lg border border-gray-300 bg-white p-4 transition-colors hover:bg-slate-700"
             >
-              <Terminal className="h-5 w-5 text-emerald-400" />
+              <Terminal className="h-5 w-5 text-blue-400" />
               <div>
                 <div className="font-semibold text-gray-900">Support Ticket</div>
                 <div className="text-xs text-gray-600">Get direct help</div>

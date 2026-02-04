@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function InsightsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-700 py-16">
+      <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 py-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]" />
         <div className="relative mx-auto max-w-6xl px-6 text-white">
           <div className="inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm font-semibold">

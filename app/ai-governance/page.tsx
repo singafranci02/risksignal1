@@ -66,7 +66,7 @@ export default function AIGovernanceOverview() {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[32rem] overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+      <section className="relative min-h-[32rem] overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
         <div className="absolute inset-0">
           <Image
             src="/images/hero/home-hero.png"
@@ -244,7 +244,7 @@ export default function AIGovernanceOverview() {
 
             <div className="rounded-2xl border border-gray-800 bg-gray-950 p-6 text-white shadow-xl">
               <div className="flex items-center gap-2 text-sm text-gray-300">
-                <Activity className="h-4 w-4 text-emerald-400" />
+                <Activity className="h-4 w-4 text-blue-400" />
                 Proof of Compliance
               </div>
               <div className="mt-4 space-y-3 text-sm text-gray-200">
@@ -261,7 +261,7 @@ export default function AIGovernanceOverview() {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 rounded-lg bg-emerald-500/10 px-4 py-3 text-xs text-emerald-200">
+              <div className="mt-6 rounded-lg bg-blue-500/10 px-4 py-3 text-xs text-blue-200">
                 Evidence captured for ASIC RG 265, EU AI Act Article 12, and SEC 17a-4
               </div>
             </div>
@@ -409,7 +409,7 @@ export default function AIGovernanceOverview() {
                 'Regional compliance mapping'
               ].map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600" />
                   {item}
                 </li>
               ))}
@@ -472,7 +472,7 @@ export default function AIGovernanceOverview() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 p-10 text-white">
+        <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-10 text-white">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-3xl font-bold">Move from experimentation to governance</h2>

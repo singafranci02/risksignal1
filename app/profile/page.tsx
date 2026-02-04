@@ -12,9 +12,9 @@ export default async function ProfilePage() {
 
   if (!user) {
     return (
-      <div className="flex min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      <div className="flex min-h-screen bg-gradient-to-br from-blue-50 to-blue-100/80">
         {/* Left Side - Branding */}
-        <div className="relative hidden w-1/2 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 p-12 lg:flex lg:flex-col lg:justify-between">
+        <div className="relative hidden w-1/2 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 p-12 lg:flex lg:flex-col lg:justify-between">
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image 
@@ -26,7 +26,7 @@ export default async function ProfilePage() {
           </div>
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/75 to-indigo-900/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/75 to-blue-900/80" />
           
           <div className="relative">
             <Link href="/" className="flex items-center gap-3">
@@ -122,7 +122,7 @@ export default async function ProfilePage() {
   const lastName = (user.user_metadata as any)?.last_name ?? ""
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100/80 py-12">
       <div className="mx-auto max-w-2xl px-6">
         <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-2xl">
           <div className="mb-8">

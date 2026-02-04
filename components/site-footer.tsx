@@ -39,7 +39,7 @@ export default function SiteFooter() {
   return (
     <footer className="border-t border-gray-200 bg-gradient-to-b from-white to-gray-50">
       {/* Newsletter Section */}
-      <div className="border-b border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <div className="border-b border-gray-200 bg-gradient-to-r from-blue-50 to-blue-100/80">
         <div className="mx-auto max-w-7xl px-6 py-12">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="text-center md:text-left">

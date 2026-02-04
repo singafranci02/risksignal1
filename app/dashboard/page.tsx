@@ -2,6 +2,7 @@ import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 import { DashboardHeader } from './components/dashboard-header'
 import { RiskOverview } from './components/risk-overview'
+import { AgentOpsDashboard } from './components/agent-ops-dashboard'
 import { WalletPortfolio } from './components/wallet-portfolio'
 import { RiskFeed } from './components/risk-feed'
 import { PolicyManager } from './components/policy-manager'
@@ -83,30 +84,28 @@ export default async function DashboardPage() {
         />
 
         {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - 2/3 width */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Wallet Portfolio */}
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
+          {/* Primary Operations Dashboard */}
+          <div className="xl:col-span-8 space-y-6">
+            <AgentOpsDashboard />
+          </div>
+
+          {/* Side Column - Wallets & Risk */}
+          <div className="xl:col-span-4 space-y-6">
             <WalletPortfolio 
               wallets={wallets || []}
               snapshots={recentSnapshots || []}
             />
 
-            {/* Risk Feed */}
             <RiskFeed 
               events={riskEvents || []}
             />
-          </div>
 
-          {/* Right Column - 1/3 width */}
-          <div className="space-y-6">
-            {/* Quick Actions */}
-            <QuickActions />
-
-            {/* Policy Manager */}
             <PolicyManager 
               policies={policies || []}
             />
+
+            <QuickActions />
           </div>
         </div>
       </div>

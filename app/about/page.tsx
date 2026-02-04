@@ -77,7 +77,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image 
@@ -179,7 +179,7 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-700 shadow-lg">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
                 <Award className="h-8 w-8 text-white" />
               </div>
               <h2 className="mb-6 text-3xl font-bold text-gray-900">The Problem We Solve</h2>
@@ -318,7 +318,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 py-24">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
             Join the Future of

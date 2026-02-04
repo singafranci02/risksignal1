@@ -160,7 +160,7 @@ export default async function SiteHeader() {
       </div>
 
       {/* Trust Bar */}
-      <div className="border-t border-gray-100 bg-gradient-to-r from-blue-50/50 to-indigo-50/50">
+      <div className="border-t border-gray-100 bg-gradient-to-r from-blue-50/50 to-blue-100/50">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5 text-xs">
           <div className="flex items-center gap-4 text-gray-600">
             <div className="flex items-center gap-2">

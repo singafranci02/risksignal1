@@ -156,7 +156,7 @@ export default function ProfileForm() {
                 <span
                   className={
                     passwordStrength === "Strong"
-                      ? "text-emerald-400"
+                      ? "text-blue-400"
                       : passwordStrength === "Medium"
                       ? "text-amber-400"
                       : "text-red-400"
@@ -192,7 +192,7 @@ export default function ProfileForm() {
           </div>
         )}
         {success && (
-          <div className="rounded-md bg-emerald-500/10 p-3 text-sm text-emerald-400">
+          <div className="rounded-md bg-blue-500/10 p-3 text-sm text-blue-400">
             {success}
           </div>
         )}

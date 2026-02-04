@@ -35,7 +35,7 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
       </div>
 
       {/* Hero Section with Professional Image */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-indigo-700 py-20">
+      <section className="relative bg-gradient-to-r from-blue-600 to-blue-700 py-20">
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src="/images/hero/about-hero.png"
@@ -44,7 +44,7 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
             className="object-cover opacity-20"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-indigo-900/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-900/80" />
         </div>
         
         <div className="relative mx-auto max-w-7xl px-6">
@@ -93,9 +93,9 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
             <p className="text-sm text-gray-600">{reg.requirements.length} Key Areas</p>
           </div>
           
-          <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-indigo-50 to-white p-6 shadow-sm">
-            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-100">
-              <Award className="h-6 w-6 text-indigo-600" />
+          <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+              <Award className="h-6 w-6 text-blue-600" />
             </div>
             <h3 className="font-bold text-gray-900 mb-2">Kuneo Solutions</h3>
             <p className="text-sm text-gray-600">{reg.kuneoSolutions.length} Compliance Tools</p>
@@ -196,7 +196,7 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
               className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
             >
               <div className="flex items-center gap-3">
-                <AlertCircle className="h-6 w-6 text-indigo-600" />
+                <AlertCircle className="h-6 w-6 text-blue-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Implementation Roadmap</h2>
               </div>
               <ChevronDown className={`h-6 w-6 text-gray-400 transition-transform ${openAccordion === 'implementation' ? 'rotate-180' : ''}`} />
@@ -213,7 +213,7 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
                       key={idx}
                       className="flex gap-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
                     >
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-600 text-lg font-bold text-white">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
                         {step.step}
                       </div>
                       <div className="flex-1">
@@ -296,7 +296,7 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
       </div>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 py-16">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-700 py-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-4 text-4xl font-bold text-white">
             Ready to Deploy Compliant AI Agents in {reg.country}?

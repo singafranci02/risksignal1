@@ -127,7 +127,7 @@ export default function RulesPage() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Beginner':
-        return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+        return 'bg-blue-500/10 text-blue-400 border-blue-500/20'
       case 'Intermediate':
         return 'bg-amber-500/10 text-amber-400 border-amber-500/20'
       case 'Advanced':
@@ -180,7 +180,7 @@ export default function RulesPage() {
                 <div className="p-6">
                   <div className="mb-4 flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700">
                         <Icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
@@ -238,7 +238,7 @@ export default function RulesPage() {
                   </div>
 
                   <div className="flex gap-2">
-                    <button className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-lg">
+                    <button className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-lg">
                       <Copy className="h-4 w-4" />
                       Copy Template
                     </button>
@@ -275,14 +275,14 @@ export default function RulesPage() {
                 <div className="space-y-2">
                   {template.rules.map((rule) => (
                     <div key={rule} className="flex items-center gap-2 text-sm text-gray-700">
-                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-emerald-400" />
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-blue-400" />
                       <span>{rule}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <button className="w-full rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-lg">
+              <button className="w-full rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-lg">
                 Deploy Package
               </button>
             </div>
@@ -292,7 +292,7 @@ export default function RulesPage() {
 
       {/* Custom Rules */}
       <section>
-        <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 p-8">
+        <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-500/10 via-blue-600/10 to-blue-700/10 p-8">
           <h2 className="mb-4 text-2xl font-bold text-gray-900">
             Need Custom Rules?
           </h2>
@@ -300,7 +300,7 @@ export default function RulesPage() {
             Our team can help you design custom rule configurations for your specific use case and regulatory requirements
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl">
+            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl">
               Request Custom Rules
             </button>
             <button className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-900 transition-colors hover:bg-slate-700">
