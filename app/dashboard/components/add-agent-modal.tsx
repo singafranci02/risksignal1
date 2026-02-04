@@ -116,12 +116,26 @@ export function AddAgentModal({ userId, onClose, onAgentAdded }: AddAgentModalPr
                       Download Kuneo Bridge
                     </h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      Install the lightweight telemetry bridge for MetaTrader 5
+                      MetaTrader 5 Expert Advisor (EA) that sends read-only telemetry to your dashboard
                     </p>
-                    <button className="mt-3 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">
-                      <Download className="h-4 w-4" />
-                      Download Bridge (v1.2.0)
-                    </button>
+                    <div className="mt-3 flex gap-2">
+                      <a
+                        href="/downloads/KuneoBridge.mq5"
+                        download="KuneoBridge.mq5"
+                        className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700"
+                      >
+                        <Download className="h-4 w-4" />
+                        Download Bridge (v1.2.0)
+                      </a>
+                      <a
+                        href="/downloads/README.txt"
+                        download="KUNEO_BRIDGE_README.txt"
+                        className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                      >
+                        <Download className="h-4 w-4" />
+                        Instructions
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -173,32 +187,38 @@ export function AddAgentModal({ userId, onClose, onAgentAdded }: AddAgentModalPr
                       Install in MetaTrader 5
                     </h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      Follow these steps to complete the setup:
+                      Copy the downloaded KuneoBridge.mq5 file into your MT5 Experts folder:
                     </p>
                     <ol className="mt-4 space-y-3 text-sm text-gray-700">
                       <li className="flex items-start gap-3">
                         <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
                           1
                         </span>
-                        <span>Open MetaTrader 5 and go to <strong>File → Open Data Folder</strong></span>
+                        <span>Open MetaTrader 5 → <strong>File → Open Data Folder</strong></span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
                           2
                         </span>
-                        <span>Navigate to <strong>MQL5 → Experts</strong> and paste the Kuneo Bridge EA</span>
+                        <span>Navigate to <strong>MQL5 → Experts</strong> and paste <code className="rounded bg-gray-200 px-1 py-0.5 font-mono text-xs">KuneoBridge.mq5</code></span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
                           3
                         </span>
-                        <span>Restart MT5 and attach the EA to any chart</span>
+                        <span>Restart MT5, then drag the EA from Navigator onto any chart</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
                           4
                         </span>
-                        <span>Paste your bridge token when prompted and enable <strong>Allow WebRequest</strong></span>
+                        <span>In EA settings, paste your Bridge Token (from above)</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
+                          5
+                        </span>
+                        <span>Go to <strong>Tools → Options → Expert Advisors</strong> and add <code className="rounded bg-gray-200 px-1 py-0.5 font-mono text-xs">https://api.kuneo.tech</code> to allowed URLs</span>
                       </li>
                     </ol>
                   </div>
@@ -209,16 +229,22 @@ export function AddAgentModal({ userId, onClose, onAgentAdded }: AddAgentModalPr
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-blue-600" />
                   <div className="text-sm text-gray-700">
-                    Once connected, your agent will appear in the dashboard with live telemetry. 
-                    You can configure risk policies and compliance rules from the <strong>Policies</strong> tab.
+                    <strong>What the Bridge sends:</strong> Balance, equity, margin usage, open positions count, heartbeat every 60 seconds.
+                    <br />
+                    <strong>What it CANNOT access:</strong> Your strategy code, broker password, or execute trades. Read-only telemetry only.
                   </div>
                 </div>
               </div>
 
-              <button className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700">
+              <a
+                href="https://kuneo.tech/docs/mt5-bridge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700"
+              >
                 <ExternalLink className="h-4 w-4" />
-                View full setup documentation
-              </button>
+                View full documentation
+              </a>
             </div>
           )}
         </div>
