@@ -42,22 +42,47 @@ export function AddAgentModal({ userId, onClose, onAgentAdded }: AddAgentModalPr
     }
   }
 
-  const handleFinish = () => {
-    // Save to database
-    const newAgent = {
-      id: Date.now().toString(),
-      name: agentName,
-      broker: broker,
-      status: 'inactive',
-      uptime: '0%',
-      latency: '--',
-      trades: '0',
-      apiKey: apiKey,
-      webhookUrl: webhookUrl,
-      connectionMethod: connectionMethod,
-      created_at: new Date().toISOString()
+  const handleFinish = async () => {
+    try {
+      // Save to database via API
+      const response = await fetch('/api/agents', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: agentName,
+          broker: broker,
+          connection_method: connectionMethod,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to create agent')
+      }
+
+      const { agent } = await response.json()
+      
+      // Transform for display
+      const displayAgent = {
+        id: agent.id,
+        name: agent.name,
+        broker: agent.broker,
+        status: agent.status,
+        uptime: '0%',
+        latency: '--',
+        trades: '0',
+        apiKey: agent.api_key,
+        webhookUrl: agent.webhook_url,
+        connectionMethod: agent.connection_method,
+        created_at: agent.created_at
+      }
+      
+      onAgentAdded(displayAgent)
+    } catch (error) {
+      console.error('Error creating agent:', error)
+      alert('Failed to create agent. Please try again.')
     }
-    onAgentAdded(newAgent)
   }
 
   // Code snippets
@@ -341,7 +366,15 @@ def send_kuneo_telemetry(balance, equity, positions):
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="/downloads/kuneo_client.py"
+                  download="kuneo_client.py"
+                  className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+                >
+                  <Code className="h-4 w-4" />
+                  Download Python Client
+                </a>
                 <a
                   href="https://kuneo.tech/docs/webhook-integration"
                   target="_blank"
@@ -349,17 +382,7 @@ def send_kuneo_telemetry(balance, equity, positions):
                   className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700"
                 >
                   <ExternalLink className="h-4 w-4" />
-                  View integration docs
-                </a>
-                <span className="text-gray-400">·</span>
-                <a
-                  href="https://kuneo.tech/docs/webhook-examples"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700"
-                >
-                  <Code className="h-4 w-4" />
-                  More code examples
+                  Integration docs
                 </a>
               </div>
             </div>

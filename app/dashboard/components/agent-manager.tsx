@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Plus, Bot, Activity, Settings, Trash2, ExternalLink, Shield, Clock, BarChart3 } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Plus, Bot, Activity, Settings, Trash2, ExternalLink, Shield, Clock, BarChart3, Power } from 'lucide-react'
 import { AddAgentModal } from './add-agent-modal'
 
 interface AgentManagerProps {
@@ -11,6 +11,46 @@ interface AgentManagerProps {
 export function AgentManager({ userId }: AgentManagerProps) {
   const [showAddModal, setShowAddModal] = useState(false)
   const [agents, setAgents] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+
+  // Fetch agents on mount
+  useEffect(() => {
+    fetchAgents()
+  }, [])
+
+  const fetchAgents = async () => {
+    try {
+      const response = await fetch('/api/agents')
+      if (response.ok) {
+        const { agents: fetchedAgents } = await response.json()
+        setAgents(fetchedAgents || [])
+      }
+    } catch (error) {
+      console.error('Error fetching agents:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleHaltToggle = async (agentId: string, currentlyHalted: boolean) => {
+    try {
+      const response = await fetch(`/api/agents/${agentId}/halt`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          halt: !currentlyHalted,
+          reason: currentlyHalted ? 'Manual resume' : 'Manual halt by user'
+        })
+      })
+
+      if (response.ok) {
+        // Refresh agents
+        fetchAgents()
+      }
+    } catch (error) {
+      console.error('Error toggling halt:', error)
+    }
+  }
 
   return (
     <>
@@ -34,7 +74,12 @@ export function AgentManager({ userId }: AgentManagerProps) {
         </div>
 
         {/* Agents List */}
-        {agents.length === 0 ? (
+        {loading ? (
+          <div className="mt-8 text-center">
+            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+            <p className="mt-2 text-sm text-gray-600">Loading agents...</p>
+          </div>
+        ) : agents.length === 0 ? (
           <div className="mt-8 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 p-12 text-center">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
               <Bot className="h-8 w-8 text-blue-600" />
@@ -63,20 +108,27 @@ export function AgentManager({ userId }: AgentManagerProps) {
               >
                 {/* Status Indicator */}
                 <div className="absolute right-4 top-4">
-                  <span className="relative flex h-3 w-3">
-                    {agent.status === 'active' && (
-                      <>
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
-                      </>
-                    )}
-                    {agent.status === 'inactive' && (
-                      <span className="relative inline-flex h-3 w-3 rounded-full bg-gray-400"></span>
-                    )}
-                    {agent.status === 'error' && (
-                      <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500"></span>
-                    )}
-                  </span>
+                  {agent.is_halted ? (
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-red-100 px-2 py-1 text-xs font-semibold text-red-700">
+                      <Power className="h-3 w-3" />
+                      Halted
+                    </span>
+                  ) : (
+                    <span className="relative flex h-3 w-3">
+                      {agent.status === 'active' && (
+                        <>
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+                        </>
+                      )}
+                      {agent.status === 'inactive' && (
+                        <span className="relative inline-flex h-3 w-3 rounded-full bg-gray-400"></span>
+                      )}
+                      {agent.status === 'error' && (
+                        <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500"></span>
+                      )}
+                    </span>
+                  )}
                 </div>
 
                 {/* Agent Info */}
@@ -102,41 +154,47 @@ export function AgentManager({ userId }: AgentManagerProps) {
                       Uptime
                     </div>
                     <p className="mt-1 text-sm font-semibold text-gray-900">
-                      {agent.uptime}
+                      {agent.last_heartbeat 
+                        ? `${Math.round((Date.now() - new Date(agent.last_heartbeat).getTime()) / 1000 / 60)}m ago`
+                        : 'Never'}
                     </p>
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5 text-xs text-gray-500">
                       <Clock className="h-3.5 w-3.5" />
-                      Latency
+                      Status
                     </div>
                     <p className="mt-1 text-sm font-semibold text-gray-900">
-                      {agent.latency}
+                      {agent.status}
                     </p>
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5 text-xs text-gray-500">
                       <BarChart3 className="h-3.5 w-3.5" />
-                      Trades
+                      Balance
                     </div>
                     <p className="mt-1 text-sm font-semibold text-gray-900">
-                      {agent.trades}
+                      ${agent.metadata?.last_balance?.toFixed(2) || '--'}
                     </p>
                   </div>
                 </div>
 
                 {/* Actions */}
                 <div className="mt-6 flex items-center gap-2">
-                  <button className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50">
-                    <Shield className="h-4 w-4" />
-                    Policies
+                  <button
+                    onClick={() => handleHaltToggle(agent.id, agent.is_halted)}
+                    className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+                      agent.is_halted
+                        ? 'border-green-300 bg-green-50 text-green-700 hover:bg-green-100'
+                        : 'border-red-300 bg-red-50 text-red-700 hover:bg-red-100'
+                    }`}
+                  >
+                    <Power className="h-4 w-4" />
+                    {agent.is_halted ? 'Resume' : 'Halt'}
                   </button>
                   <button className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50">
                     <Settings className="h-4 w-4" />
-                    Settings
-                  </button>
-                  <button className="flex items-center justify-center rounded-lg border border-gray-300 bg-white p-2 text-gray-700 transition-colors hover:bg-gray-50">
-                    <ExternalLink className="h-4 w-4" />
+                    Config
                   </button>
                 </div>
               </div>
