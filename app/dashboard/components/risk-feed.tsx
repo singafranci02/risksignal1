@@ -33,15 +33,15 @@ export function RiskFeed({ events }: RiskFeedProps) {
   }
 
   return (
-    <div className="rounded-xl border border-zinc-800 bg-black shadow-2xl">
+    <div className="rounded-2xl border border-slate-800/40 bg-white/70 shadow-xl backdrop-blur-md">
       {/* Header */}
-      <div className="border-b border-zinc-800 p-6">
+      <div className="border-b border-slate-800/20 p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-semibold tracking-tight text-slate-900">
               Risk Event Feed
             </h2>
-            <p className="mt-1 text-sm text-zinc-400">
+            <p className="mt-1 text-sm text-slate-500">
               Live stream of policy violations and alerts
             </p>
           </div>
@@ -52,8 +52,8 @@ export function RiskFeed({ events }: RiskFeedProps) {
               onClick={() => setFilter('all')}
               className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                 filter === 'all'
-                  ? 'bg-white text-black'
-                  : 'border border-zinc-800 bg-zinc-900 text-zinc-400 hover:bg-zinc-800'
+                  ? 'bg-blue-600 text-white'
+                  : 'border border-slate-800/30 bg-white/80 text-slate-500 hover:bg-white'
               }`}
             >
               All ({events.length})
@@ -62,8 +62,8 @@ export function RiskFeed({ events }: RiskFeedProps) {
               onClick={() => setFilter('open')}
               className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                 filter === 'open'
-                  ? 'bg-white text-black'
-                  : 'border border-zinc-800 bg-zinc-900 text-zinc-400 hover:bg-zinc-800'
+                  ? 'bg-blue-600 text-white'
+                  : 'border border-slate-800/30 bg-white/80 text-slate-500 hover:bg-white'
               }`}
             >
               Open ({events.filter(e => e.status === 'OPEN').length})
@@ -72,8 +72,8 @@ export function RiskFeed({ events }: RiskFeedProps) {
               onClick={() => setFilter('critical')}
               className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                 filter === 'critical'
-                  ? 'bg-white text-black'
-                  : 'border border-zinc-800 bg-zinc-900 text-zinc-400 hover:bg-zinc-800'
+                  ? 'bg-blue-600 text-white'
+                  : 'border border-slate-800/30 bg-white/80 text-slate-500 hover:bg-white'
               }`}
             >
               Critical ({events.filter(e => e.severity === 'CRITICAL').length})
@@ -86,25 +86,25 @@ export function RiskFeed({ events }: RiskFeedProps) {
       <div className="max-h-[600px] overflow-y-auto">
         {filteredEvents.length === 0 ? (
           <div className="p-12 text-center">
-            <CheckCircle className="mx-auto h-12 w-12 text-zinc-600" />
-            <p className="mt-4 text-sm font-medium text-zinc-400">
+            <CheckCircle className="mx-auto h-12 w-12 text-slate-300" />
+            <p className="mt-4 text-sm font-medium text-slate-600">
               No risk events detected
             </p>
-            <p className="mt-1 text-xs text-zinc-600">
+            <p className="mt-1 text-xs text-slate-400">
               Your wallets are operating within defined parameters
             </p>
           </div>
         ) : (
-          <div className="divide-y divide-zinc-800">
+          <div className="divide-y divide-slate-800/10">
             {filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="group cursor-pointer p-6 transition-colors hover:bg-zinc-900"
+                className="group cursor-pointer p-6 transition-colors hover:bg-slate-50"
               >
                 <div className="flex items-start gap-4">
                   {/* Severity Indicator */}
-                  <div className="mt-1 rounded-lg bg-white p-2 shadow-lg">
-                    <AlertTriangle className="h-5 w-5 text-black" />
+                  <div className="mt-1 rounded-lg bg-slate-900 p-2 shadow-lg">
+                    <AlertTriangle className="h-5 w-5 text-white" />
                   </div>
 
                   {/* Event Details */}
@@ -112,29 +112,29 @@ export function RiskFeed({ events }: RiskFeedProps) {
                     <div className="flex items-start justify-between">
                       <div>
                         <div className="flex items-center gap-2">
-                          <h3 className="font-semibold text-white">
+                          <h3 className="font-semibold text-slate-900">
                             {event.policies?.policy_name || 'Unknown Policy'}
                           </h3>
-                          <span className="flex items-center gap-1 rounded-full border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-xs font-medium text-zinc-300">
+                          <span className="flex items-center gap-1 rounded-full border border-slate-800/20 bg-white/80 px-2 py-0.5 text-xs font-medium text-slate-600">
                             {getStatusIcon(event.status)}
                             <span className="ml-1">{event.status}</span>
                           </span>
                         </div>
-                        <p className="mt-1 text-sm text-zinc-400">
+                        <p className="mt-1 text-sm text-slate-500">
                           Wallet: <span className="font-mono">{event.wallet_address.slice(0, 10)}...{event.wallet_address.slice(-4)}</span>
                         </p>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <span className="rounded-lg border border-zinc-700 bg-zinc-900 px-2 py-1 text-xs font-bold uppercase tracking-wide text-zinc-300">
+                        <span className="rounded-lg border border-slate-800/20 bg-white/80 px-2 py-1 text-xs font-bold uppercase tracking-wide text-slate-600">
                           {event.severity}
                         </span>
-                        <ChevronRight className="h-5 w-5 text-zinc-600 opacity-0 transition-opacity group-hover:opacity-100" />
+                        <ChevronRight className="h-5 w-5 text-slate-400 opacity-0 transition-opacity group-hover:opacity-100" />
                       </div>
                     </div>
 
                     {/* Metadata */}
-                    <div className="mt-3 flex items-center gap-4 text-xs text-zinc-500">
+                    <div className="mt-3 flex items-center gap-4 text-xs text-slate-500">
                       <span className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         {formatDistanceToNow(new Date(event.detected_at), { addSuffix: true })}

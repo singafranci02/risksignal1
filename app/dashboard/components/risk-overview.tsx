@@ -28,6 +28,7 @@ export function RiskOverview({
       total: totalPolicies,
       icon: Shield,
       trend: '+12%',
+      delta: '+4 vs 24h',
       trendUp: true,
       description: 'Monitoring rules'
     },
@@ -37,6 +38,7 @@ export function RiskOverview({
       total: null,
       icon: AlertTriangle,
       trend: '-8%',
+      delta: '-3 vs 24h',
       trendUp: false,
       description: 'Requires attention'
     },
@@ -46,6 +48,7 @@ export function RiskOverview({
       total: null,
       icon: Zap,
       trend: '0%',
+      delta: 'No change',
       trendUp: null,
       description: 'High severity'
     },
@@ -55,6 +58,7 @@ export function RiskOverview({
       total: null,
       icon: Activity,
       trend: '+2%',
+      delta: '+0.6% vs 24h',
       trendUp: true,
       description: 'Success rate',
       suffix: '%'
@@ -62,28 +66,28 @@ export function RiskOverview({
   ]
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
       {metrics.map((metric, index) => {
         const Icon = metric.icon
 
         return (
           <div
             key={index}
-            className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-black p-6 shadow-2xl transition-all hover:border-zinc-700"
+            className="group relative overflow-hidden rounded-2xl border border-slate-800/40 bg-white/70 p-6 shadow-lg backdrop-blur-md transition-all hover:shadow-xl"
           >
             {/* Content */}
             <div className="relative">
               <div className="flex items-start justify-between">
-                <div className="rounded-lg bg-white p-3 shadow-lg">
-                  <Icon className="h-6 w-6 text-black" />
+                <div className="rounded-lg bg-slate-900 p-3 shadow-lg">
+                  <Icon className="h-6 w-6 text-white" />
                 </div>
                 {metric.trend && (
-                  <div className={`flex items-center gap-1 rounded-full border px-2 py-1 text-xs font-medium ${
+                  <div className={`flex items-center gap-1 rounded-full border px-2 py-1 text-xs font-semibold ${
                     metric.trendUp === true
-                      ? 'border-zinc-700 bg-zinc-900 text-zinc-300'
+                      ? 'border-blue-200 bg-blue-50 text-blue-700'
                       : metric.trendUp === false
-                      ? 'border-zinc-700 bg-zinc-900 text-zinc-300'
-                      : 'border-zinc-700 bg-zinc-900 text-zinc-400'
+                      ? 'border-amber-200 bg-amber-50 text-amber-700'
+                      : 'border-slate-200 bg-slate-50 text-slate-600'
                   }`}>
                     {metric.trendUp === true && <TrendingUp className="h-3 w-3" />}
                     {metric.trendUp === false && <TrendingDown className="h-3 w-3" />}
@@ -93,22 +97,23 @@ export function RiskOverview({
               </div>
 
               <div className="mt-4">
-                <p className="text-sm font-medium text-zinc-400">
+                <p className="text-sm font-medium text-slate-500">
                   {metric.label}
                 </p>
                 <div className="mt-1 flex items-baseline gap-2">
-                  <p className="text-3xl font-bold text-white">
+                  <p className="text-3xl font-semibold tracking-tight text-slate-900 font-mono">
                     {metric.value.toLocaleString()}{metric.suffix || ''}
                   </p>
                   {metric.total !== null && (
-                    <p className="text-sm text-zinc-500">
+                    <p className="text-sm text-slate-500 font-mono">
                       / {metric.total}
                     </p>
                   )}
                 </div>
-                <p className="mt-1 text-xs text-zinc-500">
+                <div className="mt-2 flex items-center justify-between text-xs text-slate-500">
                   {metric.description}
-                </p>
+                  <span className="font-mono">{metric.delta}</span>
+                </div>
               </div>
             </div>
           </div>

@@ -66,8 +66,8 @@ export default async function DashboardPage() {
   const criticalEvents = riskEvents?.filter(e => e.severity === 'CRITICAL').length || 0
 
   return (
-    <div className="min-h-screen bg-zinc-950">
-      <div className="mx-auto max-w-[1800px] p-6 space-y-6">
+    <div className="min-h-screen bg-gradient-to-b from-white via-white to-slate-50">
+      <div className="mx-auto max-w-[1800px] space-y-6 px-6 py-8">
         {/* Header */}
         <DashboardHeader 
           userName={user.user_metadata?.first_name || user.email?.split('@')[0] || 'User'}

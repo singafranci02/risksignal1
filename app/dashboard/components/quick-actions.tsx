@@ -32,12 +32,12 @@ export function QuickActions() {
   ]
 
   return (
-    <div className="rounded-xl border border-zinc-800 bg-black shadow-2xl">
-      <div className="border-b border-zinc-800 p-6">
-        <h2 className="text-lg font-bold text-white">
+    <div className="rounded-2xl border border-slate-800/40 bg-white/70 shadow-xl backdrop-blur-md">
+      <div className="border-b border-slate-800/20 p-6">
+        <h2 className="text-lg font-semibold tracking-tight text-slate-900">
           Quick Actions
         </h2>
-        <p className="mt-1 text-sm text-zinc-400">
+        <p className="mt-1 text-sm text-slate-500">
           Common tasks and operations
         </p>
       </div>
@@ -50,16 +50,16 @@ export function QuickActions() {
               <Link
                 key={action.label}
                 href={action.href}
-                className="group flex flex-col items-center gap-3 rounded-lg border border-zinc-800 bg-zinc-900 p-4 transition-all hover:border-zinc-700 hover:shadow-lg"
+                className="group flex flex-col items-center gap-3 rounded-lg border border-slate-800/20 bg-white/80 p-4 transition-all hover:border-slate-800/40 hover:shadow-lg"
               >
-                <div className="rounded-lg bg-white p-3 shadow-lg transition-transform group-hover:scale-110">
-                  <Icon className="h-5 w-5 text-black" />
+                <div className="rounded-lg bg-slate-900 p-3 shadow-lg transition-transform group-hover:scale-110">
+                  <Icon className="h-5 w-5 text-white" />
                 </div>
                 <div className="text-center">
-                  <p className="text-sm font-semibold text-white">
+                  <p className="text-sm font-semibold text-slate-900">
                     {action.label}
                   </p>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-slate-500">
                     {action.description}
                   </p>
                 </div>
