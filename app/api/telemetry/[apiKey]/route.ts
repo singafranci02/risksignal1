@@ -16,10 +16,10 @@ interface TelemetryPayload {
 
 export async function POST(
   request: Request,
-  { params }: { params: { apiKey: string } }
+  { params }: { params: Promise<{ apiKey: string }> }
 ) {
   try {
-    const apiKey = params.apiKey
+    const { apiKey } = await params
     const supabase = await createClient()
 
     // Find agent by API key

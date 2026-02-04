@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const supabase = await createClient()
@@ -16,7 +16,7 @@ export async function POST(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const agentId = params.id
+    const { id: agentId } = await params
     const body = await request.json()
     const { reason, halt } = body // halt: true = halt, false = resume
 
@@ -75,18 +75,19 @@ export async function POST(
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { searchParams } = new URL(request.url)
     const apiKey = searchParams.get('api_key')
+    const { id } = await params
 
     const supabase = await createClient()
 
     let query = supabase
       .from('trading_agents')
       .select('id, is_halted, halt_reason, halt_timestamp, status')
-      .eq('id', params.id)
+      .eq('id', id)
 
     // If API key provided, use that for auth instead of user session
     if (apiKey) {
