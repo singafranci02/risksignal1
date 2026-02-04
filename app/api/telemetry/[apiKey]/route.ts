@@ -136,8 +136,17 @@ export async function POST(
   }
 }
 
-async function checkPolicyViolations(agent: any, payload: TelemetryPayload, supabase: any) {
-  const violations = []
+interface PolicyViolation {
+  policy_id: string
+  policy_name: string
+  severity: string
+  message: string
+  current_value: number
+  threshold: number
+}
+
+async function checkPolicyViolations(agent: any, payload: TelemetryPayload, supabase: any): Promise<PolicyViolation[]> {
+  const violations: PolicyViolation[] = []
 
   // Fetch active policies for this user
   const { data: policies } = await supabase
