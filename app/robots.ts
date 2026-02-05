@@ -1,14 +1,31 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://getkuneo.com'
+
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/dashboard/'],
+        disallow: [
+          '/api/',
+          '/dashboard/',
+          '/profile/',
+          '/_next/',
+          '/private/',
+        ],
+      },
+      {
+        userAgent: 'GPTBot',
+        disallow: ['/'],
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        disallow: ['/'],
       },
     ],
-    sitemap: 'https://kuneo.tech/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   }
 }
