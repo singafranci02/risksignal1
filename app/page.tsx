@@ -15,11 +15,11 @@ export default function Home() {
             src="/images/hero/home-hero.png"
             alt=""
             fill
-            className="object-cover opacity-20 [filter:hue-rotate(200deg)_saturate(0.6)_brightness(0.7)]"
+            className="object-cover opacity-25"
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/60 to-slate-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-slate-950/70" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:py-40">
           <div className="mx-auto max-w-4xl text-center">
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="border-b border-white/10 bg-slate-900/50 py-16">
+      <section className="border-b border-white/10 bg-slate-900/20 py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             <div className="text-center">
@@ -108,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* The Three Pillars */}
-      <section className="bg-slate-900/30 py-24">
+      <section className="bg-slate-900/20 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -216,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* Visual Feature Showcase */}
-      <section className="border-t border-white/10 bg-slate-900/30 py-24">
+      <section className="border-t border-white/10 bg-slate-900/20 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
@@ -235,7 +235,7 @@ export default function Home() {
                   src="/images/features/verification.png" 
                   alt="Digital Helmet Technology"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110 [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
@@ -255,7 +255,7 @@ export default function Home() {
                   src="/images/features/monitoring.png" 
                   alt="Real-time monitoring"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110 [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
@@ -275,7 +275,7 @@ export default function Home() {
                   src="/images/features/digital-helmet.png" 
                   alt="Verification system"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110 [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
@@ -295,7 +295,7 @@ export default function Home() {
                   src="/images/features/ai-technology.png" 
                   alt="AI technology infrastructure"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110 [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
@@ -312,7 +312,7 @@ export default function Home() {
       </section>
 
       {/* Problem/Solution */}
-      <section className="border-t border-white/10 bg-slate-900/30 py-24">
+      <section className="border-t border-white/10 bg-slate-900/20 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
             <div>
@@ -414,7 +414,7 @@ export default function Home() {
       </section>
 
       {/* Use Cases */}
-      <section className="border-t border-white/10 bg-slate-900/30 py-24">
+      <section className="border-t border-white/10 bg-slate-900/20 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
@@ -502,7 +502,7 @@ export default function Home() {
       </section>
 
       {/* Testimonial */}
-      <section className="border-t border-white/10 bg-slate-900/30 py-24">
+      <section className="border-t border-white/10 bg-slate-900/20 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <div className="mb-8 text-6xl text-sky-500">"</div>
           <blockquote className="mb-8 text-2xl font-medium leading-relaxed text-white">
@@ -515,7 +515,7 @@ export default function Home() {
                 src="/images/testimonials/client-1.png"
                 alt="Francesco Tomatis"
                 fill
-                className="object-cover [filter:hue-rotate(200deg)_saturate(0.9)_brightness(0.95)]"
+                className="object-cover"
               />
             </div>
             <div className="text-left">

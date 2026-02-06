@@ -85,15 +85,15 @@
   --sidebar-ring: oklch(0.45 0.15 250);
 
   /* Retail Shield theme – main content (deep navy + cyan accent) */
-  --content-bg: #0f172a;           /* slate-900 deep navy */
-  --content-bg-subtle: #1e293b;  /* slate-800 */
+  --content-bg: #0f172a;           /* slate-900 */
+  --content-bg-subtle: #1e293b;
   --content-bg-card: #1e293b;
-  --content-foreground: #f8fafc;  /* slate-50 white */
-  --content-muted: #94a3b8;      /* slate-400 */
-  --content-accent: #38bdf8;     /* sky-400 cyan */
-  --content-accent-strong: #7dd3fc; /* sky-300 for highlights */
-  --content-button: #2563eb;     /* blue-600 primary CTA */
-  --content-border: rgba(255, 255, 255, 0.1);
+  --content-foreground: #f8fafc;
+  --content-muted: #94a3b8;
+  --content-accent: #38bdf8;
+  --content-accent-strong: #7dd3fc;
+  --content-button: #2563eb;
+  --content-border: rgba(255, 255, 255, 0.08);
   --content-badge-bg: rgba(56, 189, 248, 0.15);
 }
 
