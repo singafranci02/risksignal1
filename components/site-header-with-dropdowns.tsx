@@ -72,8 +72,74 @@ const resourcesColumn: MegaMenuItem[] = [
   { name: 'About Kuneo', href: '/about', description: 'Our mission & team', icon: Info },
 ]
 
+type DropdownId = 'platform' | 'governance' | 'developers' | 'resources' | null
+
+function DropdownPanel({
+  items,
+  featured,
+}: {
+  items: MegaMenuItem[]
+  featured?: React.ReactNode
+}) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-slate-900/90 backdrop-blur-xl shadow-2xl overflow-hidden flex">
+      <div className="bg-slate-900/80 p-4 min-w-[280px]">
+        <ul className="space-y-0.5">
+          {items.map((item) => {
+            const Icon = item.icon
+            return (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  className="flex items-start gap-3 rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-white/5 focus:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+                >
+                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" aria-hidden />
+                  <div className="min-w-0">
+                    <span className="flex items-center gap-2 font-semibold text-white">
+                      {item.name}
+                      {item.badge && (
+                        <span className="rounded bg-blue-500/80 px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
+                          {item.badge}
+                        </span>
+                      )}
+                    </span>
+                    <p className="text-xs text-slate-400">{item.description}</p>
+                  </div>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+      {featured}
+    </div>
+  )
+}
+
+const featuredCard = (
+  <div className="w-56 shrink-0 border-l border-white/10 bg-gradient-to-b from-blue-900/60 to-slate-900/90 p-4">
+    <div className="mb-2 flex items-center gap-2">
+      <Sparkles className="h-4 w-4 text-amber-400" aria-hidden />
+      <span className="text-xs font-bold uppercase tracking-wider text-amber-400">Featured</span>
+    </div>
+    <Link
+      href="/ai-governance/regulations/australia"
+      className="block rounded-xl border border-white/10 bg-white/5 p-3 transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+    >
+      <span className="mb-1 inline-block rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-400">
+        New
+      </span>
+      <div className="font-semibold text-white">ASIC Compliance Hub</div>
+      <p className="mt-1 text-xs text-slate-400">Australian market integrity & RG 265</p>
+      <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-blue-400">
+        Explore <ChevronRight className="h-3 w-3" />
+      </span>
+    </Link>
+  </div>
+)
+
 export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
-  const [megaOpen, setMegaOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<DropdownId>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null)
 
@@ -81,12 +147,48 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
     setMobileAccordion((prev) => (prev === key ? null : key))
   }
 
+  const navItem = (id: DropdownId, label: string, menuId: string) => (
+    <div
+      className="relative"
+      onMouseEnter={() => setActiveDropdown(id)}
+      onMouseLeave={() => setActiveDropdown(null)}
+    >
+      <button
+        type="button"
+        className="flex items-center gap-1 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
+        aria-expanded={activeDropdown === id}
+        aria-haspopup="true"
+        aria-controls={menuId}
+      >
+        {label}
+        <ChevronDown
+          className={`h-4 w-4 transition-transform duration-200 ${activeDropdown === id ? 'rotate-180' : ''}`}
+          aria-hidden
+        />
+      </button>
+      <div
+        id={menuId}
+        role="menu"
+        className={`absolute top-full left-0 pt-2 transition-all duration-200 ease-out ${
+          activeDropdown === id ? 'visible opacity-100 translate-y-0' : 'invisible opacity-0 -translate-y-2 pointer-events-none'
+        }`}
+      >
+        {id === 'platform' && (
+          <DropdownPanel items={platformColumn} featured={featuredCard} />
+        )}
+        {id === 'governance' && <DropdownPanel items={governanceColumn} />}
+        {id === 'developers' && <DropdownPanel items={developersColumn} />}
+        {id === 'resources' && <DropdownPanel items={resourcesColumn} />}
+      </div>
+    </div>
+  )
+
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-white/98 backdrop-blur-xl shadow-sm">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center justify-between py-3">
-          {/* Logo: Kuneo lockup — larger mark, aligned with wordmark */}
-          <Link href="/" className="group flex items-center gap-4">
+          {/* Logo = Home (no separate Home button) */}
+          <Link href="/" className="group flex items-center gap-4" aria-label="Kuneo – Home">
             <div className="relative h-16 w-16 shrink-0 sm:h-[4.5rem] sm:w-[4.5rem]">
               <Image
                 src="/images/logos/kuneo-logo.png"
@@ -107,171 +209,15 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
             </div>
           </Link>
 
-          {/* Desktop: Platform mega menu trigger */}
-          <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main">
-            <div
-              className="relative"
-              onMouseEnter={() => setMegaOpen(true)}
-              onMouseLeave={() => setMegaOpen(false)}
-            >
-              <button
-                type="button"
-                className="flex items-center gap-1 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
-                aria-expanded={megaOpen}
-                aria-haspopup="true"
-                aria-controls="mega-menu"
-              >
-                Platform
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${megaOpen ? 'rotate-180' : ''}`}
-                  aria-hidden
-                />
-              </button>
-
-              {/* Mega menu panel: glassmorphism, 4 columns + featured */}
-              <div
-                id="mega-menu"
-                role="menu"
-                className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-full min-w-[720px] max-w-6xl transition-all duration-200 ease-out ${
-                  megaOpen ? 'visible opacity-100 translate-y-0' : 'invisible opacity-0 -translate-y-2 pointer-events-none'
-                }`}
-              >
-                <div className="rounded-2xl border border-white/10 bg-slate-900/90 backdrop-blur-xl shadow-2xl overflow-hidden">
-                  <div className="flex">
-                    {/* 4 columns */}
-                    <div className="grid grid-cols-4 flex-1 gap-px bg-white/5">
-                      {/* Platform */}
-                      <div className="bg-slate-900/80 p-4">
-                        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                          Platform
-                        </div>
-                        <ul className="space-y-0.5">
-                          {platformColumn.map((item) => {
-                            const Icon = item.icon
-                            return (
-                            <li key={item.name}>
-                              <Link
-                                href={item.href}
-                                className="flex items-start gap-3 rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-white/5 focus:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-                              >
-                                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" aria-hidden />
-                                <div className="min-w-0">
-                                  <span className="flex items-center gap-2 font-semibold text-white">
-                                    {item.name}
-                                    {item.badge && (
-                                      <span className="rounded bg-blue-500/80 px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                        {item.badge}
-                                      </span>
-                                    )}
-                                  </span>
-                                  <p className="text-xs text-slate-400">{item.description}</p>
-                                </div>
-                              </Link>
-                            </li>
-                          )})}
-                        </ul>
-                      </div>
-                      {/* Governance */}
-                      <div className="bg-slate-900/80 p-4">
-                        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                          Governance
-                        </div>
-                        <ul className="space-y-0.5">
-                          {governanceColumn.map((item) => {
-                            const Icon = item.icon
-                            return (
-                            <li key={item.name}>
-                              <Link
-                                href={item.href}
-                                className="flex items-start gap-3 rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-white/5 focus:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-                              >
-                                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" aria-hidden />
-                                <div className="min-w-0">
-                                  <span className="font-semibold text-white">{item.name}</span>
-                                  <p className="text-xs text-slate-400">{item.description}</p>
-                                </div>
-                              </Link>
-                            </li>
-                          )})}
-                        </ul>
-                      </div>
-                      {/* Developers */}
-                      <div className="bg-slate-900/80 p-4">
-                        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                          Developers
-                        </div>
-                        <ul className="space-y-0.5">
-                          {developersColumn.map((item) => {
-                            const Icon = item.icon
-                            return (
-                            <li key={item.name}>
-                              <Link
-                                href={item.href}
-                                className="flex items-start gap-3 rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-white/5 focus:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-                              >
-                                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" aria-hidden />
-                                <div className="min-w-0">
-                                  <span className="font-semibold text-white">{item.name}</span>
-                                  <p className="text-xs text-slate-400">{item.description}</p>
-                                </div>
-                              </Link>
-                            </li>
-                          )})}
-                        </ul>
-                      </div>
-                      {/* Resources */}
-                      <div className="bg-slate-900/80 p-4">
-                        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                          Resources
-                        </div>
-                        <ul className="space-y-0.5">
-                          {resourcesColumn.map((item) => {
-                            const Icon = item.icon
-                            return (
-                            <li key={item.name}>
-                              <Link
-                                href={item.href}
-                                className="flex items-start gap-3 rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-white/5 focus:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-                              >
-                                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" aria-hidden />
-                                <div className="min-w-0">
-                                  <span className="font-semibold text-white">{item.name}</span>
-                                  <p className="text-xs text-slate-400">{item.description}</p>
-                                </div>
-                              </Link>
-                            </li>
-                          )})}
-                        </ul>
-                      </div>
-                    </div>
-                    {/* Featured */}
-                    <div className="w-64 shrink-0 border-l border-white/10 bg-gradient-to-b from-blue-900/60 to-slate-900/90 p-5">
-                      <div className="mb-2 flex items-center gap-2">
-                        <Sparkles className="h-4 w-4 text-amber-400" aria-hidden />
-                        <span className="text-xs font-bold uppercase tracking-wider text-amber-400">Featured</span>
-                      </div>
-                      <Link
-                        href="/ai-governance/regulations/australia"
-                        className="block rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
-                      >
-                        <span className="mb-1 inline-block rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-400">
-                          New
-                        </span>
-                        <div className="font-semibold text-white">ASIC Compliance Hub</div>
-                        <p className="mt-1 text-xs text-slate-400">Australian market integrity & RG 265</p>
-                        <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-blue-400">
-                          Explore <ChevronRight className="h-3 w-3" />
-                        </span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          {/* Desktop: Platform, Governance, Developers, Resources (each with dropdown) + Pricing */}
+          <nav className="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="Main">
+            {navItem('platform', 'Platform', 'platform-menu')}
+            {navItem('governance', 'Governance', 'governance-menu')}
+            {navItem('developers', 'Developers', 'developers-menu')}
+            {navItem('resources', 'Resources', 'resources-menu')}
             <Link
               href="/pricing"
-              className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 hover:text-gray-900"
+              className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 hover:text-gray-900"
             >
               <Zap className="h-4 w-4" aria-hidden />
               Pricing
