@@ -25,51 +25,37 @@ export default async function ProfilePage() {
             />
           </div>
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/75 to-blue-900/80" />
-          
+          {/* Gradient Overlay - stronger for text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/85 to-slate-900/90" />
+
           <div className="relative">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
-                <Shield className="h-6 w-6 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white">Kuneo</span>
-                <span className="text-xs font-medium uppercase tracking-wider text-blue-200">
-                  AI Agent Governance
-                </span>
-              </div>
-            </Link>
-          </div>
-          
-          <div>
-            <h2 className="mb-6 text-4xl font-bold text-white">
+            <h2 className="mb-6 text-4xl font-bold leading-tight text-white drop-shadow-sm">
               Start Building with
               <br />
               Absolute Certainty
             </h2>
-            <p className="mb-8 text-lg text-blue-100">
-              Join leading institutions deploying autonomous AI agents with mathematical 
+            <p className="mb-8 text-lg leading-relaxed text-white/95 drop-shadow-sm">
+              Join leading institutions deploying autonomous AI agents with mathematical
               constraints and verifiable execution.
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-blue-100">
-                <CheckCircle2 className="h-5 w-5 text-white" />
-                <span>Free developer tier</span>
+              <div className="flex items-center gap-3 text-white">
+                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-white" />
+                <span className="font-medium">Free developer tier</span>
               </div>
-              <div className="flex items-center gap-3 text-blue-100">
-                <CheckCircle2 className="h-5 w-5 text-white" />
-                <span>No credit card required</span>
+              <div className="flex items-center gap-3 text-white">
+                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-white" />
+                <span className="font-medium">No credit card required</span>
               </div>
-              <div className="flex items-center gap-3 text-blue-100">
-                <CheckCircle2 className="h-5 w-5 text-white" />
-                <span>Deploy in minutes</span>
+              <div className="flex items-center gap-3 text-white">
+                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-white" />
+                <span className="font-medium">Deploy in minutes</span>
               </div>
             </div>
           </div>
 
-          <div className="text-sm text-blue-200">
+          <div className="relative text-sm text-white/90">
             Already have an account?{' '}
             <Link href="/login" className="font-semibold text-white hover:underline">
               Sign in

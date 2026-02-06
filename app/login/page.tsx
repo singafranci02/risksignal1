@@ -5,6 +5,7 @@ import { Shield } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+
 export default async function LoginPage() {
   const supabase = await createClient()
   
@@ -30,53 +31,39 @@ export default async function LoginPage() {
           />
         </div>
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/75 to-blue-900/80" />
-        
+        {/* Gradient Overlay - stronger for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/85 to-slate-900/90" />
+
         <div className="relative">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
-              <Shield className="h-6 w-6 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-white">Kuneo</span>
-              <span className="text-xs font-medium uppercase tracking-wider text-blue-200">
-                AI Agent Governance
-              </span>
-            </div>
-          </Link>
-        </div>
-        
-        <div>
-          <h2 className="mb-6 text-4xl font-bold text-white">
+          <h2 className="mb-6 text-4xl font-bold leading-tight text-white drop-shadow-sm">
             Deploy Autonomous Agents
             <br />
             with Absolute Certainty
           </h2>
-          <p className="text-lg text-blue-100">
-            The infrastructure layer for verifiable agentic finance. Mathematical constraints, 
+          <p className="text-lg leading-relaxed text-white/95 drop-shadow-sm">
+            The infrastructure layer for verifiable agentic finance. Mathematical constraints,
             immutable audit trails, and real-time governance.
           </p>
         </div>
 
         <div className="space-y-4">
-          <div className="flex items-center gap-3 text-blue-100">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
+          <div className="flex items-center gap-3 text-white">
+            <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/20">
               <Shield className="h-4 w-4 text-white" />
             </div>
-            <span>Hardware-Secured TEEs</span>
+            <span className="font-medium">Hardware-Secured TEEs</span>
           </div>
-          <div className="flex items-center gap-3 text-blue-100">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
+          <div className="flex items-center gap-3 text-white">
+            <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/20">
               <Shield className="h-4 w-4 text-white" />
             </div>
-            <span>Immutable Audit Trails</span>
+            <span className="font-medium">Immutable Audit Trails</span>
           </div>
-          <div className="flex items-center gap-3 text-blue-100">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
+          <div className="flex items-center gap-3 text-white">
+            <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-white/20">
               <Shield className="h-4 w-4 text-white" />
             </div>
-            <span>Global Compliance</span>
+            <span className="font-medium">Global Compliance</span>
           </div>
         </div>
       </div>
