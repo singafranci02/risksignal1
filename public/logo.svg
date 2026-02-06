@@ -1,27 +1,13 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="kFill" x1="96" y1="96" x2="448" y2="416" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0F2A6B"/>
-      <stop offset="0.5" stop-color="#1D4ED8"/>
-      <stop offset="1" stop-color="#3B82F6"/>
-    </linearGradient>
-    <linearGradient id="kHighlight" x1="140" y1="140" x2="420" y2="360" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#93C5FD" stop-opacity="0.85"/>
-      <stop offset="0.55" stop-color="#60A5FA" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <path d="M112 80H232V432H112V80Z" fill="url(#kFill)" />
-  <path
-    d="M214 220L406 70L458 138L270 288L214 220Z"
-    fill="url(#kFill)"
-  />
-  <path
-    d="M270 224L458 374L406 442L214 300L270 224Z"
-    fill="url(#kFill)"
-  />
-  <path
-    d="M220 226L400 82L448 144L274 292L220 226Z"
-    fill="url(#kHighlight)"
-  />
+<svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Geometric K + dot, deep blue #0F2A6B -->
+  <g fill="#0F2A6B">
+    <!-- Vertical stem -->
+    <path d="M0 6h18v88H0V6z" />
+    <!-- Upper diagonal: sharp point top-right; gap below center -->
+    <path d="M18 42L68 4l6 5-44 36-10-7z" />
+    <!-- Lower diagonal: flat horizontal base aligned with stem -->
+    <path d="M18 54L68 90h6l-44-36-12 0z" />
+    <!-- Dot (period), bottom-aligned -->
+    <circle cx="96" cy="88" r="6" />
+  </g>
 </svg>

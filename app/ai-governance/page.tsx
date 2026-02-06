@@ -28,7 +28,7 @@ export default function AIGovernanceOverview() {
         '@id': 'https://kuneo.tech/#organization',
         name: 'Kuneo',
         url: 'https://kuneo.tech',
-        logo: 'https://kuneo.tech/logo.svg',
+        logo: 'https://getkuneo.com/logo.svg',
         description:
           'Infrastructure for autonomous financial agent governance with mathematical certainty.'
       },

@@ -66,20 +66,17 @@ export default function SiteFooter() {
           {/* Brand Column */}
           <div className="col-span-2">
             <Link href="/" className="group inline-flex items-center gap-3">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-lg bg-blue-600 opacity-10 blur-md" />
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
-                  <Image
-                    src="/logo.svg"
-                    alt="Kuneo logo"
-                    width={28}
-                    height={28}
-                    className="h-7 w-7"
-                  />
-                </div>
+              <div className="relative flex h-12 w-12 shrink-0 items-center justify-center">
+                <Image
+                  src="/logo.svg"
+                  alt="Kuneo"
+                  width={48}
+                  height={40}
+                  className="h-12 w-auto"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-gray-900">
+                <span className="text-xl font-bold tracking-tight text-[#0F2A6B]">
                   Kuneo
                 </span>
                 <span className="text-xs font-medium uppercase tracking-wider text-gray-500">
