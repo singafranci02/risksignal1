@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Team: Auto-push after commit
+
+To push to GitHub automatically after every commit, run once:
+
+```bash
+npm run setup:githooks
+```
+
+This configures Git to use the `.githooks` directory. After that, every `git commit` will trigger a push to the current branch’s remote (e.g. `origin main`). New clones: each teammate runs `npm run setup:githooks` once to enable it.
+
 ## Getting Started
 
 First, run the development server:

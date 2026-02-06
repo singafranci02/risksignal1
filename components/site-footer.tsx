@@ -68,7 +68,7 @@ export default function SiteFooter() {
             <Link href="/" className="group inline-flex items-center gap-3">
               <div className="relative h-12 w-12 shrink-0">
                 <Image
-                  src="/logo.png"
+                  src="/images/logos/kuneo-logo.png"
                   alt="Kuneo"
                   fill
                   className="object-contain object-center"

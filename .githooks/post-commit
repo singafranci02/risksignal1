@@ -1,0 +1,12 @@
+#!/bin/sh
+# Auto-push to GitHub after every commit (shared hook for the team).
+# Enable with: git config core.hooksPath .githooks
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+remote=$(git config branch."$branch".remote 2>/dev/null || echo "origin")
+
+if git rev-parse --verify "$remote/$branch" >/dev/null 2>&1; then
+  git push "$remote" "$branch"
+else
+  git push -u "$remote" "$branch"
+fi
