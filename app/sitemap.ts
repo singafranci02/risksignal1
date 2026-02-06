@@ -37,6 +37,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9, // High priority for regulation pages (topical authority)
   }))
 
+  // Solutions pages
+  const solutionsPages = [
+    { route: '/retail-shield', priority: 0.95 }, // High priority - new flagship page
+  ].map(({ route, priority }) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority,
+  }))
+
   // Company & Info pages
   const infoPages = [
     { route: '/about', priority: 0.8 },
@@ -82,6 +92,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...corePages,
+    ...solutionsPages,
     ...governancePages,
     ...regulationRoutes,
     ...infoPages,

@@ -1,10 +1,17 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { createClient } from '@/utils/supabase/server'
-import LogoutButton from './logout-button'
-import { Activity, Zap, ChevronRight, Menu, BookOpen } from 'lucide-react'
+import SiteHeaderWithDropdowns from './site-header-with-dropdowns'
 
 export default async function SiteHeader() {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  return <SiteHeaderWithDropdowns user={user} />
+}
+
+/* Old header code - keeping as backup
+export default async function SiteHeaderOld() {
   const supabase = await createClient()
   const {
     data: { user },
@@ -181,3 +188,4 @@ export default async function SiteHeader() {
     </header>
   )
 }
+*/
