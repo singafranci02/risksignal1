@@ -49,41 +49,32 @@
 :root {
   --radius: 0.5rem;
   
-  /* Professional Light Theme - Leroux Inspired */
+  /* Header/footer: stay white (unchanged) */
   --background: oklch(1 0 0); /* Pure white */
   --foreground: oklch(0.2 0.01 264); /* Dark navy text */
   
-  --card: oklch(0.99 0 0); /* Off-white cards */
+  --card: oklch(0.99 0 0);
   --card-foreground: oklch(0.2 0.01 264);
-  
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.01 264);
-  
   --primary: oklch(0.45 0.15 250); /* Navy blue */
-  --primary-foreground: oklch(1 0 0); /* White */
-  
-  --secondary: oklch(0.55 0.12 240); /* Soft blue */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.55 0.12 240);
   --secondary-foreground: oklch(1 0 0);
-  
-  --muted: oklch(0.97 0.005 264); /* Light gray */
-  --muted-foreground: oklch(0.5 0.02 264); /* Medium gray */
-  
-  --accent: oklch(0.6 0.15 220); /* Bright blue accent */
+  --muted: oklch(0.97 0.005 264);
+  --muted-foreground: oklch(0.5 0.02 264);
+  --accent: oklch(0.6 0.15 220);
   --accent-foreground: oklch(1 0 0);
-  
-  --destructive: oklch(0.55 0.22 25); /* Red */
+  --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(1 0 0);
-  
-  --border: oklch(0.92 0.005 264); /* Light border */
+  --border: oklch(0.92 0.005 264);
   --input: oklch(0.95 0.005 264);
   --ring: oklch(0.45 0.15 250);
-  
-  --chart-1: oklch(0.6 0.15 220); /* Blue */
-  --chart-2: oklch(0.65 0.18 160); /* Teal */
-  --chart-3: oklch(0.7 0.15 140); /* Green */
-  --chart-4: oklch(0.65 0.18 60); /* Yellow */
-  --chart-5: oklch(0.6 0.2 30); /* Orange */
-  
+  --chart-1: oklch(0.6 0.15 220);
+  --chart-2: oklch(0.65 0.18 160);
+  --chart-3: oklch(0.7 0.15 140);
+  --chart-4: oklch(0.65 0.18 60);
+  --chart-5: oklch(0.6 0.2 30);
   --sidebar: oklch(0.99 0 0);
   --sidebar-foreground: oklch(0.2 0.01 264);
   --sidebar-primary: oklch(0.45 0.15 250);
@@ -92,6 +83,18 @@
   --sidebar-accent-foreground: oklch(0.2 0.01 264);
   --sidebar-border: oklch(0.92 0.005 264);
   --sidebar-ring: oklch(0.45 0.15 250);
+
+  /* Retail Shield theme – main content (deep navy + cyan accent) */
+  --content-bg: #0f172a;           /* slate-900 deep navy */
+  --content-bg-subtle: #1e293b;  /* slate-800 */
+  --content-bg-card: #1e293b;
+  --content-foreground: #f8fafc;  /* slate-50 white */
+  --content-muted: #94a3b8;      /* slate-400 */
+  --content-accent: #38bdf8;     /* sky-400 cyan */
+  --content-accent-strong: #7dd3fc; /* sky-300 for highlights */
+  --content-button: #2563eb;     /* blue-600 primary CTA */
+  --content-border: rgba(255, 255, 255, 0.1);
+  --content-badge-bg: rgba(56, 189, 248, 0.15);
 }
 
 .dark {

@@ -35,7 +35,7 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col">
             {/* Global navigation */}
             <SiteHeader />
-            <main className="flex-1">
+            <main className="flex-1 bg-[var(--content-bg)] text-[var(--content-foreground)]">
               {children}
             </main>
             <SiteFooter />
