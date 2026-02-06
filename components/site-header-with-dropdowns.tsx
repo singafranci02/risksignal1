@@ -22,6 +22,7 @@ import {
   Briefcase,
   Newspaper,
   Signal,
+  Users,
   Info,
   Sparkles,
   Menu,
@@ -70,9 +71,9 @@ const developersColumn: MegaMenuItem[] = [
 ]
 
 const resourcesColumn: MegaMenuItem[] = [
+  { name: 'Community', href: '/community', description: 'Questions, help & discussion', icon: Users },
   { name: 'Whitepapers', href: '/insights', description: 'In-depth risk research', icon: FileText },
   { name: 'Case Studies', href: '/insights', description: 'Institutional deployments', icon: Briefcase },
-  { name: 'Blog', href: '/insights', description: 'Latest AI safety news', icon: Newspaper },
   { name: 'Status Page', href: '/status', description: 'System uptime & health', icon: Signal },
   { name: 'About Kuneo', href: '/about', description: 'Our mission & team', icon: Info },
 ]
