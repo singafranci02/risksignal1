@@ -27,7 +27,9 @@ import {
   Menu,
   X,
   ChevronRight,
+  Globe,
 } from 'lucide-react'
+import { countryRegs } from '@/data/regulations'
 import LogoutButton from './logout-button'
 
 type LucideIcon = React.ComponentType<{ className?: string; 'aria-hidden'?: boolean }>
@@ -52,10 +54,13 @@ const platformColumn: MegaMenuItem[] = [
 ]
 
 const governanceColumn: MegaMenuItem[] = [
-  { name: 'ASIC RG 265', href: '/ai-governance/regulations/australia', description: 'Australian market integrity', icon: Scale },
-  { name: 'EU AI Act', href: '/ai-governance/regulations/european-union', description: 'High-risk system compliance', icon: FileCheck },
-  { name: 'SEC/CFTC', href: '/ai-governance/regulations/united-states', description: 'US financial standards', icon: Building2 },
-  { name: 'MiCA Framework', href: '/ai-governance/regulations', description: 'Crypto-asset regulation', icon: Coins },
+  { name: 'Regulations Overview', href: '/ai-governance/regulations', description: 'All regions & comparison', icon: Globe },
+  ...countryRegs.map((r) => ({
+    name: r.country,
+    href: `/ai-governance/regulations/${r.slug}`,
+    description: r.framework,
+    icon: Scale,
+  })),
 ]
 
 const developersColumn: MegaMenuItem[] = [

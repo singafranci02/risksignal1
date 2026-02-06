@@ -18,54 +18,52 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Breadcrumb Navigation */}
-      <div className="border-b border-gray-200 bg-gray-50">
+    <div className="min-h-screen">
+      {/* Breadcrumb */}
+      <div className="border-b border-white/10 bg-slate-900/50">
         <div className="mx-auto max-w-7xl px-6 py-4">
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+            <Link href="/" className="transition-colors hover:text-white">Home</Link>
             <span>/</span>
-            <Link href="/ai-governance" className="hover:text-blue-600 transition-colors">AI Governance</Link>
+            <Link href="/ai-governance" className="transition-colors hover:text-white">AI Governance</Link>
             <span>/</span>
-            <Link href="/ai-governance/regulations" className="hover:text-blue-600 transition-colors">Regulations</Link>
+            <Link href="/ai-governance/regulations" className="transition-colors hover:text-white">Regulations</Link>
             <span>/</span>
-            <span className="font-semibold text-gray-900">{reg.country}</span>
+            <span className="font-semibold text-white">{reg.country}</span>
           </div>
         </div>
       </div>
 
-      {/* Hero Section with Professional Image */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-blue-700 py-20">
-        <div className="absolute inset-0 overflow-hidden">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-20">
+        <div className="absolute inset-0">
           <Image
             src="/images/hero/about-hero.png"
-            alt={`${reg.country} regulatory landscape`}
+            alt=""
             fill
             className="object-cover opacity-20"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-900/80" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </div>
-        
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/50 to-slate-950/80" />
+
         <div className="relative mx-auto max-w-7xl px-6">
-          <div className="flex items-center gap-4 mb-6">
+          <div className="mb-6 flex items-center gap-4">
             <span className="text-5xl">{reg.flag}</span>
             <div>
-              <h1 className="text-5xl font-bold text-white mb-2">
+              <h1 className="mb-2 text-5xl font-bold text-white">
                 {reg.country} Regulatory Compliance
               </h1>
-              <p className="text-2xl text-blue-100">{reg.framework}</p>
+              <p className="text-2xl text-sky-200">{reg.framework}</p>
             </div>
           </div>
-          
-          <div className="mt-8 rounded-xl border border-white/20 bg-white/10 p-6 backdrop-blur-md max-w-4xl">
+          <div className="max-w-4xl rounded-xl border border-white/20 bg-white/10 p-6 backdrop-blur-md">
             <div className="flex items-start gap-3">
-              <Building2 className="h-6 w-6 text-blue-200 flex-shrink-0 mt-1" />
+              <Building2 className="mt-1 h-6 w-6 flex-shrink-0 text-sky-400" />
               <div>
-                <h2 className="text-xl font-semibold text-white mb-2">{reg.body}</h2>
-                <p className="text-lg leading-relaxed text-blue-50">
-                  {reg.summary}
-                </p>
+                <h2 className="mb-2 text-xl font-semibold text-white">{reg.body}</h2>
+                <p className="text-lg leading-relaxed text-slate-300">{reg.summary}</p>
               </div>
             </div>
           </div>
@@ -74,70 +72,62 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
 
       {/* Main Content */}
       <div className="mx-auto max-w-7xl px-6 py-16">
-        
         {/* Quick Stats */}
-        <div className="grid gap-6 md:grid-cols-3 mb-16">
-          <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
-            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
-              <Shield className="h-6 w-6 text-blue-600" />
+        <div className="mb-16 grid gap-6 md:grid-cols-3">
+          <div className="rounded-xl border border-white/10 bg-slate-800/80 p-6 shadow-lg backdrop-blur-sm">
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-sky-500/20">
+              <Shield className="h-6 w-6 text-sky-400" />
             </div>
-            <h3 className="font-bold text-gray-900 mb-2">Framework</h3>
-            <p className="text-sm text-gray-600">{reg.framework}</p>
+            <h3 className="mb-2 font-bold text-white">Framework</h3>
+            <p className="text-sm text-slate-400">{reg.framework}</p>
           </div>
-          
-          <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-green-50 to-white p-6 shadow-sm">
-            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100">
-              <CheckCircle2 className="h-6 w-6 text-green-600" />
+          <div className="rounded-xl border border-white/10 bg-slate-800/80 p-6 shadow-lg backdrop-blur-sm">
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-500/20">
+              <CheckCircle2 className="h-6 w-6 text-emerald-400" />
             </div>
-            <h3 className="font-bold text-gray-900 mb-2">Requirements</h3>
-            <p className="text-sm text-gray-600">{reg.requirements.length} Key Areas</p>
+            <h3 className="mb-2 font-bold text-white">Requirements</h3>
+            <p className="text-sm text-slate-400">{reg.requirements.length} Key Areas</p>
           </div>
-          
-          <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-sm">
-            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
-              <Award className="h-6 w-6 text-blue-600" />
+          <div className="rounded-xl border border-white/10 bg-slate-800/80 p-6 shadow-lg backdrop-blur-sm">
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-sky-500/20">
+              <Award className="h-6 w-6 text-sky-400" />
             </div>
-            <h3 className="font-bold text-gray-900 mb-2">Kuneo Solutions</h3>
-            <p className="text-sm text-gray-600">{reg.kuneoSolutions.length} Compliance Tools</p>
+            <h3 className="mb-2 font-bold text-white">Kuneo Solutions</h3>
+            <p className="text-sm text-slate-400">{reg.kuneoSolutions.length} Compliance Tools</p>
           </div>
         </div>
 
-        {/* Accordion Sections */}
-        <div className="space-y-4 mb-16">
-          
-          {/* Requirements Accordion */}
-          <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+        {/* Accordions */}
+        <div className="mb-16 space-y-4">
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-slate-800/80 shadow-lg backdrop-blur-sm">
             <button
               onClick={() => toggleAccordion('requirements')}
-              className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-white/5"
             >
               <div className="flex items-center gap-3">
-                <FileText className="h-6 w-6 text-blue-600" />
-                <h2 className="text-2xl font-bold text-gray-900">Regulatory Requirements</h2>
+                <FileText className="h-6 w-6 text-sky-400" />
+                <h2 className="text-2xl font-bold text-white">Regulatory Requirements</h2>
               </div>
-              <ChevronDown className={`h-6 w-6 text-gray-400 transition-transform ${openAccordion === 'requirements' ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`h-6 w-6 text-slate-400 transition-transform ${openAccordion === 'requirements' ? 'rotate-180' : ''}`} />
             </button>
-            
             {openAccordion === 'requirements' && (
-              <div className="border-t border-gray-200 p-6 bg-gray-50">
-                <p className="text-gray-600 mb-6">
+              <div className="border-t border-white/10 bg-slate-900/50 p-6">
+                <p className="mb-6 text-slate-400">
                   What {reg.body} expects from financial AI systems operating in {reg.country}.
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   {reg.requirements.map((req, idx) => (
                     <div
                       key={idx}
-                      className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                      className="rounded-lg border border-white/10 bg-slate-800/80 p-5"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-600">
+                        <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-sky-500/20 text-sm font-bold text-sky-400">
                           {idx + 1}
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-bold text-gray-900 mb-2">
-                            {req.title}
-                          </h3>
-                          <p className="text-sm text-gray-600 leading-relaxed">{req.detail}</p>
+                          <h3 className="mb-2 font-bold text-white">{req.title}</h3>
+                          <p className="text-sm leading-relaxed text-slate-400">{req.detail}</p>
                         </div>
                       </div>
                     </div>
@@ -147,39 +137,35 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
             )}
           </div>
 
-          {/* Kuneo Solutions Accordion */}
-          <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-slate-800/80 shadow-lg backdrop-blur-sm">
             <button
               onClick={() => toggleAccordion('solutions')}
-              className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-white/5"
             >
               <div className="flex items-center gap-3">
-                <Shield className="h-6 w-6 text-green-600" />
-                <h2 className="text-2xl font-bold text-gray-900">How Kuneo Ensures Compliance</h2>
+                <Shield className="h-6 w-6 text-emerald-400" />
+                <h2 className="text-2xl font-bold text-white">How Kuneo Ensures Compliance</h2>
               </div>
-              <ChevronDown className={`h-6 w-6 text-gray-400 transition-transform ${openAccordion === 'solutions' ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`h-6 w-6 text-slate-400 transition-transform ${openAccordion === 'solutions' ? 'rotate-180' : ''}`} />
             </button>
-            
             {openAccordion === 'solutions' && (
-              <div className="border-t border-gray-200 p-6 bg-gray-50">
-                <p className="text-gray-600 mb-6">
+              <div className="border-t border-white/10 bg-slate-900/50 p-6">
+                <p className="mb-6 text-slate-400">
                   Hardware-secured infrastructure that makes {reg.framework} compliance automatic.
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   {reg.kuneoSolutions.map((solution, idx) => (
                     <div
                       key={idx}
-                      className="rounded-lg border border-green-200 bg-white p-5 shadow-sm"
+                      className="rounded-lg border border-white/10 bg-slate-800/80 p-5"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
-                          <CheckCircle2 className="h-5 w-5 text-green-600" />
+                        <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500/20">
+                          <CheckCircle2 className="h-5 w-5 text-emerald-400" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-bold text-gray-900 mb-2">
-                            {solution.title}
-                          </h3>
-                          <p className="text-sm text-gray-600 leading-relaxed">{solution.description}</p>
+                          <h3 className="mb-2 font-bold text-white">{solution.title}</h3>
+                          <p className="text-sm leading-relaxed text-slate-400">{solution.description}</p>
                         </div>
                       </div>
                     </div>
@@ -189,38 +175,34 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
             )}
           </div>
 
-          {/* Implementation Steps Accordion */}
-          <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-slate-800/80 shadow-lg backdrop-blur-sm">
             <button
               onClick={() => toggleAccordion('implementation')}
-              className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-white/5"
             >
               <div className="flex items-center gap-3">
-                <AlertCircle className="h-6 w-6 text-blue-600" />
-                <h2 className="text-2xl font-bold text-gray-900">Implementation Roadmap</h2>
+                <AlertCircle className="h-6 w-6 text-sky-400" />
+                <h2 className="text-2xl font-bold text-white">Implementation Roadmap</h2>
               </div>
-              <ChevronDown className={`h-6 w-6 text-gray-400 transition-transform ${openAccordion === 'implementation' ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`h-6 w-6 text-slate-400 transition-transform ${openAccordion === 'implementation' ? 'rotate-180' : ''}`} />
             </button>
-            
             {openAccordion === 'implementation' && (
-              <div className="border-t border-gray-200 p-6 bg-gray-50">
-                <p className="text-gray-600 mb-6">
+              <div className="border-t border-white/10 bg-slate-900/50 p-6">
+                <p className="mb-6 text-slate-400">
                   Step-by-step process to achieve {reg.framework} compliance with Kuneo.
                 </p>
                 <div className="space-y-4">
                   {reg.implementationSteps.map((step, idx) => (
                     <div
                       key={idx}
-                      className="flex gap-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                      className="flex gap-4 rounded-lg border border-white/10 bg-slate-800/80 p-5"
                     >
                       <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
                         {step.step}
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-gray-900 mb-2">
-                          {step.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                        <h3 className="mb-2 font-bold text-white">{step.title}</h3>
+                        <p className="text-sm leading-relaxed text-slate-400">{step.description}</p>
                       </div>
                     </div>
                   ))}
@@ -229,22 +211,20 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
             )}
           </div>
 
-          {/* Official Resources Accordion */}
-          <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-slate-800/80 shadow-lg backdrop-blur-sm">
             <button
               onClick={() => toggleAccordion('resources')}
-              className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-white/5"
             >
               <div className="flex items-center gap-3">
-                <BookOpen className="h-6 w-6 text-gray-600" />
-                <h2 className="text-2xl font-bold text-gray-900">Official Resources</h2>
+                <BookOpen className="h-6 w-6 text-slate-400" />
+                <h2 className="text-2xl font-bold text-white">Official Resources</h2>
               </div>
-              <ChevronDown className={`h-6 w-6 text-gray-400 transition-transform ${openAccordion === 'resources' ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`h-6 w-6 text-slate-400 transition-transform ${openAccordion === 'resources' ? 'rotate-180' : ''}`} />
             </button>
-            
             {openAccordion === 'resources' && (
-              <div className="border-t border-gray-200 p-6 bg-gray-50">
-                <p className="text-gray-600 mb-6">
+              <div className="border-t border-white/10 bg-slate-900/50 p-6">
+                <p className="mb-6 text-slate-400">
                   Direct links to {reg.body} guidance and documentation.
                 </p>
                 <div className="space-y-3">
@@ -254,13 +234,13 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
                       href={resource.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 transition-all hover:border-blue-300 hover:shadow-md"
+                      className="group flex items-center justify-between rounded-lg border border-white/10 bg-slate-800/80 p-4 transition-all hover:border-sky-500/30 hover:bg-slate-800"
                     >
                       <div className="flex items-center gap-3">
-                        <ExternalLink className="h-5 w-5 text-blue-600" />
-                        <span className="font-semibold text-gray-900 group-hover:text-blue-600">{resource.title}</span>
+                        <ExternalLink className="h-5 w-5 text-sky-400" />
+                        <span className="font-semibold text-white group-hover:text-sky-400">{resource.title}</span>
                       </div>
-                      <ArrowRight className="h-5 w-5 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:text-blue-600" />
+                      <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-sky-400" />
                     </a>
                   ))}
                 </div>
@@ -270,44 +250,44 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
         </div>
 
         {/* Other Countries */}
-        <div className="border-t border-gray-200 pt-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Explore Other Regions</h3>
+        <div className="border-t border-white/10 pt-16">
+          <h3 className="mb-8 text-2xl font-bold text-white">Explore Other Regions</h3>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {countryRegs
-              .filter(r => r.slug !== reg.slug)
+              .filter((r) => r.slug !== reg.slug)
               .map((otherReg) => (
                 <Link
                   key={otherReg.slug}
                   href={`/ai-governance/regulations/${otherReg.slug}`}
-                  className="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-blue-300 hover:shadow-md"
+                  className="group flex items-center gap-4 rounded-xl border border-white/10 bg-slate-800/80 p-4 shadow-lg backdrop-blur-sm transition-all hover:border-sky-500/30 hover:bg-slate-800"
                 >
                   <span className="text-3xl">{otherReg.flag}</span>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 group-hover:text-blue-600">
+                    <h4 className="font-semibold text-white group-hover:text-sky-400">
                       {otherReg.country}
                     </h4>
-                    <p className="text-xs text-gray-500">{otherReg.framework}</p>
+                    <p className="text-xs text-slate-500">{otherReg.framework}</p>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:text-blue-600" />
+                  <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-sky-400" />
                 </Link>
               ))}
           </div>
         </div>
       </div>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-700 py-16">
+      {/* CTA */}
+      <section className="border-t border-white/10 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-4 text-4xl font-bold text-white">
             Ready to Deploy Compliant AI Agents in {reg.country}?
           </h2>
-          <p className="mb-8 text-xl text-blue-100">
-            Get started with Kuneo's {reg.framework}-compliant governance infrastructure
+          <p className="mb-8 text-xl text-slate-300">
+            Get started with Kuneo&apos;s {reg.framework}-compliant governance infrastructure
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/profile"
-              className="group flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-semibold text-blue-900 shadow-xl transition-all hover:scale-105"
+              className="group flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-xl transition-all hover:scale-105 hover:shadow-blue-500/50"
             >
               <span>Start Free Trial</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
