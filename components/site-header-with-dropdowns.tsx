@@ -77,8 +77,8 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
               </button>
               
               {activeDropdown === 'products' && (
-                <div className="absolute top-full left-0 mt-2 w-80 rounded-xl border border-gray-200 bg-white shadow-2xl">
-                  <div className="p-2">
+                <div className="absolute top-full left-0 pt-2 w-80">
+                  <div className="rounded-xl border border-gray-200 bg-white shadow-2xl p-2">
                     {productsMenu.map((item) => (
                       <Link
                         key={item.name}
@@ -111,8 +111,8 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
               </button>
               
               {activeDropdown === 'solutions' && (
-                <div className="absolute top-full left-0 mt-2 w-80 rounded-xl border border-gray-200 bg-white shadow-2xl">
-                  <div className="p-2">
+                <div className="absolute top-full left-0 pt-2 w-80">
+                  <div className="rounded-xl border border-gray-200 bg-white shadow-2xl p-2">
                     {solutionsMenu.map((item) => (
                       <Link
                         key={item.name}
@@ -145,8 +145,8 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
               </button>
               
               {activeDropdown === 'resources' && (
-                <div className="absolute top-full left-0 mt-2 w-80 rounded-xl border border-gray-200 bg-white shadow-2xl">
-                  <div className="p-2">
+                <div className="absolute top-full left-0 pt-2 w-80">
+                  <div className="rounded-xl border border-gray-200 bg-white shadow-2xl p-2">
                     {resourcesMenu.map((item) => (
                       <Link
                         key={item.name}
