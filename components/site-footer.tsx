@@ -66,17 +66,17 @@ export default function SiteFooter() {
           {/* Brand Column */}
           <div className="col-span-2">
             <Link href="/" className="group inline-flex items-center gap-3">
-              <div className="relative flex h-12 w-12 shrink-0 items-center justify-center">
+              <div className="relative h-12 w-12 shrink-0 overflow-hidden">
                 <Image
-                  src="/logo.svg"
+                  src="/logo.png"
                   alt="Kuneo"
-                  width={48}
-                  height={40}
-                  className="h-12 w-auto"
+                  fill
+                  className="object-cover object-center scale-125"
+                  sizes="48px"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-[#0F2A6B]">
+                <span className="text-xl font-bold tracking-tight text-[#2A538D]">
                   Kuneo
                 </span>
                 <span className="text-xs font-medium uppercase tracking-wider text-gray-500">

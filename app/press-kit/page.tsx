@@ -54,7 +54,7 @@ export default function PressKitPage() {
                   Download SVG
                 </a>
                 <a
-                  href="/logo.svg"
+                  href="/logo.png"
                   className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700"
                 >
                   Alternate Logo

@@ -38,20 +38,20 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-xl shadow-sm">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center justify-between py-4">
-          {/* Logo: geometric K + dot (deep blue) */}
+          {/* Logo: your picture (K + dot), cropped to trim border */}
           <Link href="/" className="group flex items-center gap-3">
-            <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Kuneo"
-                width={40}
-                height={34}
-                className="h-10 w-auto"
+                fill
+                className="object-cover object-center scale-125"
                 priority
+                sizes="40px"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-[#0F2A6B]">
+              <span className="text-xl font-bold tracking-tight text-[#2A538D]">
                 Kuneo
               </span>
               <span className="text-[10px] font-medium uppercase tracking-wider text-gray-500">
