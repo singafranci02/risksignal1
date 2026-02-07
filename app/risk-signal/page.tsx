@@ -70,8 +70,7 @@ export default function RiskSignalPage() {
             </div>
 
             <div className="relative flex justify-center lg:justify-end">
-              <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-white/5 p-4 shadow-2xl backdrop-blur-sm">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/30" />
+              <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-white/10 p-4 shadow-2xl backdrop-blur-sm">
                 <div className="relative h-[360px] w-[360px] sm:h-[420px] sm:w-[420px] lg:h-[480px] lg:w-[480px]">
                   <Image
                     src="/images/hero/risk-signal-anchor.png"
