@@ -54,7 +54,9 @@ export default function ProfileForm() {
       })
 
       if (signUpError) {
-        setError(signUpError.message)
+        const message = signUpError.message ?? "Unable to sign up."
+        const alreadyUsed = /already registered|already exists|registered/i.test(message)
+        setError(alreadyUsed ? "An account already uses this email." : message)
         setLoading(false)
         return
       }
