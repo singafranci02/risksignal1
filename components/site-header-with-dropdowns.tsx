@@ -73,8 +73,8 @@ const developersColumn: MegaMenuItem[] = [
 ]
 
 const resourcesColumn: MegaMenuItem[] = [
-  { name: 'Whitepapers', href: '/insights', description: 'In-depth risk research', icon: FileText },
-  { name: 'Case Studies', href: '/insights', description: 'Institutional deployments', icon: Briefcase },
+  { name: 'Research Papers', href: '/insights', description: 'In-depth risk research', icon: FileText },
+  { name: 'AI Agent News', href: '/insights', description: 'Trading & agentic AI updates', icon: Briefcase },
   { name: 'Status Page', href: '/status', description: 'System uptime & health', icon: Signal },
   { name: 'About Kuneo', href: '/about', description: 'Our mission & team', icon: Info },
 ]

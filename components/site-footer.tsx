@@ -31,7 +31,7 @@ export default function SiteFooter() {
       { label: 'Documentation', href: '/ai-governance/documentation' },
       { label: 'Regulations', href: '/ai-governance/regulations' },
       { label: 'Rule Library', href: '/ai-governance/rules' },
-      { label: 'Insights', href: '/insights' },
+      { label: 'AI Agent News', href: '/insights' },
       { label: 'Help Center', href: '/help-center' },
     ],
   }
