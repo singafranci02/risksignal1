@@ -70,13 +70,13 @@ export default function RiskSignalPage() {
             </div>
 
             <div className="relative flex justify-center lg:justify-end">
-              <div className="relative h-[396px] w-[396px] sm:h-[462px] sm:w-[462px] lg:h-[528px] lg:w-[528px]">
+              <div className="relative h-[320px] w-[320px] sm:h-[360px] sm:w-[360px] lg:h-[420px] lg:w-[420px]">
                 <Image
                   src="/images/hero/risk-signal-anchor.png"
                   alt="RiskSignal visual anchor"
                   fill
-                  className="object-contain object-center drop-shadow-[0_25px_70px_rgba(0,0,0,0.45)]"
-                  sizes="(min-width: 1024px) 528px, 462px"
+                  className="object-contain object-center"
+                  sizes="(min-width: 1024px) 420px, 360px"
                   priority
                 />
               </div>
