@@ -128,6 +128,38 @@ function AuditorPortalSignedIn() {
         </div>
       </section>
 
+      {/* Conformity Report Templates */}
+      <section className="border-t border-gray-200 bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Conformity Report Templates
+              </h2>
+              <p className="mt-2 text-gray-600">
+                Presumption-of-conformity outputs for ASIC and EU AI Act audits.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/downloads/conformity-report-template.pdf"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105"
+              >
+                Download PDF
+                <FileCheck className="h-4 w-4" />
+              </a>
+              <a
+                href="/downloads/conformity-report-template.json"
+                className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-5 py-3 text-sm font-semibold text-blue-700 transition-all hover:border-blue-300"
+              >
+                Download JSON
+                <Shield className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Decision Rationale Feed */}
       <section className="border-t border-gray-200 bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-6">
@@ -323,6 +355,36 @@ function AuditorPortalPreview() {
                 Inventory of every active NHI, permission scope, and hardware root-of-trust status.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Template access */}
+      <section className="border-t border-gray-200 bg-slate-50 py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Conformity Report Templates
+            </h2>
+            <p className="mt-2 text-gray-600">
+              Available in both PDF and JSON once you sign in.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105"
+            >
+              Sign in to download
+              <FileCheck className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/ai-governance"
+              className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-5 py-3 text-sm font-semibold text-blue-700 transition-all hover:border-blue-300"
+            >
+              Learn about Verifiable Proofs
+              <Shield className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

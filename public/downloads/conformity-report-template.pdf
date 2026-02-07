@@ -1,0 +1,103 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1541 >>
+stream
+BT
+/F1 18 Tf
+72 720 Td
+(Conformity Report Template) Tj
+/F1 11 Tf
+0 -16 Td
+(Issuer: Kuneo Conformity Hub) Tj
+0 -16 Td
+(Report ID: CR-2026-08-0001) Tj
+0 -16 Td
+(Generated: 2026-08-15T12:00:00Z) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Organization: Example Trading Firm) Tj
+0 -16 Td
+(Jurisdiction: EU) Tj
+0 -16 Td
+(Auditor: Independent Assurance LLC) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Annex III Assessment) Tj
+0 -16 Td
+(- Category: Financial services & critical infrastructure) Tj
+0 -16 Td
+(- Risk level: High) Tj
+0 -16 Td
+(- Presumption of conformity: Enabled) Tj
+0 -16 Td
+(- System risk score: 0.27) Tj
+0 -16 Td
+(- Drift index: 1.2%) Tj
+0 -16 Td
+(- Pre-trade latency: 42ms) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Controls) Tj
+0 -16 Td
+(- Identity: Non-Human Identity \(NHI\) with silicon-level rotation) Tj
+0 -16 Td
+(- Trust: Hardware-attested permission to act) Tj
+0 -16 Td
+(- Latency: Pre-trade deterministic sequence modeling) Tj
+0 -16 Td
+(- Audit: Immutable signatures verified by TEEs) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Decision Rationale Feed \(XAI\)) Tj
+0 -16 Td
+(- TX-8421: Drawdown breach | Policy MaxDailyLoss: -2.5%) Tj
+0 -16 Td
+(- TX-8418: Whitelist violation | Policy AssetAllowlist: BTC, ETH) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Agent Registry) Tj
+0 -16 Td
+(- NHI-7f2a9b4d: Active | TEE Attested • Intel SGX) Tj
+0 -16 Td
+(- NHI-1c4d8e9f: Active | TEE Attested • AMD SEV) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Zero-Knowledge Privacy) Tj
+0 -16 Td
+(- Strategy code visibility: Never exposed to Kuneo) Tj
+0 -16 Td
+(- Shared: Risk signal telemetry + compliance artifacts only) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001834 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1904
+%%EOF

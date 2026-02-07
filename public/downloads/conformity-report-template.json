@@ -1,0 +1,67 @@
+{
+  "report_id": "CR-2026-08-0001",
+  "generated_at": "2026-08-15T12:00:00Z",
+  "issuer": {
+    "name": "Kuneo Conformity Hub",
+    "version": "1.0",
+    "contact": "compliance@getkuneo.com"
+  },
+  "organization": {
+    "name": "Example Trading Firm",
+    "jurisdiction": "EU",
+    "auditor": "Independent Assurance LLC"
+  },
+  "annex_iii_assessment": {
+    "category": "Financial services & critical infrastructure",
+    "risk_level": "High",
+    "presumption_of_conformity": true,
+    "risk_score": 0.27,
+    "drift_index": 0.012,
+    "pre_trade_latency_ms": 42
+  },
+  "controls": {
+    "identity": "Non-Human Identity (NHI) with silicon-level rotation",
+    "trust": "Hardware-attested permission to act",
+    "latency": "Pre-trade deterministic sequence modeling",
+    "audit": "Immutable signatures verified by TEEs"
+  },
+  "agent_registry": [
+    {
+      "nhi_id": "NHI-7f2a9b4d",
+      "permissions": "Trade: BTC/ETH, Max 1.5% allocation",
+      "root_of_trust": "TEE Attested • Intel SGX",
+      "status": "Active"
+    },
+    {
+      "nhi_id": "NHI-1c4d8e9f",
+      "permissions": "Trade: Index ETFs, Max 2% drawdown",
+      "root_of_trust": "TEE Attested • AMD SEV",
+      "status": "Active"
+    }
+  ],
+  "decision_rationale_feed": [
+    {
+      "trade_id": "TX-8421",
+      "blocked_reason": "Drawdown breach",
+      "policy": "MaxDailyLoss: -2.5%",
+      "risk_score": 0.91,
+      "evidence_hash": "0x8d2f4e...a1b7c9"
+    },
+    {
+      "trade_id": "TX-8418",
+      "blocked_reason": "Whitelist violation",
+      "policy": "AssetAllowlist: BTC, ETH",
+      "risk_score": 0.88,
+      "evidence_hash": "0x4f92ab...e9c120"
+    }
+  ],
+  "zero_knowledge_privacy": {
+    "strategy_code_visibility": "Never exposed to Kuneo",
+    "shared": "Risk signal telemetry + compliance artifacts only"
+  },
+  "attestations": {
+    "signature_scheme": "TEE-bound ECDSA",
+    "audit_log_hash": "0x5c21e1...c3f2aa",
+    "compliance_window": "2026-08-01 to 2026-08-31"
+  }
+}
