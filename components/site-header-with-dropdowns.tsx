@@ -49,7 +49,7 @@ interface SiteHeaderProps {
 
 const platformColumn: MegaMenuItem[] = [
   { name: 'Digital Helmet', href: '/retail-shield', description: 'Hardware-secured execution', icon: Shield },
-  { name: 'RiskSignal Engine', href: '/ai-governance', description: 'Real-time policy enforcement', icon: Cpu },
+  { name: 'RiskSignal Dashboard', href: '/risk-signal', description: 'Retail investor risk cockpit', icon: Cpu },
   { name: 'Verifiable Proofs', href: '/ai-governance', description: 'Cryptographic audit trails', icon: Lock },
   { name: 'Agentic Drift', href: '/dashboard', description: 'Behavioral anomaly detection', icon: Activity, badge: 'Beta' },
 ]
@@ -215,9 +215,9 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
             </div>
           </Link>
 
-          {/* Desktop: Platform, Governance, Developers, Resources (each with dropdown) + Pricing */}
+          {/* Desktop: Products, Governance, Developers, Resources (each with dropdown) + Pricing */}
           <nav className="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="Main">
-            {navItem('platform', 'Platform', 'platform-menu')}
+            {navItem('platform', 'Products', 'platform-menu')}
             {navItem('governance', 'Governance', 'governance-menu')}
             {navItem('developers', 'Developers', 'developers-menu')}
             {navItem('resources', 'Resources', 'resources-menu')}
@@ -280,7 +280,7 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
             className="lg:hidden border-t border-gray-200 bg-gray-50/80 py-4"
           >
             <div className="space-y-1">
-              {/* Platform accordion */}
+              {/* Products accordion */}
               <div>
                 <button
                   type="button"
@@ -288,7 +288,7 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
                   className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-gray-900 hover:bg-gray-100"
                   aria-expanded={mobileAccordion === 'platform'}
                 >
-                  Platform
+                  Products
                   <ChevronDown
                     className={`h-4 w-4 transition-transform ${mobileAccordion === 'platform' ? 'rotate-180' : ''}`}
                   />

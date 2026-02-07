@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Solutions pages
   const solutionsPages = [
     { route: '/retail-shield', priority: 0.95 }, // High priority - new flagship page
+    { route: '/risk-signal', priority: 0.9 },
   ].map(({ route, priority }) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
