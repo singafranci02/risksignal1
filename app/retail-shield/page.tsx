@@ -27,7 +27,7 @@ export default function RetailShieldPage() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </div>
         
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             {/* Badge */}
             <div className="text-center lg:text-left">
@@ -85,19 +85,16 @@ export default function RetailShieldPage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-white/5 p-4 shadow-2xl backdrop-blur-sm lg:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/30" />
-                <div className="relative aspect-[16/10]">
-                  <Image
-                    src="/images/hero/digital-helmet-anchor.png"
-                    alt="Digital Helmet visual anchor"
-                    fill
-                    className="object-contain object-center"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    priority
-                  />
-                </div>
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative aspect-[16/10] w-full max-w-[520px]">
+                <Image
+                  src="/images/hero/digital-helmet-anchor.png"
+                  alt="Digital Helmet visual anchor"
+                  fill
+                  className="object-contain object-center drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+                  sizes="(min-width: 1024px) 520px, 100vw"
+                  priority
+                />
               </div>
             </div>
           </div>
