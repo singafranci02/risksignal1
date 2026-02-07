@@ -108,13 +108,13 @@ export default function Home() {
       </section>
 
       {/* The Three Pillars */}
-      <section className="bg-slate-900/20 py-24">
+      <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               The Three Pillars of Agent Governance
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-400">
+            <p className="mx-auto max-w-2xl text-lg text-slate-600">
               A complete infrastructure stack for deploying autonomous financial agents with institutional-grade safety
             </p>
           </div>
@@ -312,25 +312,25 @@ export default function Home() {
       </section>
 
       {/* Problem/Solution */}
-      <section className="border-t border-white/10 bg-slate-900/20 py-24">
+      <section className="border-t border-gray-200 bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
             <div>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-red-500/10 border border-red-500/20 px-4 py-2 text-sm font-semibold text-red-400">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-red-500/10 border border-red-500/20 px-4 py-2 text-sm font-semibold text-red-600">
                 <AlertTriangle className="h-4 w-4" />
                 The Challenge
               </div>
-              <h2 className="mb-6 text-3xl font-bold text-white">
+              <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 AI Agents Are Powerful But Unpredictable
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-red-500/20">
-                    <Terminal className="h-5 w-5 text-red-400" />
+                    <Terminal className="h-5 w-5 text-red-500" />
                   </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-white">Black Box Problem</h3>
-                    <p className="text-slate-400">
+                    <h3 className="mb-2 font-semibold text-gray-900">Black Box Problem</h3>
+                    <p className="text-slate-600">
                       AI agents make thousands of decisions per second. Without infrastructure-level
                       constraints, you have no guarantee they will stay within your risk parameters.
                     </p>
@@ -338,11 +338,11 @@ export default function Home() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-red-500/20">
-                    <FileCheck className="h-5 w-5 text-red-400" />
+                    <FileCheck className="h-5 w-5 text-red-500" />
                   </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-white">Regulatory Uncertainty</h3>
-                    <p className="text-slate-400">
+                    <h3 className="mb-2 font-semibold text-gray-900">Regulatory Uncertainty</h3>
+                    <p className="text-slate-600">
                       Global regulators (SEC, MiCA, ASIC) are demanding explainability and audit trails.
                       Traditional AI deployments cannot provide this level of transparency.
                     </p>
@@ -350,11 +350,11 @@ export default function Home() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-red-500/20">
-                    <Building2 className="h-5 w-5 text-red-400" />
+                    <Building2 className="h-5 w-5 text-red-500" />
                   </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-white">Institutional Barriers</h3>
-                    <p className="text-slate-400">
+                    <h3 className="mb-2 font-semibold text-gray-900">Institutional Barriers</h3>
+                    <p className="text-slate-600">
                       Banks, hedge funds, and treasuries cannot deploy AI agents without mathematical
                       proof of compliance and immutable audit trails.
                     </p>
@@ -363,21 +363,21 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 text-sm font-semibold text-emerald-400">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 text-sm font-semibold text-emerald-600">
                 <CheckCircle2 className="h-4 w-4" />
                 Our Solution
               </div>
-              <h2 className="mb-6 text-3xl font-bold text-white">
+              <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 Infrastructure-Level Governance & Enforcement
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-sky-500/20">
-                    <Lock className="h-5 w-5 text-sky-400" />
+                    <Lock className="h-5 w-5 text-sky-500" />
                   </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-white">Mathematical Constraints</h3>
-                    <p className="text-slate-400">
+                    <h3 className="mb-2 font-semibold text-gray-900">Mathematical Constraints</h3>
+                    <p className="text-slate-600">
                       Our Digital Helmet uses hardware-secured TEEs to enforce rules at the infrastructure
                       level. Your agent cannot violate constraints—it's mathematically impossible.
                     </p>
@@ -385,11 +385,11 @@ export default function Home() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-sky-500/20">
-                    <BarChart3 className="h-5 w-5 text-sky-400" />
+                    <BarChart3 className="h-5 w-5 text-sky-500" />
                   </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-white">Immutable Audit Trails</h3>
-                    <p className="text-slate-400">
+                    <h3 className="mb-2 font-semibold text-gray-900">Immutable Audit Trails</h3>
+                    <p className="text-slate-600">
                       Every decision, transaction, and state change is logged with cryptographic proof.
                       Export certified audit reports for regulators in one click.
                     </p>
@@ -397,11 +397,11 @@ export default function Home() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-sky-500/20">
-                    <Shield className="h-5 w-5 text-sky-400" />
+                    <Shield className="h-5 w-5 text-sky-500" />
                   </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-white">Verifiable Execution</h3>
-                    <p className="text-slate-400">
+                    <h3 className="mb-2 font-semibold text-gray-900">Verifiable Execution</h3>
+                    <p className="text-slate-600">
                       Zero-knowledge proofs allow third parties to verify your agent's compliance without
                       revealing proprietary strategies or sensitive data.
                     </p>
