@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllRegulationSlugs } from '@/data/regulations'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://getkuneo.com'
+  const baseUrl = 'https://www.getkuneo.com'
   
   // Core pages (highest priority)
   const corePages = [
