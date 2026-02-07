@@ -73,16 +73,16 @@ export default async function LoginPage() {
         <div className="w-full max-w-md">
           <div className="mb-8 text-center lg:hidden">
             <Link href="/" className="inline-flex items-center gap-2">
-              <div className="relative h-7 w-7">
+              <div className="relative h-8 w-8">
                 <Image
                   src="/images/logos/kuneo-logo.png"
                   alt="Kuneo"
                   fill
                   className="object-contain object-center"
-                  sizes="28px"
+                  sizes="32px"
                 />
               </div>
-              <span className="text-2xl font-bold text-[#1e3a5f]">Kuneo</span>
+              <span className="text-[28px] font-bold text-[#0b1f3a]">Kuneo</span>
             </Link>
           </div>
 

@@ -204,17 +204,17 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
         <div className="flex items-center justify-between py-3">
           {/* Logo = Home (no separate Home button); height matches Kuneo + tagline */}
           <Link href="/" className="group flex items-center gap-2" aria-label="Kuneo – Home">
-            <div className="relative h-7 w-7 shrink-0 sm:h-8 sm:w-8">
+            <div className="relative h-8 w-8 shrink-0 sm:h-9 sm:w-9">
               <Image
                 src="/images/logos/kuneo-logo.png"
                 alt=""
                 fill
                 className="object-contain object-center transition-transform group-hover:scale-105"
                 priority
-                sizes="32px"
+                sizes="36px"
               />
             </div>
-            <span className="text-2xl font-bold tracking-tight text-[#1e3a5f]">
+            <span className="text-[28px] font-bold tracking-tight text-[#0b1f3a]">
               Kuneo
             </span>
           </Link>
