@@ -69,10 +69,10 @@ const developersColumn: MegaMenuItem[] = [
   { name: 'Python SDK', href: '/ai-governance/documentation', description: 'Build compliant agents', icon: Code2 },
   { name: 'MT5 Bridge', href: '/how-it-works', description: 'MetaTrader integration', icon: Plug },
   { name: 'API Reference', href: '/ai-governance/documentation', description: 'Technical documentation', icon: BookOpen },
+  { name: 'Community', href: '/community', description: 'Questions, help & discussion', icon: Users },
 ]
 
 const resourcesColumn: MegaMenuItem[] = [
-  { name: 'Community', href: '/community', description: 'Questions, help & discussion', icon: Users },
   { name: 'Whitepapers', href: '/insights', description: 'In-depth risk research', icon: FileText },
   { name: 'Case Studies', href: '/insights', description: 'Institutional deployments', icon: Briefcase },
   { name: 'Status Page', href: '/status', description: 'System uptime & health', icon: Signal },
@@ -83,7 +83,6 @@ const toolsColumn: MegaMenuItem[] = [
   { name: 'Dashboard', href: '/dashboard', description: 'Operations and agent control', icon: Activity },
   { name: 'RiskSignal', href: '/risk-signal', description: 'Retail investor risk cockpit', icon: Cpu },
   { name: "Auditor's Portal", href: '/auditor-portal', description: 'Conformity assessment hub', icon: FileCheck },
-  { name: 'Community', href: '/community', description: 'Questions, help & discussion', icon: Users },
   { name: 'Profile', href: '/profile', description: 'Account and preferences', icon: User },
 ]
 
@@ -204,7 +203,7 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center justify-between py-3">
           {/* Logo = Home (no separate Home button); height matches Kuneo + tagline */}
-          <Link href="/" className="group flex items-center gap-3" aria-label="Kuneo – Home">
+          <Link href="/" className="group flex items-center" aria-label="Kuneo – Home">
             <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
               <Image
                 src="/images/logos/kuneo-logo.png"
@@ -214,14 +213,6 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
                 priority
                 sizes="48px"
               />
-            </div>
-            <div className="flex flex-col justify-center">
-              <span className="text-2xl font-bold tracking-tight text-[#1e3a5f] sm:text-[1.875rem]">
-                Kuneo
-              </span>
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-gray-500">
-                AI Agent Governance
-              </span>
             </div>
           </Link>
 
