@@ -22,7 +22,7 @@ export default function RiskSignalPage() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[2fr_1fr] lg:items-center">
             <div className="text-center lg:text-left">
               <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
                 <Activity className="h-4 w-4 text-blue-300" />
@@ -69,19 +69,16 @@ export default function RiskSignalPage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-white/5 p-4 shadow-2xl backdrop-blur-sm lg:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/30" />
-                <div className="relative aspect-[9/16]">
-                  <Image
-                    src="/images/hero/risk-signal-anchor.png"
-                    alt="RiskSignal visual anchor"
-                    fill
-                    className="object-contain object-center"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    priority
-                  />
-                </div>
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative h-[320px] w-[180px] sm:h-[360px] sm:w-[200px] lg:h-[420px] lg:w-[235px]">
+                <Image
+                  src="/images/hero/risk-signal-anchor.png"
+                  alt="RiskSignal visual anchor"
+                  fill
+                  className="object-contain object-center drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+                  sizes="(min-width: 1024px) 235px, 200px"
+                  priority
+                />
               </div>
             </div>
           </div>
