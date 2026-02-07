@@ -17,8 +17,13 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Kuneo - AI Agent Governance Platform",
-  description: "The infrastructure layer for autonomous financial agents. Deploy AI with absolute certainty through verifiable execution.",
+  metadataBase: new URL('https://www.getkuneo.com'),
+  title: 'Kuneo - AI Agent Governance Platform',
+  description:
+    'The infrastructure layer for autonomous financial agents. Deploy AI with absolute certainty through verifiable execution.',
+  alternates: {
+    canonical: './',
+  },
 }
 
 export default function RootLayout({
