@@ -1,8 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
+import { redirect } from "next/navigation"
 import { ArrowRight, Shield, Zap, Eye, CheckCircle2, TrendingUp, Activity, Lock, Clock, Bell, BarChart3, Terminal, Layers, Brain, FileCheck, AlertTriangle, Users, Building2, Sparkles, ChevronRight } from "lucide-react"
 
-export default function Home() {
+export default function Home({ searchParams }: { searchParams?: { code?: string } }) {
+  if (searchParams?.code) {
+    const code = encodeURIComponent(searchParams.code)
+    redirect(`/auth/callback?code=${code}&next=/auth/confirmed`)
+  }
   return (
     <div>
       {/* Hero – Retail Shield theme: deep navy + grid + cyan accent */}

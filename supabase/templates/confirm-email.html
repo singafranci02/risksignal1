@@ -20,14 +20,18 @@
                 <h1 style="margin:0 0 12px 0; font-size:24px; line-height:32px; color:#0f172a;">
                   Confirm your email to activate Kuneo
                 </h1>
-                <p style="margin:0 0 20px 0; font-size:15px; line-height:24px; color:#334155;">
+                <p style="margin:0 0 16px 0; font-size:15px; line-height:24px; color:#334155;">
                   You are one step away from activating your Kuneo account. Confirming your email enables
                   secure access to deterministic controls, verifiable audit trails, and real-time agent governance.
+                </p>
+                <p style="margin:0 0 20px 0; font-size:13px; line-height:20px; color:#475569;">
+                  Kuneo is built for 2026-grade compliance. We verify identity at the hardware layer and
+                  keep every decision traceable. This confirmation links your account to a secure, audited profile.
                 </p>
                 <table role="presentation" cellspacing="0" cellpadding="0" style="margin:24px 0;">
                   <tr>
                     <td>
-                      <a href="{{ .ConfirmationURL }}" style="display:inline-block; background:#2563eb; color:#ffffff; text-decoration:none; font-weight:600; padding:12px 20px; border-radius:10px;">
+                      <a href="{{ .ConfirmationURL }}&redirect_to={{ .SiteURL }}/auth/callback?next=/auth/confirmed" style="display:inline-block; background:#2563eb; color:#ffffff; text-decoration:none; font-weight:600; padding:12px 20px; border-radius:10px;">
                         Confirm email
                       </a>
                     </td>
@@ -51,10 +55,13 @@
                   If the button above does not work, copy and paste this link into your browser:
                 </p>
                 <p style="margin:0 0 24px 0; font-size:12px; line-height:18px; color:#2563eb; word-break:break-all;">
-                  {{ .ConfirmationURL }}
+                  {{ .ConfirmationURL }}&redirect_to={{ .SiteURL }}/auth/callback?next=/auth/confirmed
                 </p>
-                <p style="margin:0 0 16px 0; font-size:13px; line-height:20px; color:#64748b;">
+                <p style="margin:0 0 12px 0; font-size:13px; line-height:20px; color:#64748b;">
                   This link expires soon for your protection. If you did not request this email, you can safely ignore it.
+                </p>
+                <p style="margin:0 0 12px 0; font-size:13px; line-height:20px; color:#64748b;">
+                  Security tip: never forward this email or share your confirmation link.
                 </p>
                 <p style="margin:0; font-size:13px; line-height:20px; color:#64748b;">
                   Need help? Reply to this email or contact <a href="mailto:compliance@getkuneo.com" style="color:#2563eb;">compliance@getkuneo.com</a>.
