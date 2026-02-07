@@ -188,6 +188,104 @@ export const insights: InsightArticle[] = [
     ]
   },
   {
+    slug: 'asic-rg-265-agentic-ai-checklist',
+    title: 'Navigating the 2026 ASIC RG 265 Framework for Agentic AI: A Regulatory Compliance Checklist for Market Integrity',
+    description: 'A compliance checklist for agentic AI under ASIC’s 2026 market integrity reforms.',
+    category: 'Regulation',
+    readTime: '13 min read',
+    published: '2026-02-04',
+    updated: '2026-02-04',
+    summary:
+      'The structural evolution of the Australian financial ecosystem in 2026 is defined by the transition from automated order processing to the deployment of fully autonomous agentic AI within capital markets.',
+    keyTakeaways: [],
+    sections: [
+      {
+        heading: '',
+        body: [
+          'The structural evolution of the Australian financial ecosystem in 2026 is defined by the transition from automated order processing to the deployment of fully autonomous "agentic AI" within capital markets. In response to this shift, the Australian Securities and Investments Commission (ASIC) has identified the "regulatory perimeter" gap as a critical systemic risk, specifically highlighting that while agentic AI offers efficiency in price discovery, its capability to independently plan and act compounds the risk of market volatility and "flash crashes" if governance is immature. To address these technological fragilities, ASIC released a comprehensive suite of updates in December 2025 to Regulatory Guide 265 (RG 265), governing market integrity rules for participants of securities markets, and Regulatory Guide 266 (RG 266) for futures markets. These updates are part of the third stage of ASIC’s work to simplify and clarify the Resilience Rules set out in Chapters 8A and 8B of the ASIC Market Integrity Rules (MIRs), requiring market participants to prove that their autonomous agents are operating within a framework of technological and operational resilience that aligns with international best practices from IOSCO.',
+          'Central to the 2026 compliance landscape is the modernized, technology-neutral definition of "Trading Algorithms" and "Trading Systems" introduced via Consultation Paper 386 (CP 386). ASIC now defines a Trading Algorithm as any computer algorithm that automatically determines substantive order parameters—such as timing, price, or quantity—with limited or no human intervention. This definition intentionally captures the current practice of agentic AI, ensuring that these autonomous actors are subject to the same oversight as traditional algorithmic strategies. Under the revised MIRs, market participants must maintain a rigorous lifecycle for these agents, beginning with initial certification and testing before deployment, followed by mandatory reviews whenever a material change occurs in the model’s weights or policy logic. To meet these standards, firms are increasingly utilizing Trusted Execution Environments (TEEs) to provide a hardware-level "Digital Helmet," which cryptographically proves to auditors that the version of the agent running in production is the exact, untampered version that received compliance certification.',
+          'The "kill switch" requirement has emerged as the most critical technical mandate for autonomous systems in 2026. ASIC rules now explicitly require participants to have in-place controls that enable the immediate suspension, limitation, or prohibition of any Trading Algorithm that displays aberrant behavior or threatens market integrity. This mandate is supplemented by the requirement for real-time monitoring of all trading messages, moving beyond the previous "close to real-time" standard. For firms deploying agentic AI, this necessitates a move from post-hoc reporting to a deterministic compliance model. By anchoring risk-based "position collars" and "velocity logic" within silicon-enforced enclaves, institutions can ensure that if an agent attempts a trade that violates a pre-defined policy—such as during a period of extreme "agentic drift"—the enclave simply refuses to sign the transaction, stopping the violation before it ever reaches the matching engine. This technological hardening allows firms to satisfy ASIC's 2026 priorities regarding the "variable maturity" of AI governance across the sector.',
+          'From a legal and fiduciary perspective, the 2026 RG 265 checklist reinforces the non-delegable nature of directors\' duties under the Corporations Act 2001 (Cth). ASIC Chair Joe Longo has emphasized that while AI can assist in meeting duties, it cannot be used to outsource or abdicate them. Section 180 requires directors to exercise a degree of care and diligence that a reasonable person would exercise, which in the context of autonomous trading translates to an obligation to understand and interrogate the algorithms they deploy. Legal precedents such as ASIC v Healey (the "Centro case") establish that directors cannot claim ignorance of complex systems as a defense; they must satisfy themselves as to the reliability and competence of the AI "delegate" and ensure that meaningful human oversight remains in the loop for all material decisions. To discharge these duties, the 2026 compliance checklist requires firms to maintain clear records of AI systems, conduct regular conformity assessments, and establish robust crisis management frameworks that address the specific vulnerabilities of third-party AI service providers and the risk of "market monoculture" caused by synchronized algorithmic de-risking.',
+          'Ultimately, the path to 2026 ASIC compliance requires a holistic integration of hardware-level security, real-time monitoring, and disciplined corporate governance. The "Year of Accountability" demands that financial institutions treat non-human identities (NHIs) and autonomous agents as first-class citizens in their risk frameworks, ensuring that every action taken at machine speed is cryptographically tied to a verifiable identity and an authorized policy. Firms that fail to adopt these enhanced resilience measures risk not only regulatory penalties and "stop orders" on their products but also significant reputational damage as regulators intensify their scrutiny of "AI-washing" and misleading conduct in the digital asset and fintech sectors. By late 2026, the standard for market participation will be defined by "compliance by construction," where the ability to prove controllability through a TEE-backed "Digital Helmet" becomes the prerequisite for maintaining trust in Australia\'s increasingly autonomous financial ecosystem.'
+        ]
+      }
+    ],
+    references: [
+      {
+        title: 'RG 265 update: technological and operational resilience (Regulatory Tracker 2025)',
+        url: 'https://www.asic.gov.au/regulatory-resources/find-a-document/regulatory-document-updates/regulatory-tracker/regulatory-tracker-2025/'
+      },
+      {
+        title: 'ASIC 2026 Outlook: AI governance maturity',
+        url: 'https://niba.com.au/news/asic-releases-2026-key-issues-outlook-impact-of-ai-top-of-mind'
+      },
+      {
+        title: 'AI regulatory landscape to get tougher in 2026',
+        url: 'https://www.ifa.com.au/ai-regulatory-landscape-to-get-tougher-in-2026/'
+      },
+      {
+        title: 'Changes to ASIC rules on trading systems and algorithms',
+        url: 'https://www.ashurst.com/en/insights/keeping-up-with-the-times-changes-to-asic-rules-on-trading-systems-and-algorithms/'
+      },
+      {
+        title: 'ASIC 2026 Corporate Plan: AI as critical regulatory risk',
+        url: 'https://www.mexc.com/news/570759'
+      },
+      {
+        title: 'ASIC Key Issues Outlook 2026',
+        url: 'https://www.asic.gov.au/about-asic/news-centre/news-items/key-issues-outlook-2026/'
+      },
+      {
+        title: 'ASIC moves to modernise trading system rules for AI',
+        url: 'https://www.asic.gov.au/about-asic/news-centre/news-items/asic-moves-to-modernise-trading-system-rules-to-keep-pace-with-technology-and-ai/'
+      },
+      {
+        title: 'CP 386: Proposed amendments to MIRs (trading systems and automated trading)',
+        url: 'https://www.asic.gov.au/regulatory-resources/find-a-document/consultations/cp-386-proposed-amendments-to-the-asic-market-integrity-rules-trading-systems-and-automated-trading/'
+      },
+      {
+        title: 'Directors\' duties and AI governance frameworks',
+        url: 'https://www.cornwalls.com.au/ai-directors-duties/'
+      },
+      {
+        title: 'Directors cannot abdicate duties to AI',
+        url: 'https://mccullough.com.au/2025/12/05/directors-checked-their-duties-twice/'
+      },
+      {
+        title: 'Directors and AI adoption: duty of care and diligence',
+        url: 'https://mg-australia.com.au/the-ai-boardroom-how-directors-can-ethically-leverage-tools-without-abdicating-duty/'
+      },
+      {
+        title: 'AI in the boardroom and business judgment rule',
+        url: 'https://www.governanceinstitute.com.au/news_media/ai-in-the-boardroom-could-robots-soon-be-running-companies/'
+      },
+      {
+        title: 'ASIC simplifies technological and operational resilience guidance',
+        url: 'https://www.asic.gov.au/about-asic/news-centre/news-items/asic-improves-and-simplifies-technological-and-operational-resilience-guidance/'
+      },
+      {
+        title: 'AI governance in 2026: from experimentation to maturity',
+        url: 'https://www.governanceinstitute.com.au/news_media/ai-governance-in-2026-from-experimentation-to-maturity/'
+      },
+      {
+        title: 'Industry feedback on CP 386 transition periods',
+        url: 'https://lawcouncil.au/resources/submissions/consultation-paper-386-proposed-amendments-to-the-asic-market-integrity-rules-trading-systems-and-automated-trading'
+      },
+      {
+        title: 'ASIC risk radar: agentic AI planning capability risk',
+        url: 'https://www.brokernews.com.au/news/breaking-news/asics-2026-risk-radar-ai-cyber-super-and-banking-in-the-firing-line-288806.aspx'
+      },
+      {
+        title: 'ASIC flags flashpoints for 2026',
+        url: 'https://dynamicbusiness.com/topics/news/asic-flags-11-flashpoints-that-could-shake-businesses-in-2026.html'
+      },
+      {
+        title: 'Emerging threats to Australia’s financial system in 2026',
+        url: 'https://www.mpamag.com/au/news/general/asic-flags-emerging-threats-to-australias-financial-system-in-2026/563268'
+      }
+    ]
+  },
+  {
     slug: 'nhi-crisis-agentic-finance',
     title: 'The NHI Crisis in Agentic Finance: Securing the Invisible Workforce of 2026',
     description: 'Non-human identities now outnumber humans in finance. Securing autonomous agents is the new control plane.',
