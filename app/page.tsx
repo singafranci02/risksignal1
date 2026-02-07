@@ -107,6 +107,164 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Agent Debt */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              The Reality of Agent Debt in 2026
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Retail and mid-tier agents built on fast demos are accumulating hidden risk until
+              a single drift event cascades into a catastrophic failure.
+            </p>
+          </div>
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            <div className="rounded-2xl border border-red-200 bg-red-50 p-8">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-red-100">
+                <AlertTriangle className="h-6 w-6 text-red-600" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Operational Drift</h3>
+              <p className="text-sm font-semibold text-red-700">Success rates &lt; 55%</p>
+              <p className="mt-2 text-gray-600">
+                Unmanaged agents look impressive in demos but degrade in live markets.
+                Drift compounds until behavior leaves the risk envelope entirely.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-8">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-100">
+                <Users className="h-6 w-6 text-amber-600" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Cascading Failures</h3>
+              <p className="text-sm font-semibold text-amber-700">Multi-agent chain reactions</p>
+              <p className="mt-2 text-gray-600">
+                A single hallucinated figure in one agent can trigger reorder storms and
+                exposure breaches across MT5-style multi-agent stacks.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-blue-200 bg-blue-50 p-8">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+                <Brain className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Memory Poisoning</h3>
+              <p className="text-sm font-semibold text-blue-700">Intent hijacking</p>
+              <p className="mt-2 text-gray-600">
+                Without hardware isolation, unexpected market inputs can override safety rules,
+                creating silent, high-risk intent drift.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deterministic Advantage */}
+      <section className="border-t border-gray-200 bg-slate-50 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              The Deterministic Advantage
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              2026 institutions demand guaranteed controls—not probabilistic promises.
+            </p>
+          </div>
+          <div className="mt-12 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
+            <div className="grid grid-cols-1 gap-0 border-b border-gray-200 bg-slate-100 px-6 py-4 text-sm font-semibold text-gray-700 md:grid-cols-3">
+              <div>Feature</div>
+              <div>Status Quo</div>
+              <div>Kuneo Engine Value</div>
+            </div>
+            {[
+              {
+                feature: 'Identity',
+                status: 'Service accounts / API keys',
+                kuneo: 'Non-Human Identity (NHI) with silicon-level rotation',
+              },
+              {
+                feature: 'Trust',
+                status: 'Model performance & backtests',
+                kuneo: 'Hardware-attested permission to act',
+              },
+              {
+                feature: 'Latency',
+                status: 'Post-trade software checks',
+                kuneo: 'Ultra-low latency pre-trade sequence modeling',
+              },
+              {
+                feature: 'Audit',
+                status: 'Manual JSON logs (editable)',
+                kuneo: 'Immutable signatures verified by TEEs',
+              },
+            ].map((row) => (
+              <div
+                key={row.feature}
+                className="grid grid-cols-1 gap-4 border-b border-gray-200 px-6 py-5 text-sm text-gray-700 md:grid-cols-3"
+              >
+                <div className="font-semibold text-gray-900">{row.feature}</div>
+                <div>{row.status}</div>
+                <div className="font-medium text-gray-900">{row.kuneo}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ROI Through Risk Mitigation */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              ROI Through Risk Mitigation
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              The business case has shifted from efficiency gains to measurable financial risk reduction.
+            </p>
+          </div>
+          <div className="mt-16 grid gap-8 md:grid-cols-2">
+            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50">
+                <CheckCircle2 className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">
+                Reduced Insurance Premiums
+              </h3>
+              <p className="text-gray-600">
+                Proactive compliance and deterministic controls are becoming a competitive advantage
+                for lowering cyber-insurance and operational risk costs.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
+                <Lock className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">
+                Zero-Knowledge Privacy
+              </h3>
+              <p className="text-gray-600">
+                Kuneo never sees the strategy code—only the risk signal. Proprietary alpha stays private
+                while regulators get the transparency they demand.
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/auditor-portal"
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105"
+            >
+              Open the Auditor’s Portal
+              <FileCheck className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/risk-signal"
+              className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-6 py-3 text-sm font-semibold text-blue-700 transition-all hover:border-blue-300"
+            >
+              Explore RiskSignal ROI
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* The Three Pillars */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">

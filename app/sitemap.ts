@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // AI Governance section
   const governancePages = [
+    { route: '/auditor-portal', priority: 0.9 },
     { route: '/ai-governance/documentation', priority: 0.9 },
     { route: '/ai-governance/regulations', priority: 0.9 },
     { route: '/ai-governance/rules', priority: 0.85 },

@@ -55,6 +55,7 @@ const platformColumn: MegaMenuItem[] = [
 ]
 
 const governanceColumn: MegaMenuItem[] = [
+  { name: "Auditor's Portal", href: '/auditor-portal', description: 'EU AI Act conformity hub', icon: FileCheck, badge: 'New' },
   { name: 'Regulations Overview', href: '/ai-governance/regulations', description: 'All regions & comparison', icon: Globe },
   ...countryRegs.map((r) => ({
     name: r.country,
