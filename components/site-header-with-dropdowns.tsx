@@ -51,12 +51,11 @@ interface SiteHeaderProps {
 const platformColumn: MegaMenuItem[] = [
   { name: 'Digital Helmet', href: '/retail-shield', description: 'Hardware-secured execution', icon: Shield },
   { name: 'RiskSignal Dashboard', href: '/risk-signal', description: 'Retail investor risk cockpit', icon: Cpu },
-  { name: 'Verifiable Proofs', href: '/ai-governance', description: 'Cryptographic audit trails', icon: Lock },
+  { name: 'Verifiable Proofs', href: '/auditor-portal', description: 'Conformity evidence & audit trails', icon: Lock },
   { name: 'Agentic Drift', href: '/dashboard', description: 'Behavioral anomaly detection', icon: Activity, badge: 'Beta' },
 ]
 
 const governanceColumn: MegaMenuItem[] = [
-  { name: "Auditor's Portal", href: '/auditor-portal', description: 'EU AI Act conformity hub', icon: FileCheck, badge: 'New' },
   { name: 'Regulations Overview', href: '/ai-governance/regulations', description: 'All regions & comparison', icon: Globe },
   ...countryRegs.map((r) => ({
     name: r.country,
@@ -226,12 +225,12 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
             </div>
           </Link>
 
-          {/* Desktop: Products, Governance, Developers, Resources/Tools (each with dropdown) + Pricing */}
+          {/* Desktop: Products/Tools, Governance, Developers, Resources (each with dropdown) + Pricing */}
           <nav className="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="Main">
-            {navItem('platform', 'Products', 'platform-menu')}
+            {!user ? navItem('platform', 'Products', 'platform-menu') : navItem('tools', 'Tools', 'tools-menu')}
             {navItem('governance', 'Governance', 'governance-menu')}
             {navItem('developers', 'Developers', 'developers-menu')}
-            {!user ? navItem('resources', 'Resources', 'resources-menu') : navItem('tools', 'Tools', 'tools-menu')}
+            {navItem('resources', 'Resources', 'resources-menu')}
             <Link
               href="/pricing"
               className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 hover:text-gray-900"
@@ -291,22 +290,22 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
             className="lg:hidden border-t border-gray-200 bg-gray-50/80 py-4"
           >
             <div className="space-y-1">
-              {/* Products accordion */}
+              {/* Products / Tools accordion */}
               <div>
                 <button
                   type="button"
-                  onClick={() => toggleAccordion('platform')}
+                  onClick={() => toggleAccordion(user ? 'tools' : 'platform')}
                   className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-gray-900 hover:bg-gray-100"
-                  aria-expanded={mobileAccordion === 'platform'}
+                  aria-expanded={mobileAccordion === (user ? 'tools' : 'platform')}
                 >
-                  Products
+                  {user ? 'Tools' : 'Products'}
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform ${mobileAccordion === 'platform' ? 'rotate-180' : ''}`}
+                    className={`h-4 w-4 transition-transform ${mobileAccordion === (user ? 'tools' : 'platform') ? 'rotate-180' : ''}`}
                   />
                 </button>
-                {mobileAccordion === 'platform' && (
+                {mobileAccordion === (user ? 'tools' : 'platform') && (
                   <div className="space-y-0.5 pl-4 pb-2">
-                    {platformColumn.map((item) => {
+                    {(user ? toolsColumn : platformColumn).map((item) => {
                       const Icon = item.icon
                       return (
                       <Link
