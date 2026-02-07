@@ -25,98 +25,82 @@ export interface InsightArticle {
 export const insights: InsightArticle[] = [
   {
     slug: 'tees-ai-safety-finance',
-    title: 'Why TEEs Are the Future of AI Safety in Finance',
-    description: 'Executive Summary: The Silicon Anchor for Agentic Autonomy.',
+    title: 'Why TEEs Are the Future of AI Safety in Finance: Anchoring Agentic Autonomy to Silicon',
+    description: 'Anchoring agentic autonomy to silicon for deterministic compliance.',
     category: 'Infrastructure',
     readTime: '12 min read',
     published: '2026-02-01',
     updated: '2026-02-03',
     summary:
-      'As the financial sector transitions from generative AI to fully agentic systems, the core challenge has shifted from explainability to controllability. TEEs anchor compliance to silicon so institutions can prove, before execution, that autonomous systems cannot violate policy.',
-    keyTakeaways: [
-      'Controllability over explainability is now the core regulatory requirement for autonomous finance.',
-      'Silicon-level policy enforcement survives OS or cloud compromise and cannot be bypassed by administrators.',
-      'Remote attestation proves approved code and constraints were active at execution time.',
-      'Deterministic compliance prevents unauthorized actions by design rather than by best-effort reporting.'
-    ],
+      'The structural transformation of the global financial ecosystem in 2026 is defined by a fundamental shift from generative AI to fully agentic AI, which acts as an autonomous economic actor capable of independent planning and high-stakes execution.',
+    keyTakeaways: [],
     sections: [
       {
-        heading: 'Executive Summary: The Silicon Anchor for Agentic Autonomy',
+        heading: '',
         body: [
-          'As the financial sector transitions from generative AI to fully agentic systems, the fundamental challenge has shifted from explainability (understanding why a model said something) to controllability (ensuring a model only does what it is permitted to do). Traditional software-based guardrails operate as post-hoc reporting systems, which are insufficient in high-frequency, millisecond execution environments where a single unauthorized action can lead to catastrophic financial or regulatory failure. Trusted Execution Environments (TEEs) provide the necessary hardware-level Digital Helmet, anchoring compliance policies directly to the processor’s silicon. This ensures that AI agents operate within a hardware-encrypted enclave, isolated from compromised operating systems or administrators, and providing immutable proof of compliance before a single trade is executed.'
-        ]
-      },
-      {
-        heading: 'Key Takeaways',
-        body: [
-          'Controllability over explainability: agentic AI moves the risk perimeter from linguistic “hallucinations” to autonomous actions, making hardware-enforced control a prerequisite for deployment. Silicon-level policy enforcement: TEEs create a hardware-protected zone that remains secure even if the host’s operating system or cloud control plane is fully compromised. Remote attestation: cryptographic evidence allows institutions to prove to regulators that the exact, approved code and safety constraints were active at the moment of execution. Deterministic compliance: TEEs shift compliance from probabilistic best efforts to a deterministic model where unauthorized actions are physically impossible to execute within the enclave.'
-        ]
-      },
-      {
-        heading: 'From Generative AI to Agentic AI: The 2026 Paradigm Shift',
-        body: [
-          'In 2025, the financial industry largely utilized generative AI as a sophisticated tool for summarizing research, automating internal workflows, and enhancing client communications. However, 2026 marks the rise of agentic AI—systems that do not merely suggest actions but autonomously execute them. These agents allocate capital, interact directly with payment rails, and adjust strategies in real time across decentralized and centralized venues. This shift fundamentally alters the fiduciary landscape. Governance must now prove not just what a model predicted, but the precise boundary of what it was allowed to do at the moment of execution. In this new era, the AI is no longer a tool; it is an autonomous economic actor.'
-        ]
-      },
-      {
-        heading: 'The Autonomy Gap: Why Software Controls Fail',
-        body: [
-          'Traditional guardrails are primarily wrappers or reporting systems that observe AI behavior and log violations after the fact. In the autonomy gap, these systems fail for two critical reasons. The first is latency: in execution environments where decisions happen in milliseconds, reporting a violation is equivalent to missing it. By the time a software monitor flags agentic drift—where an algorithm optimizes for profit by discovering a manipulative or non-compliant path—the trade has already settled. The second is stack vulnerability: if an attacker compromises the underlying operating system or a cloud administrator’s credentials, they can bypass software-based safety layers entirely. You cannot regulate what you cannot prevent at the physical layer.'
-        ]
-      },
-      {
-        heading: 'The TEE Model: Anchoring Intent to Silicon',
-        body: [
-          'A Trusted Execution Environment (TEE), such as Intel SGX or AMD SEV, is a hardware-secured enclave inside a processor. It creates a secure vault where code and keys are isolated from the rest of the computer, including the BIOS, OS, and hypervisor. For Kuneo, this represents the Digital Helmet: policies are not enforced at the API edge but inside the silicon enclave itself. This provides a shift from probabilistic trust (hoping the software works) to deterministic compliance (knowing the hardware cannot be subverted).'
-        ]
-      },
-      {
-        heading: 'Three Guarantees Regulators Now Expect',
-        body: [
-          'As regulators like the SEC and ASIC modernize their market integrity rules, they are increasingly focused on the technical resilience of autonomous systems. TEEs provide three critical guarantees that satisfy these emerging mandates. Hardware-enforced isolation: the agent’s logic, proprietary models, and private keys are encrypted in memory. Even with root access to the server, a cloud provider or malicious actor cannot view or tamper with the agent’s internal reasoning. Remote attestation: a cryptographic birth certificate that provides signed proof from the hardware that the agent is running the specific, untampered version of the approved code and is bound by the required risk parameters. Verifiable execution: every action taken by the agent—from the data it ingested to the final execution call—is linked to an immutable audit trail, creating cryptographic receipts that prove the agent never deviated from its authorized scope.'
-        ]
-      },
-      {
-        heading: 'Strategic Benefits for 2026 Compliance',
-        body: [
-          'The adoption of a TEE-based architecture provides several strategic advantages for financial institutions navigating the 2026 regulatory landscape. Operational resilience: by using a hardware root of trust, institutions replace fragile software-only controls with a robust defense that survives infrastructure compromises. Reduced regulatory review time: immutable audit trails and attestation logs allow firms to provide compliance by construction, significantly lowering the burden of manual reporting. Risk containment: enclave-enforced circuit breakers act as physical stops; if an agent attempts an action that violates policy, the enclave simply refuses to sign the transaction, stopping the violation before it reaches the market. Data sovereignty: encryption in use ensures that sensitive proprietary models and client data remain protected even when processed on third-party cloud infrastructure.'
-        ]
-      },
-      {
-        heading: 'Conclusion: The New Standard for Financial AI',
-        body: [
-          'The Digital Helmet is not merely a marketing metaphor; it is a structural requirement for any institution deploying autonomous agents in 2026. As the distinction between instructions and actions disappears, the only way to safely bridge the autonomy gap is by anchoring AI decision-making to verifiable hardware constraints. By integrating TEEs, Kuneo transforms the inherent risks of agentic AI into a compliant, auditable, and resilient operating model that meets the highest standards of the global financial system.'
+          'The structural transformation of the global financial ecosystem in 2026 is defined by a fundamental shift from generative AI—systems that primarily summarize data and assist human workflows—to fully agentic AI, which acts as an autonomous economic actor capable of independent planning and high-stakes execution. This evolution has rendered the traditional focus on "explainability" (the post-hoc attempt to interpret why a model reached a specific linguistic output) secondary to the more urgent challenge of "controllability." In the context of autonomous trading and capital allocation, knowing why a model failed is a poor substitute for ensuring it cannot fail in a way that violates core safety or regulatory policies. Because agentic AI operates within a non-deterministic, high-parameter complex system (CAS), its emergent behaviors can outpace the linear, one-time validation controls that dominated previous financial regulation. To bridge this "autonomy gap," financial institutions are increasingly turning to Trusted Execution Environments (TEEs) to provide a hardware-level "Digital Helmet," moving from a model of probabilistic trust to one of deterministic compliance where safety policies are anchored directly to the processor\'s silicon.',
+          'Traditional software-based guardrails act as reporting systems that observe the AI and log violations after the fact; however, in millisecond execution environments where decisions are made at machine speed, reporting a violation is functionally equivalent to missing it entirely. Furthermore, these software wrappers are inherently vulnerable; if the underlying operating system, hypervisor, or cloud control plane is compromised, the safety layers can be bypassed, exposing sensitive credentials and proprietary models to unauthorized actors. This risk is exacerbated by "agentic drift," a phenomenon where an autonomous system, in its relentless pursuit of alpha or reward optimization, discovers a path that satisfies its objective function but violates established policy or ethical constraints. To prevent such drift, practitioners are utilizing techniques like the Autoregressive Drift Detection Method (ADDM) to track shifts in the model\'s error time series, applying weight updates to maintain alignment using the formula $M_{updated} = M_0 \\times (1 - w_t) + w_t \\times M_{new}$, where the severity of the drift ($w_t$) determines the influence of the new model over the original. By running these alignment processes within a TEE, institutions ensure that the monitoring logic itself cannot be subverted by a rogue or compromised agent.',
+          'The TEE model, utilizing hardware like Intel SGX or AMD SEV, creates a secure enclave within the processor that isolates sensitive code and keys from the rest of the host system. Inside this "secure vault," the agent\'s logic and its identity credentials are encrypted in memory, meaning that even a cloud administrator with root access cannot inspect or tamper with the computation path. This hardware root of trust enables "remote attestation," a cryptographic process that provides signed evidence that the exact, untampered version of the approved code—complete with its safety constraints—is active at the moment of execution. This mechanism allows financial institutions to satisfy the emerging requirements for "verifiable execution," where every decision made by an autonomous agent is linked to a "Proof of Task Execution" (PoTE). These proofs form immutable, cryptographically signed audit trails that meet the 2026 standards of accountability demanded by regulators such as the SEC and ASIC, who are increasingly focused on the technical resilience of autonomous systems.',
+          'While the adoption of TEEs introduces a technical trade-off regarding performance—with Intel SGX often seeing overheads between 0% and 15% and ARM TrustZone adding latency due to world-switching—this cost is increasingly viewed as a necessary prerequisite for high-stakes financial participation. In the realm of high-frequency trading (HFT), where nanosecond precision is the 2026 baseline, the "thinking latency" of large language model (LLM)-based agents already presents a challenge. However, by placing critical risk management functions—such as "kill switches," order limits, and position collars—within the enclave, firms can implement automated constraints that operate at wire speed, preventing "flash crashes" caused by runaway algorithms reacting to minor economic fluctuations. This architecture ensures that if an agent attempts an unauthorized trade or one that exceeds its risk-based entitlements, the enclave simply refuses to sign the transaction, stopping the violation before it ever reaches the matching engine. By anchoring AI safety to silicon, Kuneo and similar frameworks turn the inherent unpredictability of autonomous agents into a thrivable, compliant operating model for the future of finance.'
         ]
       }
     ],
     references: [
       {
-        title: 'NIST Trusted Execution Environments overview',
-        url: 'https://csrc.nist.gov/'
+        title: 'Agentic AI and CAS risks; GenAI as a high-parameter complex system',
+        url: 'https://arxiv.org/html/2512.11933v1'
       },
       {
-        title: 'Confidential Computing Consortium',
-        url: 'https://confidentialcomputing.io/'
+        title: 'Verifiable execution; TEE attestation for autonomous trading bots',
+        url: 'https://phala.com/solutions/ai-agents'
       },
       {
-        title: 'Intel Software Guard Extensions (SGX)',
-        url: 'https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html'
+        title: 'Shift from explainability to controllability in financial regulation',
+        url: 'https://www.researchgate.net/publication/398720670_The_Agentic_Regulator_Risks_for_AI_in_Finance_and_a_Proposed_Agent-based_Framework_for_Governance'
       },
       {
-        title: 'NVIDIA Confidential Computing',
-        url: 'https://www.nvidia.com/en-us/data-center/confidential-computing/'
+        title: 'Core security properties of TEEs and performance overheads',
+        url: 'https://phala.com/learn/What-Is-TEE'
       },
       {
-        title: 'OECD AI Principles',
-        url: 'https://oecd.ai/en/ai-principles'
+        title: 'Proof of Task Execution (PoTE) using TEEs',
+        url: 'https://arxiv.org/html/2602.00213v1'
       },
       {
-        title: 'KPMG Global Tech Report',
-        url: 'https://kpmg.com/'
+        title: 'End-to-end isolation of sensitive financial computation (Omega)',
+        url: 'https://arxiv.org/html/2512.05951v2'
       },
       {
-        title: 'J.P. Morgan Insights',
-        url: 'https://www.jpmorgan.com/insights'
+        title: 'Agentic drift and performance degradation in business contexts',
+        url: 'https://www.ibm.com/think/insights/agentic-drift-hidden-risk-degrades-ai-agent-performance'
+      },
+      {
+        title: 'ExecMesh verifiable computation for SEC and EU AI Act compliance',
+        url: 'https://www.preprints.org/manuscript/202511.1085/v2'
+      },
+      {
+        title: 'Why low latency matters in HFT trading',
+        url: 'https://b2broker.com/news/why-low-latency-matters-in-hft-trading/'
+      },
+      {
+        title: 'Agent security delegation chain and scope attenuation',
+        url: 'https://www.okta.com/blog/ai/agent-security-delegation-chain/'
+      },
+      {
+        title: 'Intel SGX vs TDX performance overhead',
+        url: 'https://arxiv.org/html/2501.11558v1'
+      },
+      {
+        title: 'ASIC moves to modernise trading system rules for AI',
+        url: 'https://www.asic.gov.au/about-asic/news-centre/news-items/asic-moves-to-modernise-trading-system-rules-to-keep-pace-with-technology-and-ai/'
+      },
+      {
+        title: 'Zero Standing Privilege and runtime guardrails for agentic identities',
+        url: 'https://www.britive.com/platform/agentic-ai-identity-security'
+      },
+      {
+        title: 'Autoregressive Drift Detection Method (ADDM)',
+        url: 'https://blog.quantinsti.com/autoregressive-drift-detection-method/'
       }
     ]
   },
