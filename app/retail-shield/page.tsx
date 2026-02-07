@@ -86,9 +86,9 @@ export default function RetailShieldPage() {
             </div>
 
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-white/5 p-4 shadow-2xl backdrop-blur-sm lg:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/30" />
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[16/10]">
                   <Image
                     src="/images/hero/digital-helmet-anchor.png"
                     alt="Digital Helmet visual anchor"
