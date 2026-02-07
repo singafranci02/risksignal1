@@ -22,48 +22,66 @@ export default function RiskSignalPage() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
-              <Activity className="h-4 w-4 text-blue-300" />
-              <span className="font-mono font-semibold text-blue-200">
-                Retail Risk Intelligence
-              </span>
-            </div>
-            <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              RiskSignal
-            </h1>
-            <p className="mb-10 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              A real-time dashboard for retail investors that turns agent activity into
-              actionable risk signals, alerts, and guardrails—without institutional overhead.
-            </p>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/dashboard"
-                className="group relative flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all hover:scale-105 hover:shadow-blue-500/50"
-              >
-                Open RiskSignal Dashboard
-                <Zap className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                href="/ai-governance"
-                className="group flex items-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
-              >
-                Explore AI Governance Stack
-                <Shield className="h-5 w-5" />
-              </Link>
-            </div>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
-              <div className="flex items-center gap-2">
-                <Eye className="h-4 w-4 text-blue-300" />
-                <span>Live risk visibility</span>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="text-center lg:text-left">
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
+                <Activity className="h-4 w-4 text-blue-300" />
+                <span className="font-mono font-semibold text-blue-200">
+                  Retail Risk Intelligence
+                </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Bell className="h-4 w-4 text-blue-300" />
-                <span>Instant anomaly alerts</span>
+              <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+                RiskSignal
+              </h1>
+              <p className="mb-10 text-lg leading-relaxed text-slate-300 sm:text-xl">
+                A real-time dashboard for retail investors that turns agent activity into
+                actionable risk signals, alerts, and guardrails—without institutional overhead.
+              </p>
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+                <Link
+                  href="/dashboard"
+                  className="group relative flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all hover:scale-105 hover:shadow-blue-500/50"
+                >
+                  Open RiskSignal Dashboard
+                  <Zap className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/ai-governance"
+                  className="group flex items-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
+                >
+                  Explore AI Governance Stack
+                  <Shield className="h-5 w-5" />
+                </Link>
               </div>
-              <div className="flex items-center gap-2">
-                <BarChart3 className="h-4 w-4 text-blue-300" />
-                <span>Portfolio heatmaps</span>
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400 lg:justify-start">
+                <div className="flex items-center gap-2">
+                  <Eye className="h-4 w-4 text-blue-300" />
+                  <span>Live risk visibility</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Bell className="h-4 w-4 text-blue-300" />
+                  <span>Instant anomaly alerts</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <BarChart3 className="h-4 w-4 text-blue-300" />
+                  <span>Portfolio heatmaps</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-white/5 p-4 shadow-2xl backdrop-blur-sm lg:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/30" />
+                <div className="relative aspect-[9/16]">
+                  <Image
+                    src="/images/hero/risk-signal-anchor.png"
+                    alt="RiskSignal visual anchor"
+                    fill
+                    className="object-contain object-center"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
