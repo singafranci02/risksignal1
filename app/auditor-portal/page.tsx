@@ -284,33 +284,48 @@ function AuditorPortalPreview() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
-              <Shield className="h-4 w-4 text-blue-300" />
-              <span className="font-mono font-semibold text-blue-200">Verifiable Proofs</span>
+          <div className="grid gap-10 lg:grid-cols-[2fr_1fr] lg:items-center">
+            <div className="text-center lg:text-left">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
+                <Shield className="h-4 w-4 text-blue-300" />
+                <span className="font-mono font-semibold text-blue-200">Verifiable Proofs</span>
+              </div>
+              <h1 className="mb-4 text-4xl font-bold text-white sm:text-5xl">
+                Auditor’s Portal Preview
+              </h1>
+              <p className="text-lg text-slate-300">
+                Part of Kuneo’s Verifiable Proofs stack. Sign in to access the Conformity Hub,
+                traceable decision rationale, and the full NHI registry.
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
+                <Link
+                  href="/login"
+                  className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-blue-900 shadow-lg transition-all hover:scale-105"
+                >
+                  Sign in to access
+                  <FileCheck className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/ai-governance"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50"
+                >
+                  Explore Verifiable Proofs
+                  <Shield className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
-            <h1 className="mb-4 text-4xl font-bold text-white sm:text-5xl">
-              Auditor’s Portal Preview
-            </h1>
-            <p className="text-lg text-slate-300">
-              Part of Kuneo’s Verifiable Proofs stack. Sign in to access the Conformity Hub,
-              traceable decision rationale, and the full NHI registry.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link
-                href="/login"
-                className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-blue-900 shadow-lg transition-all hover:scale-105"
-              >
-                Sign in to access
-                <FileCheck className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/ai-governance"
-                className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50"
-              >
-                Explore Verifiable Proofs
-                <Shield className="h-4 w-4" />
-              </Link>
+
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative h-[260px] w-[200px] sm:h-[300px] sm:w-[230px] lg:h-[340px] lg:w-[260px]">
+                <Image
+                  src="/images/hero/auditor-portal-anchor.png"
+                  alt="Auditor portal visual anchor"
+                  fill
+                  className="object-contain object-center drop-shadow-[0_18px_50px_rgba(0,0,0,0.4)]"
+                  sizes="(min-width: 1024px) 260px, 230px"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
