@@ -22,6 +22,7 @@ import {
   Briefcase,
   Newspaper,
   Signal,
+  User,
   Users,
   Info,
   Sparkles,
@@ -79,7 +80,15 @@ const resourcesColumn: MegaMenuItem[] = [
   { name: 'About Kuneo', href: '/about', description: 'Our mission & team', icon: Info },
 ]
 
-type DropdownId = 'platform' | 'governance' | 'developers' | 'resources' | null
+const toolsColumn: MegaMenuItem[] = [
+  { name: 'Dashboard', href: '/dashboard', description: 'Operations and agent control', icon: Activity },
+  { name: 'RiskSignal', href: '/risk-signal', description: 'Retail investor risk cockpit', icon: Cpu },
+  { name: "Auditor's Portal", href: '/auditor-portal', description: 'Conformity assessment hub', icon: FileCheck },
+  { name: 'Community', href: '/community', description: 'Questions, help & discussion', icon: Users },
+  { name: 'Profile', href: '/profile', description: 'Account and preferences', icon: User },
+]
+
+type DropdownId = 'platform' | 'governance' | 'developers' | 'resources' | 'tools' | null
 
 function DropdownPanel({
   items,
@@ -186,6 +195,7 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
         {id === 'governance' && <DropdownPanel items={governanceColumn} />}
         {id === 'developers' && <DropdownPanel items={developersColumn} />}
         {id === 'resources' && <DropdownPanel items={resourcesColumn} />}
+        {id === 'tools' && <DropdownPanel items={toolsColumn} />}
       </div>
     </div>
   )
@@ -216,12 +226,12 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
             </div>
           </Link>
 
-          {/* Desktop: Products, Governance, Developers, Resources (each with dropdown) + Pricing */}
+          {/* Desktop: Products, Governance, Developers, Resources/Tools (each with dropdown) + Pricing */}
           <nav className="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="Main">
             {navItem('platform', 'Products', 'platform-menu')}
             {navItem('governance', 'Governance', 'governance-menu')}
             {navItem('developers', 'Developers', 'developers-menu')}
-            {navItem('resources', 'Resources', 'resources-menu')}
+            {!user ? navItem('resources', 'Resources', 'resources-menu') : navItem('tools', 'Tools', 'tools-menu')}
             <Link
               href="/pricing"
               className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 hover:text-gray-900"
@@ -379,22 +389,22 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
                   </div>
                 )}
               </div>
-              {/* Resources */}
+              {/* Resources / Tools */}
               <div>
                 <button
                   type="button"
-                  onClick={() => toggleAccordion('resources')}
+                  onClick={() => toggleAccordion(user ? 'tools' : 'resources')}
                   className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-sm font-semibold text-gray-900 hover:bg-gray-100"
-                  aria-expanded={mobileAccordion === 'resources'}
+                  aria-expanded={mobileAccordion === (user ? 'tools' : 'resources')}
                 >
-                  Resources
+                  {user ? 'Tools' : 'Resources'}
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform ${mobileAccordion === 'resources' ? 'rotate-180' : ''}`}
+                    className={`h-4 w-4 transition-transform ${mobileAccordion === (user ? 'tools' : 'resources') ? 'rotate-180' : ''}`}
                   />
                 </button>
-                {mobileAccordion === 'resources' && (
+                {mobileAccordion === (user ? 'tools' : 'resources') && (
                   <div className="space-y-0.5 pl-4 pb-2">
-                    {resourcesColumn.map((item) => {
+                    {(user ? toolsColumn : resourcesColumn).map((item) => {
                       const Icon = item.icon
                       return (
                       <Link
