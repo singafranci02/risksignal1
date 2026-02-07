@@ -15,6 +15,7 @@ export default function LoginForm() {
   const [resendLoading, setResendLoading] = useState(false)
   const router = useRouter()
   const supabase = createClient()
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -58,7 +59,7 @@ export default function LoginForm() {
         type: 'signup',
         email,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback?next=/auth/confirmed`,
+          emailRedirectTo: `${siteUrl}/auth/callback?next=/auth/confirmed`,
         },
       })
       if (resendError) {
