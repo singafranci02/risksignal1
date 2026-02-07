@@ -317,15 +317,17 @@ function AuditorPortalPreview() {
             </div>
 
             <div className="relative flex justify-center lg:justify-end">
-              <div className="relative h-[260px] w-[200px] sm:h-[300px] sm:w-[230px] lg:h-[340px] lg:w-[260px]">
-                <Image
-                  src="/images/hero/auditor-portal-anchor.png"
-                  alt="Auditor portal visual anchor"
-                  fill
-                  className="object-contain object-center drop-shadow-[0_18px_50px_rgba(0,0,0,0.4)]"
-                  sizes="(min-width: 1024px) 260px, 230px"
-                  priority
-                />
+              <div className="rounded-2xl border border-blue-500/20 bg-white/10 p-4 shadow-2xl backdrop-blur-sm">
+                <div className="relative h-[260px] w-[200px] sm:h-[300px] sm:w-[230px] lg:h-[340px] lg:w-[260px]">
+                  <Image
+                    src="/images/hero/auditor-portal-anchor.png"
+                    alt="Auditor portal visual anchor"
+                    fill
+                    className="object-contain object-center drop-shadow-[0_18px_50px_rgba(0,0,0,0.4)]"
+                    sizes="(min-width: 1024px) 260px, 230px"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
