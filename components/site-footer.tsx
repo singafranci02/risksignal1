@@ -65,24 +65,19 @@ export default function SiteFooter() {
         <div className="grid grid-cols-2 gap-12 lg:grid-cols-6">
           {/* Brand Column */}
           <div className="col-span-2">
-            <Link href="/" className="group inline-flex items-center gap-3">
-              <div className="relative h-11 w-11 shrink-0">
+            <Link href="/" className="group inline-flex items-center gap-2">
+              <div className="relative h-7 w-7 shrink-0">
                 <Image
                   src="/images/logos/kuneo-logo.png"
                   alt="Kuneo"
                   fill
                   className="object-contain object-center"
-                  sizes="44px"
+                  sizes="32px"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-[#2A538D]">
-                  Kuneo
-                </span>
-                <span className="text-xs font-medium uppercase tracking-wider text-gray-500">
-                  AI Agent Governance
-                </span>
-              </div>
+              <span className="text-xl font-bold tracking-tight text-[#1e3a5f]">
+                Kuneo
+              </span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-600">
               The infrastructure layer for autonomous financial agents. Deploy AI with absolute certainty through verifiable execution and mathematical constraints.

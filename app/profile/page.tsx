@@ -67,16 +67,17 @@ export default async function ProfilePage() {
         <div className="flex w-full items-center justify-center p-8 lg:w-1/2">
           <div className="w-full max-w-md">
             <div className="mb-8 text-center lg:hidden">
-              <Link href="/" className="inline-flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
-                  <Shield className="h-6 w-6 text-white" />
+              <Link href="/" className="inline-flex items-center gap-2">
+                <div className="relative h-7 w-7">
+                  <Image
+                    src="/images/logos/kuneo-logo.png"
+                    alt="Kuneo"
+                    fill
+                    className="object-contain object-center"
+                    sizes="28px"
+                  />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-gray-900">Kuneo</span>
-                  <span className="text-xs font-medium uppercase tracking-wider text-gray-500">
-                    AI Agent Governance
-                  </span>
-                </div>
+                <span className="text-2xl font-bold text-[#1e3a5f]">Kuneo</span>
               </Link>
             </div>
 

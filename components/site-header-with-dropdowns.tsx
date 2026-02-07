@@ -203,17 +203,20 @@ export default function SiteHeaderWithDropdowns({ user }: SiteHeaderProps) {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center justify-between py-3">
           {/* Logo = Home (no separate Home button); height matches Kuneo + tagline */}
-          <Link href="/" className="group flex items-center" aria-label="Kuneo – Home">
-            <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
+          <Link href="/" className="group flex items-center gap-2" aria-label="Kuneo – Home">
+            <div className="relative h-7 w-7 shrink-0 sm:h-8 sm:w-8">
               <Image
                 src="/images/logos/kuneo-logo.png"
                 alt=""
                 fill
                 className="object-contain object-center transition-transform group-hover:scale-105"
                 priority
-                sizes="48px"
+                sizes="32px"
               />
             </div>
+            <span className="text-2xl font-bold tracking-tight text-[#1e3a5f]">
+              Kuneo
+            </span>
           </Link>
 
           {/* Desktop: Products/Tools, Governance, Developers, Resources (each with dropdown) + Pricing */}
