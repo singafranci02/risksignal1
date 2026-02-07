@@ -28,62 +28,76 @@ export default function RetailShieldPage() {
         </div>
         
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             {/* Badge */}
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
-              <Shield className="h-4 w-4 text-blue-400" />
-              <span className="font-mono font-semibold text-blue-300">
-                NHI Governance Infrastructure
-              </span>
+            <div className="text-center lg:text-left">
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
+                <Shield className="h-4 w-4 text-blue-400" />
+                <span className="font-mono font-semibold text-blue-300">
+                  NHI Governance Infrastructure
+                </span>
+              </div>
+
+              <h1 className="mb-6 font-mono text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+                The Autonomous
+                <br />
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Retail Shield
+                </span>
+              </h1>
+
+              <p className="mb-10 text-lg leading-relaxed text-slate-300 sm:text-xl">
+                Bridge the <span className="font-semibold text-white">"Autonomy Gap"</span> between
+                retail bots built in Cursor and institutional-grade security infrastructure.
+                <span className="font-mono text-blue-400"> Zero-knowledge verification. Hardware roots of trust.</span>
+              </p>
+
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+                <Link
+                  href="/profile"
+                  className="group relative flex items-center gap-2 overflow-hidden rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all hover:scale-105 hover:shadow-blue-500/50"
+                >
+                  <span className="relative">Enable Retail Shield</span>
+                  <Zap className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="#compliance-checker"
+                  className="group flex items-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
+                >
+                  Run Compliance Check
+                  <FileCheck className="h-5 w-5" />
+                </Link>
+              </div>
+
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400 lg:justify-start">
+                <div className="flex items-center gap-2">
+                  <Cpu className="h-4 w-4 text-blue-400" />
+                  <span className="font-mono">TEE-Backed Isolation</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Fingerprint className="h-4 w-4 text-blue-400" />
+                  <span className="font-mono">Hardware-Attested Reasoning</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Key className="h-4 w-4 text-blue-400" />
+                  <span className="font-mono">NHI Credential Rotation</span>
+                </div>
+              </div>
             </div>
 
-            {/* Headline */}
-            <h1 className="mb-6 font-mono text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              The Autonomous
-              <br />
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Retail Shield
-              </span>
-            </h1>
-
-            {/* Subheadline */}
-            <p className="mb-10 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              Bridge the <span className="font-semibold text-white">"Autonomy Gap"</span> between 
-              retail bots built in Cursor and institutional-grade security infrastructure. 
-              <span className="font-mono text-blue-400"> Zero-knowledge verification. Hardware roots of trust.</span>
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/profile"
-                className="group relative flex items-center gap-2 overflow-hidden rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all hover:scale-105 hover:shadow-blue-500/50"
-              >
-                <span className="relative">Enable Retail Shield</span>
-                <Zap className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                href="#compliance-checker"
-                className="group flex items-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
-              >
-                Run Compliance Check
-                <FileCheck className="h-5 w-5" />
-              </Link>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
-              <div className="flex items-center gap-2">
-                <Cpu className="h-4 w-4 text-blue-400" />
-                <span className="font-mono">TEE-Backed Isolation</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Fingerprint className="h-4 w-4 text-blue-400" />
-                <span className="font-mono">Hardware-Attested Reasoning</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Key className="h-4 w-4 text-blue-400" />
-                <span className="font-mono">NHI Credential Rotation</span>
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/30" />
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/images/hero/digital-helmet-anchor.png"
+                    alt="Digital Helmet visual anchor"
+                    fill
+                    className="object-contain object-center"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
