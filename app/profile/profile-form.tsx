@@ -48,7 +48,7 @@ export default function ProfileForm() {
             first_name: firstName.trim(),
             last_name: lastName.trim(),
           },
-          emailRedirectTo: `${window.location.origin}/auth/callback?next=/dashboard`,
+          emailRedirectTo: `${window.location.origin}/auth/callback?next=/auth/confirmed`,
         },
       })
 
@@ -58,7 +58,7 @@ export default function ProfileForm() {
         return
       }
 
-      setSuccess("Check your email to confirm your account, then sign in.")
+      setSuccess("Check your email to confirm your account. We'll sign you in after confirmation.")
       setLoading(false)
       // Optionally send them to login page
       // router.push("/login")

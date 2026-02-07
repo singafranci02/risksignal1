@@ -58,7 +58,7 @@ export default function LoginForm() {
         type: 'signup',
         email,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback?next=/dashboard`,
+          emailRedirectTo: `${window.location.origin}/auth/callback?next=/auth/confirmed`,
         },
       })
       if (resendError) {
