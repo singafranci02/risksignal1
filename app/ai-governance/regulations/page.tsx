@@ -6,221 +6,205 @@ import { countryRegs } from '@/data/regulations'
 
 export default function RegulationsOverview() {
   return (
-    <div className="min-h-screen">
-      {/* Hero – dark theme */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-20">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-slate-950/70" />
+    <div className="min-h-screen bg-slate-950">
+      {/* Hero – deep dark */}
+      <section className="relative overflow-hidden border-b border-slate-800 bg-slate-950 py-16 sm:py-20">
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 50%)`,
+          }}
+        />
         <div className="relative mx-auto max-w-7xl px-6 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-200 backdrop-blur-sm">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-500/25 bg-sky-500/5 px-4 py-2 text-sm font-medium text-sky-300">
             <Globe className="h-4 w-4" />
-            Global Compliance Coverage
+            Global frameworks
           </div>
-          <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
-            AI Agent Regulatory Frameworks
+          <h1 className="mb-5 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            Regulatory frameworks for AI agents
           </h1>
-          <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-slate-300">
-            Navigate the complex landscape of financial AI regulation. Kuneo ensures your autonomous agents
-            comply with global standards—from ASIC in Australia to the EU AI Act and SEC regulations in the United States.
+          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-400">
+            From ASIC and the EU AI Act to SEC and MAS—one infrastructure layer for multi-jurisdiction
+            compliance and audit-ready evidence.
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/profile"
-              className="group flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-xl transition-all hover:scale-105 hover:shadow-blue-500/50"
+              className="inline-flex items-center gap-2 rounded-lg bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-sky-500"
             >
-              <span>Start Free Trial</span>
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              Start free trial
+              <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/ai-governance/documentation"
-              className="group flex items-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-800/80 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors hover:border-slate-500 hover:bg-slate-800"
             >
-              <span>View Documentation</span>
-              <BookOpen className="h-5 w-5" />
+              Documentation
+              <BookOpen className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Compliance Matters */}
-      <section className="border-t border-white/10 bg-slate-900/20 py-16">
+      {/* Why it matters – dark block */}
+      <section className="border-b border-slate-800 bg-slate-900 py-14">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-white">
-              Why Regulatory Compliance Matters
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-400">
-              Financial AI systems are under intense regulatory scrutiny worldwide.
-              Non-compliance can result in severe penalties, operational shutdowns, and reputational damage.
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-slate-800/80 p-8 shadow-lg backdrop-blur-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/20">
-                <Shield className="h-6 w-6 text-sky-400" />
+          <h2 className="mb-3 text-center text-2xl font-bold text-white sm:text-3xl">
+            Why compliance is non-negotiable
+          </h2>
+          <p className="mx-auto mb-10 max-w-xl text-center text-slate-400">
+            Regulators are targeting algorithmic and AI-driven trading. Gaps in controls mean fines,
+            suspension, and reputational risk.
+          </p>
+          <div className="grid gap-5 sm:grid-cols-3">
+            <div className="rounded-xl border border-slate-700 bg-slate-800/90 p-6">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-rose-500/15">
+                <Shield className="h-5 w-5 text-rose-400" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-white">Avoid Penalties</h3>
-              <p className="text-slate-400">
-                Regulatory fines for algorithmic trading violations can reach millions.
-                Kuneo&apos;s infrastructure prevents violations at the hardware level.
+              <h3 className="mb-2 font-semibold text-white">Avoid penalties</h3>
+              <p className="text-sm leading-relaxed text-slate-400">
+                Algorithmic and AI violations attract heavy fines. Hardware-enforced controls reduce
+                breach risk at the source.
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-slate-800/80 p-8 shadow-lg backdrop-blur-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/20">
-                <CheckCircle2 className="h-6 w-6 text-emerald-400" />
+            <div className="rounded-xl border border-slate-700 bg-slate-800/90 p-6">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/15">
+                <CheckCircle2 className="h-5 w-5 text-emerald-400" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-white">Maintain Operations</h3>
-              <p className="text-slate-400">
-                Regulators can suspend trading licenses for non-compliant systems.
-                Stay operational with automated compliance monitoring.
+              <h3 className="mb-2 font-semibold text-white">Stay operational</h3>
+              <p className="text-sm leading-relaxed text-slate-400">
+                Non-compliant systems can be shut down. Continuous monitoring and attestation help
+                keep you in the clear.
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-slate-800/80 p-8 shadow-lg backdrop-blur-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/20">
-                <Globe className="h-6 w-6 text-sky-400" />
+            <div className="rounded-xl border border-slate-700 bg-slate-800/90 p-6">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-sky-500/15">
+                <Globe className="h-5 w-5 text-sky-400" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-white">Global Expansion</h3>
-              <p className="text-slate-400">
-                Enter new markets confidently. Kuneo supports compliance frameworks
-                across Australia, EU, US, UK, Singapore, and Hong Kong.
+              <h3 className="mb-2 font-semibold text-white">Scale across borders</h3>
+              <p className="text-sm leading-relaxed text-slate-400">
+                One platform for Australia, EU, US, UK, Singapore, and Hong Kong—without rebuilding
+                per jurisdiction.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Country-Specific Regulations */}
-      <section className="border-t border-white/10 bg-slate-900/20 py-16">
+      {/* Country frameworks – dark cards */}
+      <section className="border-b border-slate-800 bg-slate-950 py-14">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-white">
-              Country-Specific Compliance Frameworks
-            </h2>
-            <p className="text-lg text-slate-400">
-              Select a region to explore detailed regulatory requirements and Kuneo&apos;s solutions
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <h2 className="mb-2 text-center text-2xl font-bold text-white sm:text-3xl">
+            Jurisdiction-by-jurisdiction
+          </h2>
+          <p className="mx-auto mb-10 max-w-lg text-center text-slate-400">
+            Dive into requirements and how Kuneo maps to each framework.
+          </p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {countryRegs.map((reg) => (
               <Link
                 key={reg.slug}
                 href={`/ai-governance/regulations/${reg.slug}`}
-                className="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-800/80 p-6 shadow-lg backdrop-blur-sm transition-all hover:border-sky-500/30 hover:bg-slate-800"
+                className="group flex flex-col rounded-xl border border-slate-700 bg-slate-800/80 p-5 transition-all hover:border-sky-600/40 hover:bg-slate-800"
               >
-                <div className="relative">
-                  <div className="mb-4 flex items-center gap-3">
-                    <span className="text-4xl">{reg.flag}</span>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white transition-colors group-hover:text-sky-400">
-                        {reg.country}
-                      </h3>
-                      <p className="text-sm font-medium text-slate-400">{reg.framework}</p>
-                    </div>
-                  </div>
-                  <div className="mb-4 rounded-lg border border-sky-500/20 bg-sky-500/10 p-3">
-                    <p className="text-sm font-semibold text-sky-200">{reg.body}</p>
-                  </div>
-                  <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-slate-400">
-                    {reg.summary}
-                  </p>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-sky-400 group-hover:text-sky-300">
-                    <span>View Full Framework</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="text-3xl" aria-hidden>{reg.flag}</span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-white group-hover:text-sky-300">
+                      {reg.country}
+                    </h3>
+                    <p className="truncate text-xs font-medium text-slate-500">{reg.framework}</p>
                   </div>
                 </div>
+                <div className="mb-3 rounded-lg border border-slate-600/80 bg-slate-900/60 px-3 py-2">
+                  <p className="text-xs font-semibold text-sky-300/90">{reg.body}</p>
+                </div>
+                <p className="mb-4 line-clamp-2 flex-1 text-sm text-slate-400">
+                  {reg.summary}
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-sky-400 group-hover:text-sky-300">
+                  Open framework
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="border-t border-white/10 bg-slate-900/20 py-16">
+      {/* Comparison – dark table */}
+      <section className="border-b border-slate-800 bg-slate-900 py-14">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-white">
-              Quick Comparison
-            </h2>
-            <p className="text-lg text-slate-400">
-              Key regulatory focus areas by region
-            </p>
-          </div>
-          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-800/80 shadow-xl">
-            <table className="w-full">
-              <thead className="border-b border-white/10 bg-slate-800">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-white">Country</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-white">Body</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-white">Primary Focus</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-white">Key Requirement</th>
+          <h2 className="mb-2 text-center text-2xl font-bold text-white sm:text-3xl">
+            At a glance
+          </h2>
+          <p className="mx-auto mb-8 max-w-md text-center text-slate-400">
+            Focus areas and a representative requirement per region.
+          </p>
+          <div className="overflow-hidden rounded-xl border border-slate-700 bg-slate-800/80">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-slate-700 bg-slate-800">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Country</th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Body</th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Focus</th>
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Example requirement</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/10">
-                <tr className="transition-colors hover:bg-white/5">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">🇦🇺</span>
-                      <span className="font-semibold text-white">Australia</span>
-                    </div>
+              <tbody className="divide-y divide-slate-700/80">
+                <tr className="transition-colors hover:bg-slate-800/60">
+                  <td className="px-4 py-3">
+                    <span className="mr-2 text-lg">🇦🇺</span>
+                    <span className="font-medium text-white">Australia</span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-slate-400">ASIC</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Algorithmic Trading</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Kill-switch & Testing</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">ASIC</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Algorithmic trading</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Kill-switch & testing</td>
                 </tr>
-                <tr className="transition-colors hover:bg-white/5">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">🇸🇬</span>
-                      <span className="font-semibold text-white">Singapore</span>
-                    </div>
+                <tr className="transition-colors hover:bg-slate-800/60">
+                  <td className="px-4 py-3">
+                    <span className="mr-2 text-lg">🇸🇬</span>
+                    <span className="font-medium text-white">Singapore</span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-slate-400">MAS</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">FEAT Principles</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Explainability</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">MAS</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">FEAT principles</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Explainability</td>
                 </tr>
-                <tr className="transition-colors hover:bg-white/5">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">🇪🇺</span>
-                      <span className="font-semibold text-white">EU</span>
-                    </div>
+                <tr className="transition-colors hover:bg-slate-800/60">
+                  <td className="px-4 py-3">
+                    <span className="mr-2 text-lg">🇪🇺</span>
+                    <span className="font-medium text-white">EU</span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-slate-400">EU Commission</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">High-Risk AI Systems</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Human Oversight</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">EU Commission</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">High-risk AI</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Human oversight</td>
                 </tr>
-                <tr className="transition-colors hover:bg-white/5">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">🇺🇸</span>
-                      <span className="font-semibold text-white">USA</span>
-                    </div>
+                <tr className="transition-colors hover:bg-slate-800/60">
+                  <td className="px-4 py-3">
+                    <span className="mr-2 text-lg">🇺🇸</span>
+                    <span className="font-medium text-white">USA</span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-slate-400">SEC / FINRA</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Best Interest</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Supervision & Records</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">SEC / FINRA</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Best interest</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Supervision & records</td>
                 </tr>
-                <tr className="transition-colors hover:bg-white/5">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">🇬🇧</span>
-                      <span className="font-semibold text-white">UK</span>
-                    </div>
+                <tr className="transition-colors hover:bg-slate-800/60">
+                  <td className="px-4 py-3">
+                    <span className="mr-2 text-lg">🇬🇧</span>
+                    <span className="font-medium text-white">UK</span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-slate-400">FCA</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Consumer Protection</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">SM&CR Accountability</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">FCA</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Consumer protection</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">SM&CR accountability</td>
                 </tr>
-                <tr className="transition-colors hover:bg-white/5">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">🇭🇰</span>
-                      <span className="font-semibold text-white">Hong Kong</span>
-                    </div>
+                <tr className="transition-colors hover:bg-slate-800/60">
+                  <td className="px-4 py-3">
+                    <span className="mr-2 text-lg">🇭🇰</span>
+                    <span className="font-medium text-white">Hong Kong</span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-slate-400">SFC</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Risk Management</td>
-                  <td className="px-6 py-4 text-sm text-slate-400">Pre-Trade Controls</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">SFC</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Risk management</td>
+                  <td className="px-4 py-3 text-sm text-slate-400">Pre-trade controls</td>
                 </tr>
               </tbody>
             </table>
@@ -228,29 +212,29 @@ export default function RegulationsOverview() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t border-white/10 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-white">
-            Deploy Compliant AI Agents Globally
+      {/* CTA – dark footer block */}
+      <section className="bg-slate-950 py-16">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="mb-3 text-3xl font-bold text-white sm:text-4xl">
+            One platform, multiple regimes
           </h2>
-          <p className="mb-8 text-xl text-slate-300">
-            One infrastructure platform. Multiple regulatory frameworks. Zero compliance headaches.
+          <p className="mb-8 text-slate-400">
+            Deploy with compliance built in. Get started or explore AI governance.
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/profile"
-              className="group flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all hover:scale-105 hover:shadow-blue-500/50"
+              className="inline-flex items-center gap-2 rounded-lg bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-sky-500"
             >
-              <span>Get Started Free</span>
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              Get started free
+              <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/ai-governance"
-              className="group flex items-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-800/80 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors hover:border-slate-500 hover:bg-slate-800"
             >
-              <span>Learn About AI Governance</span>
-              <Shield className="h-5 w-5" />
+              AI governance overview
+              <Shield className="h-4 w-4" />
             </Link>
           </div>
         </div>
