@@ -28,7 +28,7 @@ export default function RetailShieldPage() {
         </div>
         
         <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-20">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-center lg:gap-4">
             {/* Badge */}
             <div className="text-center lg:text-left">
               <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
@@ -86,13 +86,13 @@ export default function RetailShieldPage() {
             </div>
 
             <div className="relative flex justify-center lg:justify-end">
-              <div className="relative h-[280px] w-[280px] sm:h-[320px] sm:w-[320px] lg:h-[360px] lg:w-[360px]">
+              <div className="relative h-[336px] w-[336px] sm:h-[384px] sm:w-[384px] lg:h-[432px] lg:w-[432px]">
                 <Image
                   src="/images/hero/digital-helmet-anchor.png"
                   alt="Retail Shield — Digital Helmet visual anchor"
                   fill
                   className="object-contain object-center drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
-                  sizes="(min-width: 1024px) 360px, (min-width: 640px) 320px, 280px"
+                  sizes="(min-width: 1024px) 432px, (min-width: 640px) 384px, 336px"
                   priority
                 />
               </div>
