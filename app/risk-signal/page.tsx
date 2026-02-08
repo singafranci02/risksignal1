@@ -21,7 +21,7 @@ export default function RiskSignalPage() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32">
+        <div className="relative mx-auto max-w-7xl px-6 py-10 sm:py-14">
           <div className="grid gap-12 lg:grid-cols-[2fr_1fr] lg:items-center">
             <div className="text-center lg:text-left">
               <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
@@ -69,7 +69,7 @@ export default function RiskSignalPage() {
               </div>
             </div>
 
-            <div className="relative flex justify-center lg:justify-end lg:-translate-x-8">
+            <div className="relative flex justify-center lg:justify-end lg:translate-x-6">
               <div className="relative h-[480px] w-[480px] sm:h-[540px] sm:w-[540px] lg:h-[630px] lg:w-[630px]">
                 <Image
                   src="/images/hero/risk-signal-anchor.png"
