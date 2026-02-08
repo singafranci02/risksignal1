@@ -1,96 +1,131 @@
 export default function HowItWorksPage() {
   return (
-    <div className="space-y-10">
-      <header className="space-y-3">
-        <h1 className="text-3xl font-bold tracking-tight">How RiskSignal works</h1>
-        <p className="max-w-2xl text-sm text-muted-foreground">
-          A deeper look at how we monitor your wallets, evaluate risk, and trigger alerts
-          using Supabase, Moralis, and Resend behind the scenes.
-        </p>
-      </header>
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-200">
+              MT5 Bridge
+            </div>
+            <h1 className="mt-6 text-4xl font-bold text-white sm:text-5xl">
+              Zero‑Trust Execution Bridge
+            </h1>
+            <p className="mt-4 text-lg text-slate-300">
+              The institutional bridge for MetaTrader 5. Capture intent before execution, prove
+              compliance at the silicon layer, and enforce deterministic kill‑switches in real time.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm text-blue-100">
+              <span className="rounded-full border border-white/20 px-3 py-1">Pre‑trade telemetry</span>
+              <span className="rounded-full border border-white/20 px-3 py-1">TEE attestation</span>
+              <span className="rounded-full border border-white/20 px-3 py-1">ASIC RG 265 ready</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">1. Data model &amp; permissions</h2>
-        <div className="rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground space-y-2">
-          <p>
-            Every wallet you monitor lives in the <code className="rounded bg-muted px-1 py-0.5 text-xs">monitored_wallets</code>{' '}
-            table inside Supabase. Each row is tied to a Supabase user and includes:
-          </p>
-          <ul className="list-disc space-y-1 pl-5">
-            <li><strong>wallet_address</strong>: the EVM address we watch.</li>
-            <li><strong>min_balance_usd</strong>: your threshold in USD.</li>
-            <li><strong>user_id</strong>: the Supabase auth user who owns the wallet.</li>
-          </ul>
-          <p>
-            Row‑Level Security (RLS) is enabled so that users can only read, insert, update,
-            and delete their own wallets. This is enforced by Supabase directly, not by the
-            frontend.
+      {/* Governance Stack */}
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">The Kuneo Governance Stack</h2>
+            <p className="mt-2 text-gray-600">
+              The bridge is a compliance proxy for MT5, validating every Order_Send() before it hits the broker.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-gray-900">Pre‑Trade Risk Signal Interception</h3>
+            <p className="mt-3 text-sm text-gray-600">
+              Kuneo captures the Intent to Trade before execution, comparing pre‑trade vs post‑trade
+              risk gaps in real time.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-gray-900">Digital Helmet (TEE)</h3>
+            <p className="mt-3 text-sm text-gray-600">
+              Bridge logic runs inside hardware‑attested enclaves so the kill‑switch cannot be disabled
+              by a compromised server.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-gray-900">Deterministic Compliance Engine</h3>
+            <p className="mt-3 text-sm text-gray-600">
+              Validates every Order_Send() against ASIC RG 265 risk policies with immediate enforcement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Telemetry Feed */}
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h3 className="text-lg font-semibold text-gray-900">Live Telemetry Feed</h3>
+            <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+              PASS · Stream active
+            </span>
+          </div>
+          <div className="mt-4 space-y-2 text-sm text-gray-600">
+            <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+              <span>09:14:02 · Order Intent · EURUSD · BUY 0.8</span>
+              <span className="font-semibold text-emerald-600">PASS</span>
+            </div>
+            <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+              <span>09:14:05 · Risk Collar · Max Drawdown 1.5%</span>
+              <span className="font-semibold text-emerald-600">PASS</span>
+            </div>
+            <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
+              <span>09:14:07 · Broker Dispatch · MT5 Server 12</span>
+              <span className="font-semibold text-emerald-600">PASS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sequence Diagram */}
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <h3 className="text-lg font-semibold text-gray-900">Sequence Diagram</h3>
+          <div className="mt-4 grid gap-3 text-sm text-gray-700 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr]">
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">Trader/Agent</div>
+            <div className="flex items-center justify-center text-gray-400">→</div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">Digital Helmet (TEE)</div>
+            <div className="flex items-center justify-center text-gray-400">→</div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">Compliance Proxy</div>
+            <div className="flex items-center justify-center text-gray-400">→</div>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">MT5 Server</div>
+          </div>
+          <p className="mt-4 text-sm text-gray-600">
+            Trade intent is intercepted, validated, and hardware‑attested before execution.
           </p>
         </div>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">2. Risk checks via Cron &amp; Moralis</h2>
-        <div className="rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground space-y-2">
-          <p>
-            On Vercel, we schedule a cron job (via <code className="rounded bg-muted px-1 py-0.5 text-xs">vercel.json</code>)
-            that hits the{' '}
-            <code className="rounded bg-muted px-1 py-0.5 text-xs">/api/check-risk</code> endpoint every hour.
-          </p>
-          <p>Each run does the following:</p>
-          <ol className="list-decimal space-y-1 pl-5">
-            <li>Authenticates the request using either Vercel Cron headers or your <code className="rounded bg-muted px-1 py-0.5 text-xs">CRON_SECRET</code>.</li>
-            <li>Fetches all rows from <code className="rounded bg-muted px-1 py-0.5 text-xs">monitored_wallets</code>.</li>
-            <li>
-              For each wallet, calls Moralis:
-              <br />
-              <code className="block rounded bg-muted px-2 py-1 text-xs mt-1">
-                https://deep-index.moralis.io/api/v2.2/wallets/&lt;address&gt;/net-worth?exclude_spam=true
-              </code>
-            </li>
-            <li>Parses <code className="rounded bg-muted px-1 py-0.5 text-xs">total_networth_usd</code> and compares it to <code className="rounded bg-muted px-1 py-0.5 text-xs">min_balance_usd</code>.</li>
-            <li>Flags any wallet where net worth has fallen below the configured threshold.</li>
-          </ol>
-          <p>
-            The endpoint returns a JSON summary of how many wallets were checked and how many
-            alerts were triggered in that run.
+      {/* Evidence & Proofs */}
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <h3 className="text-lg font-semibold text-gray-900">Evidence for Audits</h3>
+          <p className="mt-3 text-sm text-gray-600">
+            The bridge generates C2PA‑signed audit proofs, providing immutable evidence for ASIC and EU AI Act reviews.
           </p>
         </div>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">3. Alerting pipeline with Resend</h2>
-        <div className="rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground space-y-2">
-          <p>
-            When a wallet breaches its threshold, we currently:
-          </p>
-          <ul className="list-disc space-y-1 pl-5">
-            <li>Log a critical message on the server: <strong>&quot;ALERT TRIGGERED&quot;</strong>.</li>
-            <li>
-              Use Resend with your <code className="rounded bg-muted px-1 py-0.5 text-xs">RESEND_API_KEY</code> to send
-              an email (mocked to <code className="rounded bg-muted px-1 py-0.5 text-xs">user@example.com</code> for now).
-            </li>
-          </ul>
-          <p>
-            The email content clearly states which wallet dropped, what its new USD value is,
-            and what threshold you configured, so you can quickly triage the issue.
-          </p>
-        </div>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">4. User journey end‑to‑end</h2>
-        <div className="rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground space-y-2">
-          <ol className="list-decimal space-y-1 pl-5">
-            <li>Visitor lands on the marketing homepage and clicks “Sign up”.</li>
-            <li>On the Profile page, they enter first name, last name, email, and password twice.</li>
-            <li>
-              Supabase creates the user, stores names in <code className="rounded bg-muted px-1 py-0.5 text-xs">user_metadata</code>,
-              and emails a confirmation link.
-            </li>
-            <li>After confirming, they log in and are redirected to the dashboard.</li>
-            <li>On the dashboard, they add wallets and thresholds — all stored in Supabase.</li>
-            <li>Vercel Cron + Moralis + Resend take over from there for automated monitoring.</li>
+      {/* User Journey */}
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <h3 className="text-lg font-semibold text-gray-900">Deployment Journey</h3>
+          <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-gray-600">
+            <li>Deploy the Digital Helmet inside your own TEE.</li>
+            <li>Bind MT5 bridge credentials to hardware‑attested identity.</li>
+            <li>Define risk policies and kill‑switch thresholds.</li>
+            <li>Stream telemetry and enforce pre‑trade compliance in real time.</li>
           </ol>
         </div>
       </section>
