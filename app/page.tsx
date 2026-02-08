@@ -226,17 +226,17 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
 
       {/* ROI Through Risk Mitigation */}
       <section className="relative bg-white py-24">
-        {/* Decorative image on the left, flipped to face the content — same size as agent-debt guardian */}
-        <div className="pointer-events-none absolute left-6 top-1/2 hidden w-[200px] -translate-y-1/2 md:block lg:left-8 lg:w-[240px] xl:w-[260px]">
+        {/* Decorative image on the left, flipped to face the content — ~30% larger than agent-debt guardian */}
+        <div className="pointer-events-none absolute left-4 top-1/2 hidden w-[260px] -translate-y-1/2 md:block lg:left-6 lg:w-[312px] xl:w-[340px]">
           <Image
             src="/images/hero/roi-risk-archer.png"
             alt=""
-            width={260}
-            height={320}
+            width={340}
+            height={420}
             className="object-contain object-left scale-x-[-1]"
           />
         </div>
-        <div className="mx-auto max-w-7xl px-6 pl-0 md:pl-32 lg:pl-36">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
               ROI Through Risk Mitigation
