@@ -51,7 +51,7 @@ interface SiteHeaderProps {
 const platformColumn: MegaMenuItem[] = [
   { name: 'Digital Helmet', href: '/retail-shield', description: 'Hardware-secured execution', icon: Shield },
   { name: 'RiskSignal Dashboard', href: '/risk-signal', description: 'Retail investor risk cockpit', icon: Cpu },
-  { name: 'Verifiable Proofs', href: '/auditor-portal', description: 'Conformity evidence & audit trails', icon: Lock },
+  { name: 'Auditor Portal', href: '/auditor-portal', description: 'Conformity evidence & audit trails', icon: Lock },
   { name: 'Agentic Drift', href: '/dashboard', description: 'Behavioral anomaly detection', icon: Activity, badge: 'Beta' },
 ]
 
