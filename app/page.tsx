@@ -227,41 +227,56 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
       {/* ROI Through Risk Mitigation */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              ROI Through Risk Mitigation
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              The business case has shifted from efficiency gains to measurable financial risk reduction.
-            </p>
-          </div>
-          <div className="mt-16 grid gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50">
-                <CheckCircle2 className="h-6 w-6 text-emerald-600" />
+          <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:items-center lg:gap-6">
+            {/* Left: archer image, flipped to face the text */}
+            <div className="relative mx-auto flex justify-center lg:order-1 lg:mx-0 lg:justify-end">
+              <div className="relative h-[220px] w-[160px] shrink-0 sm:h-[260px] sm:w-[200px] lg:h-[280px] lg:w-[200px]">
+                <Image
+                  src="/images/hero/roi-mitigation-archer.png"
+                  alt=""
+                  fill
+                  className="object-contain object-center scale-x-[-1]"
+                  sizes="(min-width: 1024px) 200px, (min-width: 640px) 200px, 160px"
+                />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">
-                Reduced Insurance Premiums
-              </h3>
-              <p className="text-gray-600">
-                Proactive compliance and deterministic controls are becoming a competitive advantage
-                for lowering cyber-insurance and operational risk costs.
-              </p>
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
-                <Lock className="h-6 w-6 text-blue-600" />
+            {/* Right: heading + more vertical boxes */}
+            <div className="lg:order-2 lg:max-w-xl">
+              <div className="text-center lg:text-left">
+                <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                  ROI Through Risk Mitigation
+                </h2>
+                <p className="mt-4 text-lg text-gray-600">
+                  The business case has shifted from efficiency gains to measurable financial risk reduction.
+                </p>
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">
-                Zero-Knowledge Privacy
-              </h3>
-              <p className="text-gray-600">
-                Kuneo never sees the strategy code—only the risk signal. Proprietary alpha stays private
-                while regulators get the transparency they demand.
-              </p>
-            </div>
-          </div>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+                <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+                  </div>
+                  <h3 className="mb-2 text-lg font-bold text-gray-900">
+                    Reduced Insurance Premiums
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Proactive compliance and deterministic controls are becoming a competitive advantage
+                    for lowering cyber-insurance and operational risk costs.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-lg">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50">
+                    <Lock className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <h3 className="mb-2 text-lg font-bold text-gray-900">
+                    Zero-Knowledge Privacy
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Kuneo never sees the strategy code—only the risk signal. Proprietary alpha stays private
+                    while regulators get the transparency they demand.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
             <Link
               href="/auditor-portal"
               className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105"
@@ -276,6 +291,8 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
               Explore RiskSignal ROI
               <ArrowRight className="h-4 w-4" />
             </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
