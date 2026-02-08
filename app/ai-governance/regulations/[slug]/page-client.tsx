@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Shield, CheckCircle2, ArrowRight, BookOpen, ExternalLink, ChevronDown, FileText, AlertCircle, Award, Building2 } from 'lucide-react'
 import { countryRegs, CountryRegulation } from '@/data/regulations'
@@ -35,8 +36,19 @@ export default function RegulationPageClient({ regulation: reg }: RegulationPage
         </div>
       </div>
 
-      {/* Hero – no image, white + blue accent */}
-      <section className="border-b border-gray-200 bg-white py-16">
+      {/* Hero – no image, white + blue accent; Australia: flag figure on the right */}
+      <section className={`border-b border-gray-200 bg-white py-16 ${reg.slug === 'australia' ? 'relative' : ''}`}>
+        {reg.slug === 'australia' && (
+          <div className="pointer-events-none absolute right-6 top-1/2 hidden h-[360px] w-[280px] -translate-y-1/2 md:block lg:right-12 lg:h-[420px] lg:w-[320px] xl:h-[480px] xl:w-[360px]">
+            <Image
+              src="/images/hero/australia-regulation-anchor.png"
+              alt=""
+              fill
+              className="object-contain object-right"
+              sizes="(min-width: 1280px) 360px, (min-width: 1024px) 320px, 280px"
+            />
+          </div>
+        )}
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-8 flex items-center gap-6">
             <span className="text-7xl" role="img" aria-label={`${reg.country} flag`}>
