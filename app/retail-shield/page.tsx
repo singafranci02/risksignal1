@@ -28,10 +28,24 @@ export default function RetailShieldPage() {
         </div>
         
         <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-20">
-          <div className="grid gap-6 lg:grid-cols-2 lg:items-center lg:gap-4">
-            {/* Badge */}
-            <div className="text-center lg:text-left">
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-8 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-2 lg:gap-x-1">
+            {/* Left: flipped image (protecting) */}
+            <div className="relative flex justify-center lg:order-1 lg:justify-end">
+              <div className="relative h-[240px] w-[240px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[280px]">
+                <Image
+                  src="/images/hero/digital-helmet-anchor.png"
+                  alt=""
+                  fill
+                  className="object-contain object-center drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)] lg:scale-x-[-1]"
+                  sizes="(min-width: 1024px) 280px, (min-width: 640px) 280px, 240px"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Center: text */}
+            <div className="text-center lg:order-2 lg:px-2">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
                 <Shield className="h-4 w-4 text-blue-400" />
                 <span className="font-mono font-semibold text-blue-300">
                   NHI Governance Infrastructure
@@ -52,7 +66,7 @@ export default function RetailShieldPage() {
                 <span className="font-mono text-blue-400"> Zero-knowledge verification. Hardware roots of trust.</span>
               </p>
 
-              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                   href="/profile"
                   className="group relative flex items-center gap-2 overflow-hidden rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all hover:scale-105 hover:shadow-blue-500/50"
@@ -69,7 +83,7 @@ export default function RetailShieldPage() {
                 </Link>
               </div>
 
-              <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400 lg:justify-start">
+              <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
                 <div className="flex items-center gap-2">
                   <Cpu className="h-4 w-4 text-blue-400" />
                   <span className="font-mono">TEE-Backed Isolation</span>
@@ -85,14 +99,15 @@ export default function RetailShieldPage() {
               </div>
             </div>
 
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative h-[336px] w-[336px] sm:h-[384px] sm:w-[384px] lg:h-[432px] lg:w-[432px]">
+            {/* Right: image (protecting) */}
+            <div className="relative flex justify-center lg:order-3 lg:justify-start">
+              <div className="relative h-[240px] w-[240px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[280px]">
                 <Image
                   src="/images/hero/digital-helmet-anchor.png"
                   alt="Retail Shield — Digital Helmet visual anchor"
                   fill
                   className="object-contain object-center drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
-                  sizes="(min-width: 1024px) 432px, (min-width: 640px) 384px, 336px"
+                  sizes="(min-width: 1024px) 280px, (min-width: 640px) 280px, 240px"
                   priority
                 />
               </div>
