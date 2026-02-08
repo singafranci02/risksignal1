@@ -115,7 +115,7 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
       {/* Agent Debt */}
       <section className="relative bg-white py-24">
         {/* Decorative image on the right, facing the heading — does not affect layout */}
-        <div className="pointer-events-none absolute right-0 top-1/2 hidden w-[200px] -translate-y-1/2 md:block lg:right-6 lg:w-[240px] xl:w-[260px]">
+        <div className="pointer-events-none absolute -right-4 top-1/2 hidden w-[200px] -translate-y-1/2 md:block lg:-right-2 lg:w-[240px] xl:-right-2 xl:w-[260px]">
           <Image
             src="/images/hero/agent-debt-guardian.png"
             alt=""
