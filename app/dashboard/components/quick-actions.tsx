@@ -1,33 +1,33 @@
 'use client'
 
-import { Plus, Download, Upload, Zap } from 'lucide-react'
+import { Download, ExternalLink, RefreshCw, ShieldAlert } from 'lucide-react'
 import Link from 'next/link'
 
 export function QuickActions() {
   const actions = [
     {
-      label: 'Add Wallet',
-      description: 'Monitor new address',
-      icon: Plus,
-      href: '#add-wallet',
+      label: 'Scan Token',
+      description: 'Run circuit breaker',
+      icon: ShieldAlert,
+      href: '#scanner',
     },
     {
-      label: 'Create Policy',
-      description: 'Define new rule',
-      icon: Zap,
-      href: '#create-policy',
-    },
-    {
-      label: 'Export Data',
-      description: 'Download reports',
+      label: 'Download SKILL.md',
+      description: 'OpenClaw leash file',
       icon: Download,
-      href: '#export',
+      href: '/kuneoclaw/SKILL.md',
     },
     {
-      label: 'Import Config',
-      description: 'Bulk upload',
-      icon: Upload,
-      href: '#import',
+      label: 'View Docs',
+      description: 'How it works',
+      icon: ExternalLink,
+      href: '/how-it-works',
+    },
+    {
+      label: 'Re-run Checks',
+      description: 'Rescan last token',
+      icon: RefreshCw,
+      href: '#scanner',
     },
   ]
 
@@ -38,7 +38,7 @@ export function QuickActions() {
           Quick Actions
         </h2>
         <p className="mt-1 text-sm text-slate-500">
-          Common tasks and operations
+          KuneoClaw shortcuts
         </p>
       </div>
 

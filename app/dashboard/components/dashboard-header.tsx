@@ -15,10 +15,10 @@ export function DashboardHeader({ userName, userEmail }: DashboardHeaderProps) {
     <div className="flex flex-col gap-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm lg:flex-row lg:items-center lg:justify-between">
       <div>
         <h1 className="text-3xl font-bold text-gray-900">
-          Agent Governance Dashboard
+          KuneoClaw Circuit Breaker
         </h1>
         <p className="mt-2 text-sm text-gray-600">
-          Welcome back, <span className="font-semibold text-gray-900">{userName}</span> · Last updated{' '}
+          Welcome back, <span className="font-semibold text-gray-900">{userName}</span> · Helmet active{' '}
           <span className="font-mono text-gray-700">
             {formatDistanceToNow(currentTime, { addSuffix: true })}
           </span>
@@ -35,7 +35,7 @@ export function DashboardHeader({ userName, userEmail }: DashboardHeaderProps) {
         <div className="flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2">
           <Activity className="h-4 w-4 animate-pulse text-green-600" />
           <span className="text-xs font-semibold text-gray-700">
-            Operational
+            Helmet Active
           </span>
         </div>
 
