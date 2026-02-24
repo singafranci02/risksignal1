@@ -30,18 +30,18 @@ export default function AIGovernanceOverview() {
         url: 'https://kuneo.tech',
         logo: 'https://getkuneo.com/logo.png',
         description:
-          'Infrastructure for autonomous financial agent governance with mathematical certainty.'
+          'RiskSignal Helmet for OpenClaw: air-gapped Solana trading guard. Keys in risksignal.py only—LLM never touches them.'
       },
       {
         '@type': 'FAQPage',
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'What is AI Agent Governance?',
+            name: 'How does Kuneo secure OpenClaw?',
             acceptedAnswer: {
               '@type': 'Answer',
               text:
-                'AI Agent Governance is the infrastructure layer that enforces mathematical constraints and regulatory compliance on autonomous agents using hardware-secured environments and immutable audit logs.'
+                'SKILL.md routes trading commands to your local risksignal.py script. The script holds your keys and runs RugCheck, Sybil, and other checks. The LLM only parses intent and relays script output—it cannot bypass the script.'
             }
           },
           {
@@ -83,14 +83,14 @@ export default function AIGovernanceOverview() {
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-sm">
               <Sparkles className="h-4 w-4 text-blue-200" />
-              Governance infrastructure for autonomous finance
+              Governance for OpenClaw
             </div>
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-              The AI Governance Layer for Verifiable Agentic Finance
+              Governance for OpenClaw: The RiskSignal Helmet
             </h1>
             <p className="mt-6 text-lg text-blue-100">
-              Kuneo turns AI agents into compliant financial infrastructure with hardware-secured
-              execution, real-time policy enforcement, and immutable audit trails.
+              OpenClaw stays in control of parsing and UX. Execution and keys live in your local script—compliant,
+              auditable Solana trading with no LLM key access.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -137,8 +137,7 @@ export default function AIGovernanceOverview() {
         <div className="max-w-3xl">
           <h2 className="text-3xl font-bold text-gray-900">Governance Platform Core</h2>
           <p className="mt-3 text-gray-600">
-            A layered governance stack that combines hardware isolation, deterministic policy
-            enforcement, and regulator-ready audit outputs.
+            RiskSignal Helmet + script-only key access, immutable audit (script output + tx), and real-time visibility.
           </p>
         </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -146,19 +145,19 @@ export default function AIGovernanceOverview() {
             <div className="relative h-44 overflow-hidden rounded-xl">
               <Image
                 src="/images/features/digital-helmet.png"
-                alt="Digital Helmet"
+                alt="RiskSignal Helmet"
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white">
                 <Shield className="h-5 w-5" />
-                <span className="text-sm font-semibold">Digital Helmet</span>
+                <span className="text-sm font-semibold">RiskSignal Helmet</span>
               </div>
             </div>
-            <h3 className="mt-5 text-xl font-bold text-gray-900">Hardware-secured execution</h3>
+            <h3 className="mt-5 text-xl font-bold text-gray-900">Air-gapped execution for OpenClaw</h3>
             <p className="mt-3 text-sm text-gray-600">
-              Enforce policy inside TEEs so agents cannot execute outside approved constraints.
+              SKILL.md routes buy/snipe/swap to risksignal.py. Only the script holds keys and signs—scan then block or execute.
             </p>
           </div>
 
@@ -178,7 +177,7 @@ export default function AIGovernanceOverview() {
             </div>
             <h3 className="mt-5 text-xl font-bold text-gray-900">Regulator-ready evidence</h3>
             <p className="mt-3 text-sm text-gray-600">
-              Cryptographically signed logs show every policy check before execution.
+              Script output (block/success + reason) and signed tx—cryptographically signed, exportable.
             </p>
           </div>
 
@@ -186,19 +185,19 @@ export default function AIGovernanceOverview() {
             <div className="relative h-44 overflow-hidden rounded-xl">
               <Image
                 src="/images/features/monitoring.png"
-                alt="Agent drift monitoring"
+                alt="Helmet blocks and dashboard"
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white">
                 <Eye className="h-5 w-5" />
-                <span className="text-sm font-semibold">Agent Drift Control</span>
+                <span className="text-sm font-semibold">Helmet Blocks + Dashboard</span>
               </div>
             </div>
             <h3 className="mt-5 text-xl font-bold text-gray-900">Real-time supervision</h3>
             <p className="mt-3 text-sm text-gray-600">
-              Detect intent drift, enforce guardrails, and escalate to human oversight.
+              RiskSignal dashboard shows every block and execution; human-in-the-loop = you reading the message in chat.
             </p>
           </div>
         </div>
@@ -211,22 +210,21 @@ export default function AIGovernanceOverview() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900">How the governance layer works</h2>
               <p className="mt-4 text-gray-600">
-                Every decision is evaluated against policy, verified inside secured hardware, and
-                recorded for audit before capital moves.
+                OpenClaw parses intent; risksignal.py enforces and signs. Audit = script logs + RiskSignal dashboard.
               </p>
               <div className="mt-8 space-y-5">
                 {[
                   {
-                    title: 'Define governance policy',
-                    body: 'Configure guardrails for exposure, leverage, counterparties, and jurisdiction.'
+                    title: 'Define policy in SKILL.md + script heuristics',
+                    body: 'Trigger on buy/snipe/swap; constraint: pass contract to risksignal.py, wait for output. Heuristics: RugCheck, Sybil, LP, mint.'
                   },
                   {
-                    title: 'Secure execution with TEEs',
-                    body: 'Policies are enforced inside isolated environments that cannot be tampered with.'
+                    title: 'OpenClaw routes to script; script secures execution',
+                    body: 'LLM runs python3 risksignal.py &lt;contract&gt; &lt;amount&gt;. No LLM key access—script holds keys and blocks or signs.'
                   },
                   {
-                    title: 'Real-time audit output',
-                    body: 'Signed logs and compliance reports are generated automatically.'
+                    title: 'Audit = script logs + RiskSignal dashboard',
+                    body: 'Block/success + reason and signed tx; immutable, regulator-ready.'
                   }
                 ].map((item) => (
                   <div key={item.title} className="flex items-start gap-4">
@@ -249,12 +247,12 @@ export default function AIGovernanceOverview() {
               </div>
               <div className="mt-4 space-y-3 text-sm text-gray-200">
                 {[
-                  '12:01:03.421  Agent Request   BUY 10 BTC @ 94,500',
-                  '12:01:03.422  Helmet Check    Leverage Cap: PASS',
-                  '12:01:03.423  Helmet Check    Exposure Limit: PASS',
-                  '12:01:03.424  Helmet Check    Price Deviation: PASS',
-                  '12:01:03.425  Execution       Order routed to venue',
-                  '12:01:03.426  Audit Log       Signature recorded'
+                  'User (Telegram): Snipe 0.5 SOL 7zDA...BAGS',
+                  'Skill: risksignal.py invoked · 7zDA...BAGS 0.5',
+                  'Script: RugCheck · Sybil · LP · mint · ~400ms',
+                  'Script: Sybil detected → FATAL ERROR · Trade aborted',
+                  'OpenClaw → User: RiskSignal blocked this trade. Sybil cabal.',
+                  'Audit: script output + no tx (blocked)'
                 ].map((line) => (
                   <div key={line} className="rounded-lg bg-gray-900/70 px-3 py-2 font-mono">
                     {line}

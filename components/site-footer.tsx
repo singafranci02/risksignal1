@@ -44,7 +44,7 @@ export default function SiteFooter() {
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold text-gray-900">Stay Updated</h3>
-              <p className="mt-2 text-gray-600">Get the latest updates on AI agent governance and compliance.</p>
+              <p className="mt-2 text-gray-600">Get the latest on OpenClaw trading safety and RiskSignal Helmet updates.</p>
             </div>
             <div className="flex w-full max-w-md gap-2">
               <input
@@ -80,7 +80,7 @@ export default function SiteFooter() {
               </span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-600">
-              The infrastructure layer for autonomous financial agents. Deploy AI with absolute certainty through verifiable execution and mathematical constraints.
+              The RiskSignal Helmet for OpenClaw: air-gapped Solana trading. Your keys stay in risksignal.py—the LLM never touches them.
             </p>
             
             {/* Contact Info */}

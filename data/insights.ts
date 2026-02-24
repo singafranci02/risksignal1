@@ -152,11 +152,11 @@ export const insights: InsightArticle[] = [
         ]
       },
       {
-        heading: 'Enforcing containment with the Digital Helmet',
+        heading: 'Enforcing containment with the RiskSignal Helmet for OpenClaw',
         body: [
           'Detection is useless without enforcement. Containment must be infrastructure-level, not a manual response.',
-          'Every transaction is intercepted, verified against mathematical constraints, and halted deterministically if drift is detected.',
-          'HITL review preserves accountability while ensuring the agent is paused before any non-compliant trade reaches a venue.'
+          'With the RiskSignal Helmet, every OpenClaw trade intent is routed to risksignal.py. The script holds keys and runs RugCheck, Sybil, and LP checks—block or sign. The LLM cannot bypass.',
+          'HITL review preserves accountability: you read the block/success message in Telegram; the script never signs a non-compliant trade.'
         ]
       },
       {

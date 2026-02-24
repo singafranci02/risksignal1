@@ -30,21 +30,20 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
           <div className="mx-auto max-w-4xl text-center">
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-4 py-2 text-sm backdrop-blur-sm">
               <Shield className="h-4 w-4 text-sky-400" />
-              <span className="font-semibold text-sky-200">Verifiable Agentic Finance</span>
+              <span className="font-semibold text-sky-200">RiskSignal Helmet</span>
             </div>
 
             <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Deploy Autonomous Agents
+              Trade with OpenClaw—
               <br />
               <span className="bg-gradient-to-r from-sky-400 via-cyan-400 to-sky-500 bg-clip-text text-transparent">
-                with Absolute Certainty
+                Without Giving It Your Keys
               </span>
             </h1>
 
             <p className="mb-10 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              The infrastructure layer that transforms experimental AI scripts into compliant,
-              institutional-grade financial vehicles. <span className="font-semibold text-white">Define the rules.
-              We enforce the logic at the infrastructure level.</span>
+              The RiskSignal Helmet sits between OpenClaw’s language layer and your wallet.
+              <span className="font-semibold text-white"> Your rules run in a local script the AI cannot bypass.</span>
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -67,7 +66,7 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
             <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
               <div className="flex items-center gap-2">
                 <Lock className="h-4 w-4 text-sky-400" />
-                <span>Hardware-Secured TEEs</span>
+                <span>Air-Gapped Execution</span>
               </div>
               <div className="flex items-center gap-2">
                 <FileCheck className="h-4 w-4 text-sky-400" />
@@ -127,11 +126,11 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              The Reality of Agent Debt in 2026
+              The Reality of OpenClaw Without a Helmet
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Retail and mid-tier agents built on fast demos are accumulating hidden risk until
-              a single drift event cascades into a catastrophic failure.
+              OpenClaw reads real files and runs shell commands. Without a physical bottleneck,
+              agentic drift, malicious tokens, or prompt injection can put your wallet at risk.
             </p>
           </div>
           <div className="mt-16 grid gap-8 md:grid-cols-3">
@@ -139,33 +138,33 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-red-100">
                 <AlertTriangle className="h-6 w-6 text-red-600" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">Operational Drift</h3>
-              <p className="text-sm font-semibold text-red-700">Success rates &lt; 55%</p>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Agentic Drift</h3>
+              <p className="text-sm font-semibold text-red-700">LLM builds the tx</p>
               <p className="mt-2 text-gray-600">
-                Unmanaged agents look impressive in demos but degrade in live markets.
-                Drift compounds until behavior leaves the risk envelope entirely.
+                If OpenClaw constructs Solana transactions itself, behavior can leave your risk
+                envelope—or a confused model sends the wrong trade.
               </p>
             </div>
             <div className="rounded-2xl border border-amber-200 bg-amber-50 p-8">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-100">
                 <Users className="h-6 w-6 text-amber-600" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">Cascading Failures</h3>
-              <p className="text-sm font-semibold text-amber-700">Multi-agent chain reactions</p>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Malicious Tokens</h3>
+              <p className="text-sm font-semibold text-amber-700">Sybil cabals & honeypots</p>
               <p className="mt-2 text-gray-600">
-                A single hallucinated figure in one agent can trigger reorder storms and
-                exposure breaches across MT5-style multi-agent stacks.
+                Token names or contract addresses designed to trick the LLM can lead to sniping
+                scams. The AI has no way to run RugCheck or funding checks by itself.
               </p>
             </div>
             <div className="rounded-2xl border border-blue-200 bg-blue-50 p-8">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
                 <Brain className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">Memory Poisoning</h3>
-              <p className="text-sm font-semibold text-blue-700">Intent hijacking</p>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Prompt Injection</h3>
+              <p className="text-sm font-semibold text-blue-700">Key theft (e.g. ClawHavoc)</p>
               <p className="mt-2 text-gray-600">
-                Without hardware isolation, unexpected market inputs can override safety rules,
-                creating silent, high-risk intent drift.
+                If the LLM has access to your keys or builds transactions, prompt-injection
+                malware can drain your account. The Helmet keeps keys in risksignal.py only.
               </p>
             </div>
           </div>
@@ -191,24 +190,24 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
             </div>
             {[
               {
-                feature: 'Identity',
-                status: 'Service accounts / API keys',
-                kuneo: 'Non-Human Identity (NHI) with silicon-level rotation',
+                feature: 'Who builds the tx',
+                status: 'LLM has key access or builds Solana tx',
+                kuneo: 'OpenClaw parses intent → risksignal.py only builds & signs',
               },
               {
-                feature: 'Trust',
-                status: 'Model performance & backtests',
-                kuneo: 'Hardware-attested permission to act',
+                feature: 'Who holds keys',
+                status: 'API keys or LLM-accessible wallet',
+                kuneo: 'Keys only in local risksignal.py; LLM is blind',
               },
               {
-                feature: 'Latency',
-                status: 'Post-trade software checks',
-                kuneo: 'Ultra-low latency pre-trade sequence modeling',
+                feature: 'Token safety',
+                status: 'No on-chain / RugCheck before trade',
+                kuneo: '~400ms scan: Helius, RugCheck, Jito, Sybil, LP, mint authority',
               },
               {
                 feature: 'Audit',
-                status: 'Manual JSON logs (editable)',
-                kuneo: 'Immutable signatures verified by TEEs',
+                status: 'Manual logs or none',
+                kuneo: 'Script output + signed tx; immutable, regulator-ready',
               },
             ].map((row) => (
               <div
@@ -295,10 +294,10 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              The Three Pillars of Agent Governance
+              The Three Pillars of KuneoClaw
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-600">
-              A complete infrastructure stack for deploying autonomous financial agents with institutional-grade safety
+              OpenClaw + RiskSignal Helmet: intent parsing, air-gapped execution, and compliance in one stack
             </p>
           </div>
 
@@ -311,14 +310,13 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                 <h3 className="mb-3 text-2xl font-bold text-white">Kuneo Core</h3>
                 <p className="mb-2 text-sm font-semibold text-sky-400">Real-Time Monitoring</p>
                 <p className="mb-6 text-slate-300">
-                  Our auditing engine tracks cross-custodian mandates and detects "Agentic Drift"
-                  or AI hallucinations in real-time. Every transaction, every decision, every movement
-                  of capital is logged and verified against your defined parameters.
+                  Track OpenClaw-triggered flows and every RiskSignal decision: blocks, successes,
+                  and reasons (Sybil, organic, etc.). Full audit trail for regulators.
                 </p>
                 <ul className="space-y-2 text-sm text-slate-400">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400" />
-                    <span>Cross-custodian portfolio aggregation</span>
+                    <span>OpenClaw intent → script → Solana</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400" />
@@ -342,25 +340,24 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
                   <Shield className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-white">The Digital Helmet</h3>
-                <p className="mb-2 text-sm font-semibold text-sky-200">Verifiable Execution</p>
+                <h3 className="mb-3 text-2xl font-bold text-white">RiskSignal Helmet</h3>
+                <p className="mb-2 text-sm font-semibold text-sky-200">Air-Gapped Execution</p>
                 <p className="mb-6 text-slate-200">
-                  Hardware-secured environments (TEEs) that isolate your AI's logic, ensuring strategies
-                  cannot be tampered with and funds cannot be accessed outside of set parameters.
-                  Mathematical certainty replaces blind trust.
+                  SKILL.md routes buy/snipe/swap to risksignal.py. Only the script holds your keys
+                  and builds the Solana tx. The LLM never sees keys—mathematical certainty.
                 </p>
                 <ul className="space-y-2 text-sm text-slate-200">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" />
-                    <span>TEE-based execution isolation</span>
+                    <span>SKILL.md + risksignal.py in ~/.openclaw</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" />
-                    <span>Cryptographic proof of compliance</span>
+                    <span>RugCheck, Sybil, Jito, LP checks</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" />
-                    <span>Zero-knowledge verification</span>
+                    <span>Block or sign; relay result to Telegram</span>
                   </li>
                 </ul>
               </div>
@@ -372,11 +369,10 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                   <Brain className="h-7 w-7 text-white" />
                 </div>
                 <h3 className="mb-3 text-2xl font-bold text-white">Agent Intelligence Hub</h3>
-                <p className="mb-2 text-sm font-semibold text-sky-400">Compliance Knowledge Base</p>
+                <p className="mb-2 text-sm font-semibold text-sky-400">Compliance & OpenClaw Skills</p>
                 <p className="mb-6 text-slate-300">
-                  A knowledge base of global AI regulations (MiCA, EU AI Act, ASIC ERS) and pre-built
-                  rule templates for agentic trading, from drawdown limits to recursive loop protection.
-                  Deploy compliant agents in minutes, not months.
+                  Global AI regulations (MiCA, EU AI Act, ASIC ERS) and pre-built constraints for
+                  OpenClaw: SKILL.md templates, token-safety heuristics, and audit-ready outputs.
                 </p>
                 <ul className="space-y-2 text-sm text-slate-400">
                   <li className="flex items-start gap-2">
@@ -389,7 +385,7 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400" />
-                    <span>Auto-updating regulatory framework</span>
+                    <span>OpenClaw skills & constraint docs</span>
                   </li>
                 </ul>
               </div>
@@ -406,17 +402,17 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
               See the Technology in Action
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-400">
-              Cutting-edge infrastructure that powers verifiable agentic finance
+              OpenClaw + RiskSignal Helmet: safe Solana snipes and swaps, key-safe execution
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Digital Helmet Visual - SWAPPED to abstract art */}
+            {/* RiskSignal Helmet Visual */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-800/50 shadow-lg">
               <div className="relative h-64 overflow-hidden">
                 <Image 
                   src="/images/features/verification.png" 
-                  alt="Digital Helmet Technology"
+                  alt="RiskSignal Helmet for OpenClaw"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -425,8 +421,8 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                     <Shield className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">The Digital Helmet</h3>
-                  <p className="text-sm text-slate-300">Hardware-secured execution environments</p>
+                  <h3 className="text-xl font-bold text-white">RiskSignal Helmet</h3>
+                  <p className="text-sm text-slate-300">Air-gapped Solana trade guard; keys in risksignal.py only</p>
                 </div>
               </div>
             </div>
@@ -504,7 +500,7 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                 The Challenge
               </div>
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
-                AI Agents Are Powerful But Unpredictable
+                OpenClaw Is Powerful—But Should Not Hold Your Keys
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
@@ -512,10 +508,10 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                     <Terminal className="h-5 w-5 text-red-500" />
                   </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-gray-900">Black Box Problem</h3>
+                    <h3 className="mb-2 font-semibold text-gray-900">LLM Builds the Transaction</h3>
                     <p className="text-slate-600">
-                      AI agents make thousands of decisions per second. Without infrastructure-level
-                      constraints, you have no guarantee they will stay within your risk parameters.
+                      If OpenClaw constructs Solana transactions or has key access, you have no
+                      guarantee it will stay within your risk parameters—or that it won’t be tricked.
                     </p>
                   </div>
                 </div>
@@ -526,8 +522,8 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                   <div>
                     <h3 className="mb-2 font-semibold text-gray-900">Regulatory Uncertainty</h3>
                     <p className="text-slate-600">
-                      Global regulators (SEC, MiCA, ASIC) are demanding explainability and audit trails.
-                      Traditional AI deployments cannot provide this level of transparency.
+                      Regulators (SEC, MiCA, ASIC) demand explainability and audit trails. Letting the
+                      LLM execute trades without a deterministic guard doesn’t meet that bar.
                     </p>
                   </div>
                 </div>
@@ -538,8 +534,8 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                   <div>
                     <h3 className="mb-2 font-semibold text-gray-900">Institutional Barriers</h3>
                     <p className="text-slate-600">
-                      Banks, hedge funds, and treasuries cannot deploy AI agents without mathematical
-                      proof of compliance and immutable audit trails.
+                      Serious capital cannot rely on an LLM with key access. You need mathematical
+                      proof: the AI parses intent; a local script enforces and signs.
                     </p>
                   </div>
                 </div>
@@ -551,7 +547,7 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                 Our Solution
               </div>
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
-                Infrastructure-Level Governance & Enforcement
+                The RiskSignal Helmet: Intent Parsing, Script Execution
               </h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
@@ -559,10 +555,10 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                     <Lock className="h-5 w-5 text-sky-500" />
                   </div>
                   <div>
-                    <h3 className="mb-2 font-semibold text-gray-900">Mathematical Constraints</h3>
+                    <h3 className="mb-2 font-semibold text-gray-900">Keys Only in risksignal.py</h3>
                     <p className="text-slate-600">
-                      Our Digital Helmet uses hardware-secured TEEs to enforce rules at the infrastructure
-                      level. Your agent cannot violate constraints—it's mathematically impossible.
+                      The Helmet routes trading to a local script. The LLM only parses your message
+                      and runs python3 risksignal.py &lt;contract&gt; &lt;amount&gt;. It cannot bypass—immutable script.
                     </p>
                   </div>
                 </div>
@@ -573,8 +569,8 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                   <div>
                     <h3 className="mb-2 font-semibold text-gray-900">Immutable Audit Trails</h3>
                     <p className="text-slate-600">
-                      Every decision, transaction, and state change is logged with cryptographic proof.
-                      Export certified audit reports for regulators in one click.
+                      Script output (block or success + reason) and signed tx are logged. Export
+                      certified audit reports for regulators in one click.
                     </p>
                   </div>
                 </div>
@@ -585,8 +581,8 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                   <div>
                     <h3 className="mb-2 font-semibold text-gray-900">Verifiable Execution</h3>
                     <p className="text-slate-600">
-                      Zero-knowledge proofs allow third parties to verify your agent's compliance without
-                      revealing proprietary strategies or sensitive data.
+                      Third parties can verify that trades went through the script (RugCheck, Sybil,
+                      etc.) without seeing your keys or strategy logic.
                     </p>
                   </div>
                 </div>
@@ -601,10 +597,10 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-              Built for the Future of Finance
+              Built for OpenClaw Solana Trading
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-400">
-              From autonomous trading to treasury management, Kuneo powers the next generation of financial infrastructure
+              Safe snipes and swaps via Telegram/WhatsApp—RiskSignal blocks the bad trades before they hit the chain
             </p>
           </div>
           <div className="grid gap-8 lg:grid-cols-2">
@@ -613,30 +609,30 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                   <TrendingUp className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="mb-2 text-2xl font-bold text-white">Autonomous Trading Agents</h3>
-                <p className="text-slate-200">Deploy AI-powered trading strategies with mathematical guarantees</p>
+                <h3 className="mb-2 text-2xl font-bold text-white">OpenClaw Solana Snipes & Swaps</h3>
+                <p className="text-slate-200">Message OpenClaw to snipe or swap; RiskSignal runs RugCheck, Sybil, LP checks—then blocks or executes</p>
               </div>
               <div className="p-8">
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-sky-400" />
                     <div>
-                      <div className="font-semibold text-white">Max Drawdown Protection</div>
-                      <div className="text-sm text-slate-400">Automatically halt trading if losses exceed 15%</div>
+                      <div className="font-semibold text-white">Sybil & Funding Checks</div>
+                      <div className="text-sm text-slate-400">Script traces top wallets; blocks if cabal or single funder detected</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-sky-400" />
                     <div>
-                      <div className="font-semibold text-white">Asset Concentration Limits</div>
-                      <div className="text-sm text-slate-400">Prevent over-exposure to any single asset</div>
+                      <div className="font-semibold text-white">LP Burned & Mint Revoked</div>
+                      <div className="text-sm text-slate-400">Verify token safety before a single SOL moves</div>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-sky-400" />
                     <div>
-                      <div className="font-semibold text-white">Transaction Frequency Caps</div>
-                      <div className="text-sm text-slate-400">Prevent wash trading and market manipulation</div>
+                      <div className="font-semibold text-white">~400ms Scan</div>
+                      <div className="text-sm text-slate-400">Helius, RugCheck, Jito-bundled launches—then block or sign</div>
                     </div>
                   </li>
                 </ul>
@@ -689,8 +685,8 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
         <div className="mx-auto max-w-4xl px-6 text-center">
           <div className="mb-8 text-6xl text-sky-500">"</div>
           <blockquote className="mb-8 text-2xl font-medium leading-relaxed text-white">
-            The infrastructure layer that finally makes autonomous AI agents viable for institutional finance.
-            We built Kuneo because the market needed mathematical certainty, not blind trust.
+            OpenClaw is brilliant at parsing what you want—but it should never touch your keys.
+            We built the RiskSignal Helmet so you get safe Solana snipes without giving the AI autonomy over execution.
           </blockquote>
           <div className="flex items-center justify-center gap-4">
             <div className="relative h-16 w-16 overflow-hidden rounded-full ring-2 ring-sky-500/50">
@@ -713,14 +709,14 @@ export default function Home({ searchParams }: { searchParams?: { code?: string 
       <section className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl">
-            Transform AI Scripts into
+            Plug the Helmet into OpenClaw
             <br />
             <span className="bg-gradient-to-r from-sky-400 via-cyan-400 to-sky-500 bg-clip-text text-transparent">
-              Institutional-Grade Vehicles
+              Keys in Script, Not in the LLM
             </span>
           </h2>
           <p className="mb-10 text-lg text-slate-300">
-            Join leading institutions deploying autonomous agents with absolute certainty
+            Join traders using RiskSignal to block the bad trades and execute the organic ones—with no key access for the AI
           </p>
           <div className="mb-10 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
             <div className="flex items-center gap-2">

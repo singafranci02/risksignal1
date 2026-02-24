@@ -48,22 +48,22 @@ export default function RetailShieldPage() {
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
                 <Shield className="h-4 w-4 text-blue-400" />
                 <span className="font-mono font-semibold text-blue-300">
-                  NHI Governance Infrastructure
+                  OpenClaw Trade Guard
                 </span>
               </div>
 
               <h1 className="mb-6 font-mono text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-                The Autonomous
+                The RiskSignal Helmet
                 <br />
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Retail Shield
+                  for OpenClaw
                 </span>
               </h1>
 
               <p className="mb-10 text-lg leading-relaxed text-slate-300 sm:text-xl">
-                Bridge the <span className="font-semibold text-white">"Autonomy Gap"</span> between
-                retail bots built in Cursor and institutional-grade security infrastructure.
-                <span className="font-mono text-blue-400"> Zero-knowledge verification. Hardware roots of trust.</span>
+                OpenClaw reads real files and runs shell commands. The Helmet is the <span className="font-semibold text-white">physical bottleneck</span> so
+                the LLM never constructs the Solana tx or sees your keys.
+                <span className="font-mono text-blue-400"> Air-gapped. Keys in risksignal.py only.</span>
               </p>
 
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -71,7 +71,7 @@ export default function RetailShieldPage() {
                   href="/profile"
                   className="group relative flex items-center gap-2 overflow-hidden rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-2xl transition-all hover:scale-105 hover:shadow-blue-500/50"
                 >
-                  <span className="relative">Enable Retail Shield</span>
+                  <span className="relative">Plug the Helmet into OpenClaw</span>
                   <Zap className="relative h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
@@ -86,15 +86,15 @@ export default function RetailShieldPage() {
               <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
                 <div className="flex items-center gap-2">
                   <Cpu className="h-4 w-4 text-blue-400" />
-                  <span className="font-mono">TEE-Backed Isolation</span>
+                  <span className="font-mono">SKILL.md + risksignal.py</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Fingerprint className="h-4 w-4 text-blue-400" />
-                  <span className="font-mono">Hardware-Attested Reasoning</span>
+                  <span className="font-mono">Keys in Script Only</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Key className="h-4 w-4 text-blue-400" />
-                  <span className="font-mono">NHI Credential Rotation</span>
+                  <span className="font-mono">RugCheck · Sybil · Jito</span>
                 </div>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function RetailShieldPage() {
               <div className="relative h-[240px] w-[240px] sm:h-[280px] sm:w-[280px] lg:h-[320px] lg:w-[280px]">
                 <Image
                   src="/images/hero/digital-helmet-anchor.png"
-                  alt="Retail Shield — Digital Helmet visual anchor"
+                  alt="RiskSignal Helmet for OpenClaw"
                   fill
                   className="object-contain object-center drop-shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
                   sizes="(min-width: 1024px) 280px, (min-width: 640px) 280px, 240px"
@@ -128,11 +128,11 @@ export default function RetailShieldPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              The Retail Trading Crisis
+              Why OpenClaw Needs a Helmet
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Retail traders are rapidly deploying autonomous Non-Human Identities (NHIs) 
-              that manage end-to-end trading workflows—but lack institutional security infrastructure.
+              OpenClaw runs on your machine and can execute shell commands. Without a guard,
+              prompt injection, agentic drift, or malicious token names can put your wallet at risk.
             </p>
           </div>
 
@@ -143,11 +143,11 @@ export default function RetailShieldPage() {
                 <AlertTriangle className="h-6 w-6 text-red-600" />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">
-                NHI Identity Crisis
+                Prompt Injection
               </h3>
               <p className="text-gray-700">
-                <span className="font-semibold text-red-700">{"<20%"}</span> of retail traders have 
-                formal processes to offboard and rotate API keys, leaving agent identities exposed to credential misuse.
+                Malware like <span className="font-mono text-red-700">ClawHavoc</span> can steal keys or
+                drain wallets if the LLM has key access or builds transactions. The Helmet keeps keys only in risksignal.py.
               </p>
             </div>
 
@@ -157,11 +157,11 @@ export default function RetailShieldPage() {
                 <Eye className="h-6 w-6 text-amber-600" />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">
-                Semantic Obfuscation
+                Agentic Drift
               </h3>
               <p className="text-gray-700">
-                AI agents are <span className="font-mono text-amber-700">probabilistic</span>—
-                their trustworthiness depends on <em>current behavior</em>, which can shift suddenly based on market data.
+                OpenClaw is <span className="font-mono text-amber-700">probabilistic</span>—context
+                compaction or confusion can lead to wrong trades. With the Helmet, the immutable script decides; the LLM only parses and relays.
               </p>
             </div>
 
@@ -171,11 +171,11 @@ export default function RetailShieldPage() {
                 <Server className="h-6 w-6 text-orange-600" />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">
-                Hardware Vulnerability
+                Malicious Token Names
               </h3>
               <p className="text-gray-700">
-                Without <span className="font-mono text-orange-700">TEEs</span>, agent memory can be 
-                "poisoned" by false market data or prompt injections, leading to unsafe automated decisions.
+                Token names or contract addresses can trick the LLM into sniping scams. 
+                <span className="font-mono text-orange-700"> risksignal.py</span> runs RugCheck, Sybil, and LP checks—the AI cannot bypass.
               </p>
             </div>
           </div>
@@ -195,9 +195,8 @@ export default function RetailShieldPage() {
                 Privacy-First Verification
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                Institutions and retail "whales" are terrified of strategy leakage. 
-                Kuneo verifies <span className="font-semibold text-gray-900">Risk Signals</span> without 
-                ever seeing your <span className="font-mono text-blue-600">Private Code</span>.
+                Your wallet and <span className="font-mono text-blue-600">risksignal.py</span> logic stay local.
+                The LLM only receives <span className="font-semibold text-gray-900">script output</span> (block or success + reason) and relays it to you in Telegram.
               </p>
 
               <div className="mt-8 space-y-4">
@@ -206,9 +205,9 @@ export default function RetailShieldPage() {
                     <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Private Execution Pools</h3>
+                    <h3 className="font-semibold text-gray-900">Wallet & Script Local</h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      Your strategy code executes in isolated TEE environments—never transmitted to Kuneo servers.
+                      risksignal.py holds your keys and runs on your machine. Kuneo never sees keys or raw strategy.
                     </p>
                   </div>
                 </div>
@@ -218,9 +217,9 @@ export default function RetailShieldPage() {
                     <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Signed Risk Signals Only</h3>
+                    <h3 className="font-semibold text-gray-900">Script Output = Risk Signal</h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      We receive cryptographically signed telemetry (balance, drawdown, positions) — not your alpha.
+                      Block or success message (e.g. Sybil detected, or Signature: …) is all the LLM gets—signed and attestable.
                     </p>
                   </div>
                 </div>
@@ -230,9 +229,9 @@ export default function RetailShieldPage() {
                     <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Hardware Attestation</h3>
+                    <h3 className="font-semibold text-gray-900">LLM Only Forwards</h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      Every signal includes a TEE attestation hash proving execution integrity.
+                      OpenClaw reads the terminal output from risksignal.py and formats it for your messaging app—no execution power.
                     </p>
                   </div>
                 </div>
@@ -246,7 +245,7 @@ export default function RetailShieldPage() {
                   <div className="flex items-center gap-3">
                     <Terminal className="h-6 w-6 text-green-600" />
                     <div>
-                      <div className="font-mono text-sm font-semibold text-green-900">Strategy Code</div>
+                      <div className="font-mono text-sm font-semibold text-green-900">Wallet + risksignal.py</div>
                       <div className="font-mono text-xs text-green-600">Stays Local</div>
                     </div>
                   </div>
@@ -261,8 +260,8 @@ export default function RetailShieldPage() {
                   <div className="flex items-center gap-3">
                     <Activity className="h-6 w-6 text-blue-600" />
                     <div>
-                      <div className="font-mono text-sm font-semibold text-blue-900">Risk Signals</div>
-                      <div className="font-mono text-xs text-blue-600">Signed + Attested</div>
+                      <div className="font-mono text-sm font-semibold text-blue-900">Script Output</div>
+                      <div className="font-mono text-xs text-blue-600">Block / Success + Reason</div>
                     </div>
                   </div>
                   <Fingerprint className="h-5 w-5 text-blue-600" />
@@ -278,8 +277,8 @@ export default function RetailShieldPage() {
                   <div className="flex items-center gap-3">
                     <Shield className="h-6 w-6 text-purple-600" />
                     <div>
-                      <div className="font-mono text-sm font-semibold text-purple-900">Kuneo Platform</div>
-                      <div className="font-mono text-xs text-purple-600">Policy Enforcement Only</div>
+                      <div className="font-mono text-sm font-semibold text-purple-900">OpenClaw</div>
+                      <div className="font-mono text-xs text-purple-600">Parses & Relays Only</div>
                     </div>
                   </div>
                 </div>
@@ -298,11 +297,11 @@ export default function RetailShieldPage() {
               Pre-Trade Intercept
             </div>
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              Deterministic Kill-Switch Dashboard
+              Circuit Breaker: Block or Sign
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Retail bots can "drift" and execute thousands of trades per minute during high volatility. 
-              Our hardware-level intercept <span className="font-semibold text-gray-900">stops trades before they hit the exchange</span>.
+              You message OpenClaw (e.g. Telegram): &quot;Snipe 0.5 SOL of 7zDA...BAGS.&quot;
+              The Helmet runs <span className="font-semibold text-gray-900">risksignal.py</span>—scam → block; organic → sign and relay result.
             </p>
           </div>
 
@@ -320,10 +319,10 @@ export default function RetailShieldPage() {
                     <Activity className="h-7 w-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-mono text-xs text-slate-500">t = 0ms</div>
-                    <h3 className="text-lg font-bold text-gray-900">Agent Generates Trade Signal</h3>
+                    <div className="font-mono text-xs text-slate-500">Step 1</div>
+                    <h3 className="text-lg font-bold text-gray-900">You Message OpenClaw</h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      Buy 1.5 lots EURUSD @ 1.0850
+                      &quot;Snipe 0.5 SOL of 7zDA...BAGS&quot; (Telegram / WhatsApp)
                     </p>
                   </div>
                 </div>
@@ -334,14 +333,14 @@ export default function RetailShieldPage() {
                     <Shield className="h-7 w-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-mono text-xs text-slate-500">t = 12ms</div>
-                    <h3 className="text-lg font-bold text-gray-900">Pre-Flight Validation</h3>
+                    <div className="font-mono text-xs text-slate-500">Step 2</div>
+                    <h3 className="text-lg font-bold text-gray-900">Skill Invokes risksignal.py</h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      Kuneo checks active policies: Drawdown = 6.2% → Exceeds 5% limit
+                      OpenClaw runs: python3 risksignal.py 7zDA...BAGS 0.5. Script scans RugCheck, Sybil, LP, mint.
                     </p>
                     <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
                       <AlertTriangle className="h-3 w-3" />
-                      POLICY VIOLATION DETECTED
+                      SCAM: Sybil Cabal Detected
                     </div>
                   </div>
                 </div>
@@ -352,14 +351,14 @@ export default function RetailShieldPage() {
                     <Zap className="h-7 w-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-mono text-xs text-slate-500">t = 18ms</div>
-                    <h3 className="text-lg font-bold text-gray-900">Hardware-Level Disconnect</h3>
+                    <div className="font-mono text-xs text-slate-500">Step 3</div>
+                    <h3 className="text-lg font-bold text-gray-900">Script Halts; You Get the Message</h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      MT5 bridge halted at TEE level. Trade never reaches broker.
+                      No tx signed. OpenClaw relays: &quot;RiskSignal blocked this trade. Token is a honeypot controlled by a Sybil cabal.&quot;
                     </p>
                     <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
                       <CheckCircle2 className="h-3 w-3" />
-                      TRADE REJECTED
+                      TRADE BLOCKED
                     </div>
                   </div>
                 </div>
@@ -374,10 +373,10 @@ export default function RetailShieldPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              Basic Bot vs. Kuneo Shield
+              OpenClaw Alone vs. Kuneo RiskSignal Helmet
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              The difference between experimental scripts and institutional-grade governance
+              Without the Helmet, the LLM can build tx or hold keys. With it, only risksignal.py signs.
             </p>
           </div>
 
@@ -386,35 +385,35 @@ export default function RetailShieldPage() {
               <thead>
                 <tr className="border-b border-gray-200 bg-slate-50">
                   <th className="px-6 py-4 text-left text-sm font-bold text-gray-900">Feature</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-red-700">Basic Bot (No Governance)</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-blue-700">Kuneo Shield (Governed)</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-red-700">OpenClaw (No Helmet)</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-blue-700">Kuneo RiskSignal Helmet</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr className="bg-white hover:bg-slate-50">
-                  <td className="px-6 py-4 font-semibold text-gray-900">Identity</td>
-                  <td className="px-6 py-4 text-gray-600">Static API Keys (Exposed)</td>
-                  <td className="px-6 py-4 text-gray-900">NHI with Rotated Credentials</td>
+                  <td className="px-6 py-4 font-semibold text-gray-900">Who holds keys</td>
+                  <td className="px-6 py-4 text-gray-600">LLM or API / wallet exposure</td>
+                  <td className="px-6 py-4 text-gray-900">Keys only in risksignal.py; LLM blind</td>
                 </tr>
                 <tr className="bg-white hover:bg-slate-50">
-                  <td className="px-6 py-4 font-semibold text-gray-900">Safety</td>
-                  <td className="px-6 py-4 text-gray-600">Post-trade Alerts (Reactive)</td>
-                  <td className="px-6 py-4 text-gray-900">Pre-trade Enforcement (Proactive)</td>
+                  <td className="px-6 py-4 font-semibold text-gray-900">Who builds tx</td>
+                  <td className="px-6 py-4 text-gray-600">LLM constructs Solana tx</td>
+                  <td className="px-6 py-4 text-gray-900">Script builds & signs; LLM only parses intent</td>
                 </tr>
                 <tr className="bg-white hover:bg-slate-50">
-                  <td className="px-6 py-4 font-semibold text-gray-900">Trust</td>
-                  <td className="px-6 py-4 text-gray-600">"Black Box" (Opaque)</td>
-                  <td className="px-6 py-4 text-gray-900">Hardware-Attested Reasoning</td>
+                  <td className="px-6 py-4 font-semibold text-gray-900">Token safety</td>
+                  <td className="px-6 py-4 text-gray-600">No RugCheck / Sybil before trade</td>
+                  <td className="px-6 py-4 text-gray-900">~400ms scan: RugCheck, Sybil, Jito, LP, mint</td>
                 </tr>
                 <tr className="bg-white hover:bg-slate-50">
-                  <td className="px-6 py-4 font-semibold text-gray-900">Resilience</td>
-                  <td className="px-6 py-4 text-gray-600">Software-only</td>
-                  <td className="px-6 py-4 text-gray-900">Silicon-level Isolation (TEEs)</td>
+                  <td className="px-6 py-4 font-semibold text-gray-900">Prompt injection</td>
+                  <td className="px-6 py-4 text-gray-600">ClawHavoc-style key theft possible</td>
+                  <td className="px-6 py-4 text-gray-900">Script = wall; AI cannot bypass</td>
                 </tr>
                 <tr className="bg-white hover:bg-slate-50">
-                  <td className="px-6 py-4 font-semibold text-gray-900">Compliance</td>
-                  <td className="px-6 py-4 text-gray-600">No audit trail</td>
-                  <td className="px-6 py-4 text-gray-900">Immutable cryptographic logs</td>
+                  <td className="px-6 py-4 font-semibold text-gray-900">Audit</td>
+                  <td className="px-6 py-4 text-gray-600">No deterministic trail</td>
+                  <td className="px-6 py-4 text-gray-900">Script output + signed tx; immutable</td>
                 </tr>
               </tbody>
             </table>
@@ -484,12 +483,12 @@ export default function RetailShieldPage() {
                 <FileCheck className="h-4 w-4" />
                 Regulatory Compliance
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                Regulatory-Ready Audit Trail
+<h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Regulatory-Ready Audit Trail
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                Regulators like ASIC and the SEC are increasingly focused on the "Black Box" problem 
-                and accountability for automated trades.
+                Regulators demand accountability for automated trades. With the Helmet, evidence = 
+                script runs, block/success output, and signed tx—human-in-the-loop = you reading RiskSignal’s message in chat.
               </p>
 
               <div className="mt-8 space-y-4">
@@ -579,18 +578,18 @@ export default function RetailShieldPage() {
               2026 EU AI Act Compliance Checker
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              See if your Cursor-built agent meets the new regulatory standards
+              See if your OpenClaw + Helmet setup meets the new regulatory standards
             </p>
           </div>
 
           <div className="rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-2xl">
             <div className="space-y-6">
               {[
+                { q: 'Do you route OpenClaw trading commands through a local script that holds keys (e.g. RiskSignal Helmet)?', status: 'unknown' },
                 { q: 'Does your agent have pre-deployment testing?', status: 'unknown' },
-                { q: 'Do you maintain an audit trail of decisions?', status: 'unknown' },
-                { q: 'Can you halt the agent remotely?', status: 'unknown' },
-                { q: 'Do you use hardware-level isolation (TEEs)?', status: 'unknown' },
-                { q: 'Are API credentials rotated regularly?', status: 'unknown' },
+                { q: 'Do you maintain an audit trail of decisions (script output + tx)?', status: 'unknown' },
+                { q: 'Can you halt execution (script blocks; no tx signed)?', status: 'unknown' },
+                { q: 'Are wallet keys isolated from the LLM (keys only in risksignal.py)?', status: 'unknown' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4">
                   <span className="text-gray-700">{item.q}</span>
@@ -619,17 +618,17 @@ export default function RetailShieldPage() {
       <section className="bg-gradient-to-br from-blue-600 to-blue-800 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-4xl font-bold text-white sm:text-5xl">
-            Ready to Shield Your Retail Agent?
+            Ready to Secure Your OpenClaw Snipes?
           </h2>
           <p className="mt-6 text-xl text-blue-100">
-            Join the next generation of governed autonomous trading
+            Plug the Helmet in—keys in script, not in the LLM
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/profile"
               className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-semibold text-blue-600 shadow-2xl transition-all hover:scale-105"
             >
-              Enable Retail Shield
+              Plug the Helmet into OpenClaw
               <Shield className="h-5 w-5" />
             </Link>
             <Link

@@ -27,15 +27,15 @@ export default function RiskSignalPage() {
               <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm backdrop-blur-sm">
                 <Activity className="h-4 w-4 text-blue-300" />
                 <span className="font-mono font-semibold text-blue-200">
-                  Retail Risk Intelligence
+                  OpenClaw Trade Guard Visibility
                 </span>
               </div>
               <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
                 RiskSignal
               </h1>
               <p className="mb-10 text-lg leading-relaxed text-slate-300 sm:text-xl">
-                A real-time dashboard for retail investors that turns agent activity into
-                actionable risk signals, alerts, and guardrails—without institutional overhead.
+                The dashboard that surfaces what the RiskSignal Helmet did: when it blocked a trade (and why—e.g. Sybil cabal),
+                when it executed, and the signature—so you have full visibility without giving the LLM your keys.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
                 <Link
@@ -90,11 +90,11 @@ export default function RiskSignalPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              A Risk Cockpit Built for Retail Agents
+              A Risk Cockpit for OpenClaw Users
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              RiskSignal turns your agent’s decisions into a clear, auditable view of
-              exposure, drift, and compliance—so you can act before capital is at risk.
+              See when RiskSignal blocked a trade (e.g. Sybil cabal), when it executed and the signature,
+              and the reason for every decision—fully auditable.
             </p>
           </div>
           <div className="mt-16 grid gap-8 md:grid-cols-3">
@@ -102,20 +102,20 @@ export default function RiskSignalPage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
                 <LineChart className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Live Risk Score</h3>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">Block vs. Execute</h3>
               <p className="text-gray-600">
-                A single health score that updates every trade, showing drawdowns,
-                exposure spikes, and policy breaches in real time.
+                Every OpenClaw trade intent: blocked (with reason) or executed (with signature).
+                Live view of what risksignal.py decided.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-50">
                 <AlertTriangle className="h-6 w-6 text-amber-600" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Anomaly Alerts</h3>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">Block Reasons</h3>
               <p className="text-gray-600">
-                Immediate notifications when behavior drifts from your rules—position
-                sizing, volatility, or asset whitelist violations.
+                Sybil cabal, honeypot, LP not burned, mint authority still active—see exactly why
+                RiskSignal halted a trade.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
@@ -124,8 +124,7 @@ export default function RiskSignalPage() {
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900">Guardrail Provenance</h3>
               <p className="text-gray-600">
-                See which rule fired, why it fired, and what action was taken—fully
-                traceable and exportable in seconds.
+                Script output and signed tx for every decision—traceable and exportable for regulators.
               </p>
             </div>
           </div>
@@ -138,24 +137,24 @@ export default function RiskSignalPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                Digital Helmet Lives Inside the AI Governance Layer
+                RiskSignal Helmet Runs in Your Environment
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                RiskSignal is the retail dashboard that surfaces Digital Helmet enforcement.
-                Your agent can’t break the rules—and you can see every constraint in action.
+                The Helmet is your local risksignal.py + SKILL.md. This dashboard surfaces block/success
+                and reason for each OpenClaw trade intent—so you see every constraint in action.
               </p>
               <ul className="mt-6 space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" />
-                  <span>TEE-enforced rule execution inside the AI stack</span>
+                  <span>risksignal.py output (block or success + reason) per trade</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" />
-                  <span>Immutable audit trails for every agent decision</span>
+                  <span>Immutable audit: script run + signed tx</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" />
-                  <span>RiskSignal UI that translates enforcement into insights</span>
+                  <span>RiskSignal UI translates Helmet decisions into insights</span>
                 </li>
               </ul>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -163,7 +162,7 @@ export default function RiskSignalPage() {
                   href="/retail-shield"
                   className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105"
                 >
-                  View Digital Helmet
+                  View RiskSignal Helmet
                   <Shield className="h-4 w-4" />
                 </Link>
                 <Link
@@ -200,7 +199,7 @@ export default function RiskSignalPage() {
               How RiskSignal Works
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              From agent telemetry to risk clarity in three simple steps.
+              From OpenClaw + Helmet to full visibility in three steps.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
@@ -208,18 +207,18 @@ export default function RiskSignalPage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white">
                 1
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">Connect Agents</h3>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Connect OpenClaw</h3>
               <p className="text-gray-600">
-                Link your automated strategies and wallets to stream execution telemetry.
+                Link OpenClaw and optional wallet/script logs so trade intents and Helmet results stream here.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white">
                 2
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">Enforce Guardrails</h3>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">See Helmet Results</h3>
               <p className="text-gray-600">
-                RiskSignal renders every constraint enforced by the AI governance layer.
+                Every block or success + reason (e.g. Sybil cabal, organic, signature) from risksignal.py.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
@@ -228,7 +227,7 @@ export default function RiskSignalPage() {
               </div>
               <h3 className="mb-2 text-xl font-bold text-gray-900">Act on Alerts</h3>
               <p className="text-gray-600">
-                Get notified when behavior shifts and take action before losses compound.
+                Get notified when RiskSignal blocks a trade (e.g. &quot;Sybil cabal&quot;) and act before you risk capital elsewhere.
               </p>
             </div>
           </div>

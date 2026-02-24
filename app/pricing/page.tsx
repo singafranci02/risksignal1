@@ -9,7 +9,7 @@ export default function PricingPage() {
       period: 'forever',
       description: 'Perfect for developers and small projects',
       features: [
-        { text: 'Up to 5 AI agents', included: true },
+        { text: 'Up to 5 OpenClaw + Helmet setups', included: true },
         { text: '10,000 rule evaluations/month', included: true },
         { text: 'Email alerts', included: true },
         { text: 'Basic audit logs (30 days)', included: true },
@@ -29,7 +29,7 @@ export default function PricingPage() {
       period: 'per month',
       description: 'For growing teams and production deployments',
       features: [
-        { text: 'Up to 50 AI agents', included: true },
+        { text: 'Up to 50 OpenClaw + Helmet setups', included: true },
         { text: '1M rule evaluations/month', included: true },
         { text: 'Email, SMS & Slack alerts', included: true },
         { text: 'Advanced audit logs (1 year)', included: true },
@@ -49,7 +49,7 @@ export default function PricingPage() {
       period: 'contact us',
       description: 'For institutions requiring maximum scale and support',
       features: [
-        { text: 'Unlimited AI agents', included: true },
+        { text: 'Unlimited OpenClaw + Helmet setups', included: true },
         { text: 'Unlimited rule evaluations', included: true },
         { text: 'All alert channels + custom integrations', included: true },
         { text: 'Unlimited audit log retention', included: true },
@@ -337,7 +337,7 @@ export default function PricingPage() {
             Ready to Get Started?
           </h2>
           <p className="mb-10 text-lg text-blue-100">
-            Join leading institutions deploying autonomous agents with absolute certainty
+            Join traders securing OpenClaw with the RiskSignal Helmet—keys in script, not in the LLM
           </p>
           
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">

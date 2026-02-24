@@ -49,8 +49,8 @@ interface SiteHeaderProps {
 }
 
 const platformColumn: MegaMenuItem[] = [
-  { name: 'Digital Helmet', href: '/retail-shield', description: 'Hardware-secured execution', icon: Shield },
-  { name: 'RiskSignal Dashboard', href: '/risk-signal', description: 'Retail investor risk cockpit', icon: Cpu },
+  { name: 'RiskSignal Helmet', href: '/retail-shield', description: 'Air-gapped Solana trade guard for OpenClaw', icon: Shield },
+  { name: 'RiskSignal Dashboard', href: '/risk-signal', description: 'OpenClaw trade guard visibility & blocks', icon: Cpu },
   { name: 'Auditor Portal', href: '/auditor-portal', description: 'Conformity evidence & audit trails', icon: Lock },
   { name: 'Agentic Drift', href: '/dashboard', description: 'Behavioral anomaly detection', icon: Activity, badge: 'Beta' },
 ]
@@ -67,7 +67,7 @@ const governanceColumn: MegaMenuItem[] = [
 
 const developersColumn: MegaMenuItem[] = [
   { name: 'Python SDK', href: '/ai-governance/documentation', description: 'Build compliant agents', icon: Code2 },
-  { name: 'MT5 Bridge', href: '/how-it-works', description: 'MetaTrader integration', icon: Plug },
+  { name: 'OpenClaw + Helmet', href: '/how-it-works', description: 'SKILL.md & risksignal.py integration', icon: Plug },
   { name: 'API Reference', href: '/ai-governance/documentation', description: 'Technical documentation', icon: BookOpen },
   { name: 'Community', href: '/community', description: 'Questions, help & discussion', icon: Users },
 ]
@@ -81,7 +81,7 @@ const resourcesColumn: MegaMenuItem[] = [
 
 const toolsColumn: MegaMenuItem[] = [
   { name: 'Dashboard', href: '/dashboard', description: 'Operations and agent control', icon: Activity },
-  { name: 'RiskSignal', href: '/risk-signal', description: 'Retail investor risk cockpit', icon: Cpu },
+  { name: 'RiskSignal', href: '/risk-signal', description: 'OpenClaw trade guard visibility', icon: Cpu },
   { name: "Auditor's Portal", href: '/auditor-portal', description: 'Conformity assessment hub', icon: FileCheck },
   { name: 'Profile', href: '/profile', description: 'Account and preferences', icon: User },
 ]

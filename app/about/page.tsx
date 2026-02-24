@@ -12,7 +12,7 @@ export default function AboutPage() {
     {
       icon: Zap,
       title: 'Innovation',
-      description: 'Pioneering the future of AI agent governance with cutting-edge technology and mathematical certainty.',
+      description: 'Pioneering the RiskSignal Helmet for OpenClaw: air-gapped Solana trading with keys in script only—mathematical certainty through an immutable guard the AI cannot bypass.',
     },
     {
       icon: Eye,
@@ -105,18 +105,17 @@ export default function AboutPage() {
               Building the Future of
               <br />
               <span className="bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
-                AI Agent Governance
+                Secure OpenClaw Trading
               </span>
             </h1>
             
             <p className="mb-8 text-lg leading-relaxed text-blue-100">
-              Kuneo was born from a simple problem: financial institutions needed 
-              to deploy autonomous AI agents, but existing tools could not provide 
-              the mathematical certainty and regulatory compliance required. Our{' '}
-              <Link href="/ai-governance" className="font-semibold text-white underline decoration-blue-300 underline-offset-4 hover:decoration-white">
-                AI Agent Governance Framework
+              Kuneo was born from a simple problem: OpenClaw is powerful but must not hold your keys.
+              The{' '}
+              <Link href="/retail-shield" className="font-semibold text-white underline decoration-blue-300 underline-offset-4 hover:decoration-white">
+                RiskSignal Helmet
               </Link>
-              {' '}solves this with hardware-secured execution and immutable audit trails.
+              {' '}solves this—SKILL.md + risksignal.py form an immutable wall the AI cannot bypass; execution and keys stay in your script, with compliant, auditable Solana trading.
             </p>
 
             <Link
@@ -162,14 +161,14 @@ export default function AboutPage() {
               <h2 className="mb-6 text-3xl font-bold text-gray-900">Our Mission</h2>
               <div className="space-y-4 text-lg text-gray-600">
                 <p>
-                  We're building the governance infrastructure that enables autonomous AI agents 
-                  to operate in financial markets with absolute certainty. No more black boxes, 
-                  no more regulatory uncertainty, no more institutional barriers.
+                  We're building the guard that lets you trade with OpenClaw in financial markets with absolute certainty: 
+                  keys in script, not in the LLM. No more black boxes, no more prompt-injection key theft, 
+                  no more institutional barriers.
                 </p>
                 <p>
-                  Our Digital Helmet technology provides mathematical proof that AI agents 
-                  operate within defined parameters—transforming experimental scripts into 
-                  institutional-grade financial vehicles.
+Our RiskSignal Helmet provides mathematical proof that execution stays in your script—OpenClaw
+                  never touches keys; only risksignal.py signs. Transform Solana snipes and swaps into
+                  auditable, compliant flows.
                 </p>
                 <p>
                   We believe the future of finance is autonomous, but it must be verifiable, 

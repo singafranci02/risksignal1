@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.getkuneo.com'),
-  title: 'Kuneo - AI Agent Governance Platform',
+  title: 'Kuneo – RiskSignal Helmet for OpenClaw',
   description:
-    'The infrastructure layer for autonomous financial agents. Deploy AI with absolute certainty through verifiable execution.',
+    'Air-gapped Solana trading guard for OpenClaw. SKILL.md + local risksignal.py—your wallet keys stay in the script, the LLM never touches them.',
   alternates: {
     canonical: './',
   },

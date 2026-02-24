@@ -18,14 +18,14 @@ export default function HelpCenterPage() {
         <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
           <h2 className="text-2xl font-bold text-gray-900">How can we help?</h2>
           <p className="mt-3 text-gray-600">
-            Find quick answers or reach the team for compliance and governance support.
+            Find quick answers or reach the team for OpenClaw, RiskSignal Helmet, and compliance support.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {[
               {
-                question: 'How do I start a governance program?',
-                answer: 'Create a policy baseline, connect your agents, and define guardrails.'
+                question: 'How do I plug the RiskSignal Helmet into OpenClaw?',
+                answer: 'Add a RiskSignal skill (e.g. RiskSignal_Trade.md) to ~/.openclaw, configure risksignal.py with your wallet and heuristics, then use OpenClaw via Telegram/WhatsApp. The script blocks or signs and relays the result.'
               },
               {
                 question: 'Can I export audit logs?',
